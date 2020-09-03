@@ -13,7 +13,6 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "meraki_dashboard_api": "https://github.com/JockDaRock/qt-test",
     "superagent": "3.7.0"
   },
   "devDependencies": {
