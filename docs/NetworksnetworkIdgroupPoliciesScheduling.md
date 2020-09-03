@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **friday** | [**NetworksnetworkIdgroupPoliciesSchedulingFriday**](NetworksnetworkIdgroupPoliciesSchedulingFriday.md) |  | [optional] 
 **saturday** | [**NetworksnetworkIdgroupPoliciesSchedulingSaturday**](NetworksnetworkIdgroupPoliciesSchedulingSaturday.md) |  | [optional] 
 **sunday** | [**NetworksnetworkIdgroupPoliciesSchedulingSunday**](NetworksnetworkIdgroupPoliciesSchedulingSunday.md) |  | [optional] 
+
+

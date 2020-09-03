@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getOrganizationSamlIdps**](IdpsApi.md#getOrganizationSamlIdps) | **GET** /organizations/{organizationId}/saml/idps | List the SAML IdPs in your organization.
 [**updateOrganizationSamlIdp**](IdpsApi.md#updateOrganizationSamlIdp) | **PUT** /organizations/{organizationId}/saml/idps/{idpId} | Update a SAML IdP in your organization
 
+
 <a name="createOrganizationSamlIdp"></a>
 # **createOrganizationSamlIdp**
-> Object createOrganizationSamlIdp(bodyorganizationId)
+> Object createOrganizationSamlIdp(organizationId, createOrganizationSamlIdp)
 
 Create a SAML IdP for your organization.
 
@@ -20,34 +21,38 @@ Create a SAML IdP for your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IdpsApi();
-let body = new MerakiDashboardApi.Body147(); // Body147 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IdpsApi();
 
-apiInstance.createOrganizationSamlIdp(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationSamlIdp = new MerakiDashboardApi.CreateOrganizationSamlIdp(); // CreateOrganizationSamlIdp | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationSamlIdp(organizationId, createOrganizationSamlIdp, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body147**](Body147.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationSamlIdp** | [**CreateOrganizationSamlIdp**](CreateOrganizationSamlIdp.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Remove a SAML IdP in your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IdpsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IdpsApi();
 
-apiInstance.deleteOrganizationSamlIdp(organizationId, idpId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationSamlIdp(organizationId, idpId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getOrganizationSamlIdp"></a>
 # **getOrganizationSamlIdp**
@@ -124,26 +133,30 @@ Get a SAML IdP from your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IdpsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IdpsApi();
 
-apiInstance.getOrganizationSamlIdp(organizationId, idpId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlIdp(organizationId, idpId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSamlIdps"></a>
@@ -176,25 +189,28 @@ List the SAML IdPs in your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IdpsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IdpsApi();
 
-apiInstance.getOrganizationSamlIdps(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlIdps(organizationId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateOrganizationSamlIdp"></a>
 # **updateOrganizationSamlIdp**
-> Object updateOrganizationSamlIdp(organizationIdidpId, opts)
+> Object updateOrganizationSamlIdp(organizationId, idpId, opts)
 
 Update a SAML IdP in your organization
 
@@ -226,28 +242,33 @@ Update a SAML IdP in your organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IdpsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body148() // Body148 | 
+var apiInstance = new MerakiDashboardApi.IdpsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSamlIdp': new MerakiDashboardApi.UpdateOrganizationSamlIdp() // UpdateOrganizationSamlIdp | 
 };
-apiInstance.updateOrganizationSamlIdp(organizationIdidpId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSamlIdp(organizationId, idpId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **idpId** | **String**|  | 
- **body** | [**Body148**](Body148.md)|  | [optional] 
+ **updateOrganizationSamlIdp** | [**UpdateOrganizationSamlIdp**](UpdateOrganizationSamlIdp.md)|  | [optional] 
 
 ### Return type
 

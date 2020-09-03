@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getNetworkMqttBrokers**](MqttBrokersApi.md#getNetworkMqttBrokers) | **GET** /networks/{networkId}/mqttBrokers | List the MQTT brokers for this network
 [**updateNetworkMqttBroker**](MqttBrokersApi.md#updateNetworkMqttBroker) | **PUT** /networks/{networkId}/mqttBrokers/{mqttBrokerId} | Update an MQTT broker
 
+
 <a name="createNetworkMqttBroker"></a>
 # **createNetworkMqttBroker**
-> Object createNetworkMqttBroker(bodynetworkId)
+> Object createNetworkMqttBroker(networkId, createNetworkMqttBroker)
 
 Add an MQTT broker
 
@@ -20,34 +21,38 @@ Add an MQTT broker
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MqttBrokersApi();
-let body = new MerakiDashboardApi.Body66(); // Body66 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MqttBrokersApi();
 
-apiInstance.createNetworkMqttBroker(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkMqttBroker = new MerakiDashboardApi.CreateNetworkMqttBroker(); // CreateNetworkMqttBroker | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkMqttBroker(networkId, createNetworkMqttBroker, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body66**](Body66.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkMqttBroker** | [**CreateNetworkMqttBroker**](CreateNetworkMqttBroker.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Delete an MQTT broker
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MqttBrokersApi();
-let networkId = "networkId_example"; // String | 
-let mqttBrokerId = "mqttBrokerId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MqttBrokersApi();
 
-apiInstance.deleteNetworkMqttBroker(networkId, mqttBrokerId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var mqttBrokerId = "mqttBrokerId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkMqttBroker(networkId, mqttBrokerId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkMqttBroker"></a>
 # **getNetworkMqttBroker**
@@ -124,26 +133,30 @@ Return an MQTT broker
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MqttBrokersApi();
-let networkId = "networkId_example"; // String | 
-let mqttBrokerId = "mqttBrokerId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MqttBrokersApi();
 
-apiInstance.getNetworkMqttBroker(networkId, mqttBrokerId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var mqttBrokerId = "mqttBrokerId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkMqttBroker(networkId, mqttBrokerId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkMqttBrokers"></a>
@@ -176,25 +189,28 @@ List the MQTT brokers for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MqttBrokersApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MqttBrokersApi();
 
-apiInstance.getNetworkMqttBrokers(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkMqttBrokers(networkId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkMqttBroker"></a>
 # **updateNetworkMqttBroker**
-> Object updateNetworkMqttBroker(networkIdmqttBrokerId, opts)
+> Object updateNetworkMqttBroker(networkId, mqttBrokerId, opts)
 
 Update an MQTT broker
 
@@ -226,28 +242,33 @@ Update an MQTT broker
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MqttBrokersApi();
-let networkId = "networkId_example"; // String | 
-let mqttBrokerId = "mqttBrokerId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body67() // Body67 | 
+var apiInstance = new MerakiDashboardApi.MqttBrokersApi();
+
+var networkId = "networkId_example"; // String | 
+
+var mqttBrokerId = "mqttBrokerId_example"; // String | 
+
+var opts = { 
+  'updateNetworkMqttBroker': new MerakiDashboardApi.UpdateNetworkMqttBroker() // UpdateNetworkMqttBroker | 
 };
-apiInstance.updateNetworkMqttBroker(networkIdmqttBrokerId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkMqttBroker(networkId, mqttBrokerId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **mqttBrokerId** | **String**|  | 
- **body** | [**Body67**](Body67.md)|  | [optional] 
+ **updateNetworkMqttBroker** | [**UpdateNetworkMqttBroker**](UpdateNetworkMqttBroker.md)|  | [optional] 
 
 ### Return type
 

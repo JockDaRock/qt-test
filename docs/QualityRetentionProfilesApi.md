@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getNetworkCameraQualityRetentionProfiles**](QualityRetentionProfilesApi.md#getNetworkCameraQualityRetentionProfiles) | **GET** /networks/{networkId}/camera/qualityRetentionProfiles | List the quality retention profiles for this network
 [**updateNetworkCameraQualityRetentionProfile**](QualityRetentionProfilesApi.md#updateNetworkCameraQualityRetentionProfile) | **PUT** /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId} | Update an existing quality retention profile for this network.
 
+
 <a name="createNetworkCameraQualityRetentionProfile"></a>
 # **createNetworkCameraQualityRetentionProfile**
-> Object createNetworkCameraQualityRetentionProfile(bodynetworkId)
+> Object createNetworkCameraQualityRetentionProfile(networkId, createNetworkCameraQualityRetentionProfile)
 
 Creates new quality retention profile for this network.
 
@@ -20,34 +21,38 @@ Creates new quality retention profile for this network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
-let body = new MerakiDashboardApi.Body48(); // Body48 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
 
-apiInstance.createNetworkCameraQualityRetentionProfile(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkCameraQualityRetentionProfile = new MerakiDashboardApi.CreateNetworkCameraQualityRetentionProfile(); // CreateNetworkCameraQualityRetentionProfile | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkCameraQualityRetentionProfile(networkId, createNetworkCameraQualityRetentionProfile, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body48**](Body48.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkCameraQualityRetentionProfile** | [**CreateNetworkCameraQualityRetentionProfile**](CreateNetworkCameraQualityRetentionProfile.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Delete an existing quality retention profile for this network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
-let networkId = "networkId_example"; // String | 
-let qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
 
-apiInstance.deleteNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkCameraQualityRetentionProfile"></a>
 # **getNetworkCameraQualityRetentionProfile**
@@ -124,26 +133,30 @@ Retrieve a single quality retention profile
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
-let networkId = "networkId_example"; // String | 
-let qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
 
-apiInstance.getNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkCameraQualityRetentionProfiles"></a>
@@ -176,25 +189,28 @@ List the quality retention profiles for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
 
-apiInstance.getNetworkCameraQualityRetentionProfiles(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkCameraQualityRetentionProfiles(networkId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkCameraQualityRetentionProfile"></a>
 # **updateNetworkCameraQualityRetentionProfile**
-> Object updateNetworkCameraQualityRetentionProfile(networkIdqualityRetentionProfileId, opts)
+> Object updateNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, opts)
 
 Update an existing quality retention profile for this network.
 
@@ -226,28 +242,33 @@ Update an existing quality retention profile for this network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
-let networkId = "networkId_example"; // String | 
-let qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body49() // Body49 | 
+var apiInstance = new MerakiDashboardApi.QualityRetentionProfilesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var qualityRetentionProfileId = "qualityRetentionProfileId_example"; // String | 
+
+var opts = { 
+  'updateNetworkCameraQualityRetentionProfile': new MerakiDashboardApi.UpdateNetworkCameraQualityRetentionProfile() // UpdateNetworkCameraQualityRetentionProfile | 
 };
-apiInstance.updateNetworkCameraQualityRetentionProfile(networkIdqualityRetentionProfileId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkCameraQualityRetentionProfile(networkId, qualityRetentionProfileId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **qualityRetentionProfileId** | **String**|  | 
- **body** | [**Body49**](Body49.md)|  | [optional] 
+ **updateNetworkCameraQualityRetentionProfile** | [**UpdateNetworkCameraQualityRetentionProfile**](UpdateNetworkCameraQualityRetentionProfile.md)|  | [optional] 
 
 ### Return type
 

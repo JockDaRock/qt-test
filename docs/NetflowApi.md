@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkNetflow**](NetflowApi.md#getNetworkNetflow) | **GET** /networks/{networkId}/netflow | Return the NetFlow traffic reporting settings for a network
 [**updateNetworkNetflow**](NetflowApi.md#updateNetworkNetflow) | **PUT** /networks/{networkId}/netflow | Update the NetFlow traffic reporting settings for a network
 
+
 <a name="getNetworkNetflow"></a>
 # **getNetworkNetflow**
 > Object getNetworkNetflow(networkId)
@@ -17,25 +18,28 @@ Return the NetFlow traffic reporting settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.NetflowApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.NetflowApi();
 
-apiInstance.getNetworkNetflow(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkNetflow(networkId, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkNetflow"></a>
@@ -67,27 +71,31 @@ Update the NetFlow traffic reporting settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.NetflowApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body68() // Body68 | 
+var apiInstance = new MerakiDashboardApi.NetflowApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkNetflow': new MerakiDashboardApi.UpdateNetworkNetflow() // UpdateNetworkNetflow | 
 };
-apiInstance.updateNetworkNetflow(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkNetflow(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateNetworkNetflow(networkId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body68**](Body68.md)|  | [optional] 
+ **updateNetworkNetflow** | [**UpdateNetworkNetflow**](UpdateNetworkNetflow.md)|  | [optional] 
 
 ### Return type
 

@@ -12,9 +12,10 @@ Method | HTTP request | Description
 [**updateNetworkSwitchRoutingMulticast**](MulticastApi.md#updateNetworkSwitchRoutingMulticast) | **PUT** /networks/{networkId}/switch/routing/multicast | Update multicast settings for a network
 [**updateNetworkSwitchRoutingMulticastRendezvousPoint**](MulticastApi.md#updateNetworkSwitchRoutingMulticastRendezvousPoint) | **PUT** /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | Update a multicast rendezvous point
 
+
 <a name="createNetworkSwitchRoutingMulticastRendezvousPoint"></a>
 # **createNetworkSwitchRoutingMulticastRendezvousPoint**
-> Object createNetworkSwitchRoutingMulticastRendezvousPoint(bodynetworkId)
+> Object createNetworkSwitchRoutingMulticastRendezvousPoint(networkId, createNetworkSwitchRoutingMulticastRendezvousPoint)
 
 Create a multicast rendezvous point
 
@@ -22,34 +23,38 @@ Create a multicast rendezvous point
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let body = new MerakiDashboardApi.Body89(); // Body89 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.createNetworkSwitchRoutingMulticastRendezvousPoint(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkSwitchRoutingMulticastRendezvousPoint = new MerakiDashboardApi.CreateNetworkSwitchRoutingMulticastRendezvousPoint(); // CreateNetworkSwitchRoutingMulticastRendezvousPoint | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSwitchRoutingMulticastRendezvousPoint(networkId, createNetworkSwitchRoutingMulticastRendezvousPoint, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body89**](Body89.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkSwitchRoutingMulticastRendezvousPoint** | [**CreateNetworkSwitchRoutingMulticastRendezvousPoint**](CreateNetworkSwitchRoutingMulticastRendezvousPoint.md)|  | 
 
 ### Return type
 
@@ -74,26 +79,30 @@ Delete a multicast rendezvous point
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let networkId = "networkId_example"; // String | 
-let rendezvousPointId = "rendezvousPointId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.deleteNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var rendezvousPointId = "rendezvousPointId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, callback);
 ```
 
 ### Parameters
@@ -113,8 +122,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkSwitchRoutingMulticast"></a>
 # **getNetworkSwitchRoutingMulticast**
@@ -126,25 +135,28 @@ Return multicast settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.getNetworkSwitchRoutingMulticast(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchRoutingMulticast(networkId, callback);
 ```
 
 ### Parameters
@@ -163,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchRoutingMulticastRendezvousPoint"></a>
@@ -176,26 +188,30 @@ Return a multicast rendezvous point
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let networkId = "networkId_example"; // String | 
-let rendezvousPointId = "rendezvousPointId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.getNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var rendezvousPointId = "rendezvousPointId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, callback);
 ```
 
 ### Parameters
@@ -215,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchRoutingMulticastRendezvousPoints"></a>
@@ -228,25 +244,28 @@ List multicast rendezvous points
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.getNetworkSwitchRoutingMulticastRendezvousPoints(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchRoutingMulticastRendezvousPoints(networkId, callback);
 ```
 
 ### Parameters
@@ -265,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSwitchRoutingMulticast"></a>
@@ -278,27 +297,31 @@ Update multicast settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body88() // Body88 | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchRoutingMulticast': new MerakiDashboardApi.UpdateNetworkSwitchRoutingMulticast() // UpdateNetworkSwitchRoutingMulticast | 
 };
-apiInstance.updateNetworkSwitchRoutingMulticast(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchRoutingMulticast(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -306,7 +329,7 @@ apiInstance.updateNetworkSwitchRoutingMulticast(networkId, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body88**](Body88.md)|  | [optional] 
+ **updateNetworkSwitchRoutingMulticast** | [**UpdateNetworkSwitchRoutingMulticast**](UpdateNetworkSwitchRoutingMulticast.md)|  | [optional] 
 
 ### Return type
 
@@ -323,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkSwitchRoutingMulticastRendezvousPoint"></a>
 # **updateNetworkSwitchRoutingMulticastRendezvousPoint**
-> Object updateNetworkSwitchRoutingMulticastRendezvousPoint(bodynetworkIdrendezvousPointId)
+> Object updateNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, updateNetworkSwitchRoutingMulticastRendezvousPoint)
 
 Update a multicast rendezvous point
 
@@ -331,36 +354,41 @@ Update a multicast rendezvous point
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MulticastApi();
-let body = new MerakiDashboardApi.Body90(); // Body90 | 
-let networkId = "networkId_example"; // String | 
-let rendezvousPointId = "rendezvousPointId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MulticastApi();
 
-apiInstance.updateNetworkSwitchRoutingMulticastRendezvousPoint(bodynetworkIdrendezvousPointId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var rendezvousPointId = "rendezvousPointId_example"; // String | 
+
+var updateNetworkSwitchRoutingMulticastRendezvousPoint = new MerakiDashboardApi.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(); // UpdateNetworkSwitchRoutingMulticastRendezvousPoint | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchRoutingMulticastRendezvousPoint(networkId, rendezvousPointId, updateNetworkSwitchRoutingMulticastRendezvousPoint, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body90**](Body90.md)|  | 
  **networkId** | **String**|  | 
  **rendezvousPointId** | **String**|  | 
+ **updateNetworkSwitchRoutingMulticastRendezvousPoint** | [**UpdateNetworkSwitchRoutingMulticastRendezvousPoint**](UpdateNetworkSwitchRoutingMulticastRendezvousPoint.md)|  | 
 
 ### Return type
 

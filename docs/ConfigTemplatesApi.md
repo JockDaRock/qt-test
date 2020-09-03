@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**updateOrganizationConfigTemplate**](ConfigTemplatesApi.md#updateOrganizationConfigTemplate) | **PUT** /organizations/{organizationId}/configTemplates/{configTemplateId} | Update a configuration template
 [**updateOrganizationConfigTemplateSwitchProfilePort**](ConfigTemplatesApi.md#updateOrganizationConfigTemplateSwitchProfilePort) | **PUT** /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | Update a switch profile port
 
+
 <a name="createOrganizationConfigTemplate"></a>
 # **createOrganizationConfigTemplate**
-> Object createOrganizationConfigTemplate(bodyorganizationId)
+> Object createOrganizationConfigTemplate(organizationId, createOrganizationConfigTemplate)
 
 Create a new configuration template
 
@@ -24,34 +25,38 @@ Create a new configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let body = new MerakiDashboardApi.Body134(); // Body134 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.createOrganizationConfigTemplate(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationConfigTemplate = new MerakiDashboardApi.CreateOrganizationConfigTemplate(); // CreateOrganizationConfigTemplate | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationConfigTemplate(organizationId, createOrganizationConfigTemplate, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body134**](Body134.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationConfigTemplate** | [**CreateOrganizationConfigTemplate**](CreateOrganizationConfigTemplate.md)|  | 
 
 ### Return type
 
@@ -76,26 +81,30 @@ Remove a configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.deleteOrganizationConfigTemplate(organizationId, configTemplateId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationConfigTemplate(organizationId, configTemplateId, callback);
 ```
 
 ### Parameters
@@ -115,8 +124,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplate"></a>
 # **getOrganizationConfigTemplate**
@@ -128,26 +137,30 @@ Return a single configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.getOrganizationConfigTemplate(organizationId, configTemplateId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplate(organizationId, configTemplateId, callback);
 ```
 
 ### Parameters
@@ -167,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplateSwitchProfilePort"></a>
@@ -180,28 +193,34 @@ Return a switch profile port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
-let portId = "portId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.getOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, callback);
 ```
 
 ### Parameters
@@ -223,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplateSwitchProfilePorts"></a>
@@ -236,27 +255,32 @@ Return all the ports of a switch profile
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.getOrganizationConfigTemplateSwitchProfilePorts(organizationId, configTemplateId, profileId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplateSwitchProfilePorts(organizationId, configTemplateId, profileId, callback);
 ```
 
 ### Parameters
@@ -277,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplateSwitchProfiles"></a>
@@ -290,26 +314,30 @@ List the switch profiles for your switch template configuration
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.getOrganizationConfigTemplateSwitchProfiles(organizationId, configTemplateId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplateSwitchProfiles(organizationId, configTemplateId, callback);
 ```
 
 ### Parameters
@@ -329,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplates"></a>
@@ -342,25 +370,28 @@ List the configuration templates for this organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
 
-apiInstance.getOrganizationConfigTemplates(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplates(organizationId, callback);
 ```
 
 ### Parameters
@@ -379,12 +410,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateOrganizationConfigTemplate"></a>
 # **updateOrganizationConfigTemplate**
-> Object updateOrganizationConfigTemplate(organizationIdconfigTemplateId, opts)
+> Object updateOrganizationConfigTemplate(organizationId, configTemplateId, opts)
 
 Update a configuration template
 
@@ -392,28 +423,33 @@ Update a configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body135() // Body135 | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationConfigTemplate': new MerakiDashboardApi.UpdateOrganizationConfigTemplate() // UpdateOrganizationConfigTemplate | 
 };
-apiInstance.updateOrganizationConfigTemplate(organizationIdconfigTemplateId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationConfigTemplate(organizationId, configTemplateId, opts, callback);
 ```
 
 ### Parameters
@@ -422,7 +458,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **configTemplateId** | **String**|  | 
- **body** | [**Body135**](Body135.md)|  | [optional] 
+ **updateOrganizationConfigTemplate** | [**UpdateOrganizationConfigTemplate**](UpdateOrganizationConfigTemplate.md)|  | [optional] 
 
 ### Return type
 
@@ -439,7 +475,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationConfigTemplateSwitchProfilePort"></a>
 # **updateOrganizationConfigTemplateSwitchProfilePort**
-> Object updateOrganizationConfigTemplateSwitchProfilePort(organizationIdconfigTemplateIdprofileIdportId, opts)
+> Object updateOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, opts)
 
 Update a switch profile port
 
@@ -447,30 +483,37 @@ Update a switch profile port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
-let portId = "portId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body136() // Body136 | 
+var apiInstance = new MerakiDashboardApi.ConfigTemplatesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationConfigTemplateSwitchProfilePort': new MerakiDashboardApi.UpdateOrganizationConfigTemplateSwitchProfilePort() // UpdateOrganizationConfigTemplateSwitchProfilePort | 
 };
-apiInstance.updateOrganizationConfigTemplateSwitchProfilePort(organizationIdconfigTemplateIdprofileIdportId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, opts, callback);
 ```
 
 ### Parameters
@@ -481,7 +524,7 @@ Name | Type | Description  | Notes
  **configTemplateId** | **String**|  | 
  **profileId** | **String**|  | 
  **portId** | **String**|  | 
- **body** | [**Body136**](Body136.md)|  | [optional] 
+ **updateOrganizationConfigTemplateSwitchProfilePort** | [**UpdateOrganizationConfigTemplateSwitchProfilePort**](UpdateOrganizationConfigTemplateSwitchProfilePort.md)|  | [optional] 
 
 ### Return type
 

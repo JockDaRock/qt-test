@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkFirmwareUpgrades**](FirmwareUpgradesApi.md#getNetworkFirmwareUpgrades) | **GET** /networks/{networkId}/firmwareUpgrades | Get current maintenance window for a network
 [**updateNetworkFirmwareUpgrades**](FirmwareUpgradesApi.md#updateNetworkFirmwareUpgrades) | **PUT** /networks/{networkId}/firmwareUpgrades | Update current maintenance window for a network
 
+
 <a name="getNetworkFirmwareUpgrades"></a>
 # **getNetworkFirmwareUpgrades**
 > Object getNetworkFirmwareUpgrades(networkId)
@@ -17,25 +18,28 @@ Get current maintenance window for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirmwareUpgradesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirmwareUpgradesApi();
 
-apiInstance.getNetworkFirmwareUpgrades(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkFirmwareUpgrades(networkId, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkFirmwareUpgrades"></a>
@@ -67,27 +71,31 @@ Update current maintenance window for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirmwareUpgradesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body59() // Body59 | 
+var apiInstance = new MerakiDashboardApi.FirmwareUpgradesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkFirmwareUpgrades': new MerakiDashboardApi.UpdateNetworkFirmwareUpgrades() // UpdateNetworkFirmwareUpgrades | 
 };
-apiInstance.updateNetworkFirmwareUpgrades(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkFirmwareUpgrades(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateNetworkFirmwareUpgrades(networkId, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body59**](Body59.md)|  | [optional] 
+ **updateNetworkFirmwareUpgrades** | [**UpdateNetworkFirmwareUpgrades**](UpdateNetworkFirmwareUpgrades.md)|  | [optional] 
 
 ### Return type
 

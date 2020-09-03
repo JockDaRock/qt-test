@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getNetworkApplianceTrafficShapingCustomPerformanceClasses**](CustomPerformanceClassesApi.md#getNetworkApplianceTrafficShapingCustomPerformanceClasses) | **GET** /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses | List all custom performance classes for an MX network
 [**updateNetworkApplianceTrafficShapingCustomPerformanceClass**](CustomPerformanceClassesApi.md#updateNetworkApplianceTrafficShapingCustomPerformanceClass) | **PUT** /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId} | Update a custom performance class for an MX network
 
+
 <a name="createNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **createNetworkApplianceTrafficShapingCustomPerformanceClass**
-> Object createNetworkApplianceTrafficShapingCustomPerformanceClass(bodynetworkId)
+> Object createNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, createNetworkApplianceTrafficShapingCustomPerformanceClass)
 
 Add a custom performance class for an MX network
 
@@ -20,34 +21,38 @@ Add a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
-let body = new MerakiDashboardApi.Body37(); // Body37 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
 
-apiInstance.createNetworkApplianceTrafficShapingCustomPerformanceClass(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceTrafficShapingCustomPerformanceClass = new MerakiDashboardApi.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(); // CreateNetworkApplianceTrafficShapingCustomPerformanceClass | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, createNetworkApplianceTrafficShapingCustomPerformanceClass, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body37**](Body37.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceTrafficShapingCustomPerformanceClass** | [**CreateNetworkApplianceTrafficShapingCustomPerformanceClass**](CreateNetworkApplianceTrafficShapingCustomPerformanceClass.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Delete a custom performance class from an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
 
-apiInstance.deleteNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **getNetworkApplianceTrafficShapingCustomPerformanceClass**
@@ -124,26 +133,30 @@ Return a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
 
-apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingCustomPerformanceClasses"></a>
@@ -176,25 +189,28 @@ List all custom performance classes for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
 
-apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClasses(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClasses(networkId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **updateNetworkApplianceTrafficShapingCustomPerformanceClass**
-> Object updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkIdcustomPerformanceClassId, opts)
+> Object updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, opts)
 
 Update a custom performance class for an MX network
 
@@ -226,28 +242,33 @@ Update a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body38() // Body38 | 
+var apiInstance = new MerakiDashboardApi.CustomPerformanceClassesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingCustomPerformanceClass': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass() // UpdateNetworkApplianceTrafficShapingCustomPerformanceClass | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkIdcustomPerformanceClassId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **customPerformanceClassId** | **String**|  | 
- **body** | [**Body38**](Body38.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingCustomPerformanceClass** | [**UpdateNetworkApplianceTrafficShapingCustomPerformanceClass**](UpdateNetworkApplianceTrafficShapingCustomPerformanceClass.md)|  | [optional] 
 
 ### Return type
 

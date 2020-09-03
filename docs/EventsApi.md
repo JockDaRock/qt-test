@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getNetworkEventsEventTypes**](EventsApi.md#getNetworkEventsEventTypes) | **GET** /networks/{networkId}/events/eventTypes | List the event type to human-readable description
 [**getOrganizationApplianceSecurityEvents**](EventsApi.md#getOrganizationApplianceSecurityEvents) | **GET** /organizations/{organizationId}/appliance/security/events | List the security events for an organization
 
+
 <a name="getNetworkApplianceClientSecurityEvents"></a>
 # **getNetworkApplianceClientSecurityEvents**
 > Object getNetworkApplianceClientSecurityEvents(networkId, clientId, opts)
@@ -20,19 +21,22 @@ List the security events for a client. Clients can be identified by a client key
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.EventsApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.EventsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
@@ -41,13 +45,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -62,7 +68,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -74,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityEvents"></a>
@@ -87,18 +93,20 @@ List the security events for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.EventsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.EventsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -107,13 +115,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -127,7 +137,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -139,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkEvents"></a>
@@ -152,18 +162,20 @@ List the events for the network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.EventsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.EventsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   'productType': "productType_example", // String | The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, and cellularGateway
   'includedEventTypes': ["includedEventTypes_example"], // [String] | A list of event types. The returned events will be filtered to only include events with these types.
   'excludedEventTypes': ["excludedEventTypes_example"], // [String] | A list of event types. The returned events will be filtered to exclude events with these types.
@@ -179,13 +191,15 @@ let opts = {
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkEvents(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkEvents(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -218,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkEventsEventTypes"></a>
@@ -231,25 +245,28 @@ List the event type to human-readable description
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.EventsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.EventsApi();
 
-apiInstance.getNetworkEventsEventTypes(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkEventsEventTypes(networkId, callback);
 ```
 
 ### Parameters
@@ -268,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityEvents"></a>
@@ -281,18 +298,20 @@ List the security events for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.EventsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.EventsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -301,13 +320,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -321,7 +342,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -333,6 +354,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

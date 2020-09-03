@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getNetworkWebhooksHttpServers**](HttpServersApi.md#getNetworkWebhooksHttpServers) | **GET** /networks/{networkId}/webhooks/httpServers | List the HTTP servers for a network
 [**updateNetworkWebhooksHttpServer**](HttpServersApi.md#updateNetworkWebhooksHttpServer) | **PUT** /networks/{networkId}/webhooks/httpServers/{httpServerId} | Update an HTTP server
 
+
 <a name="createNetworkWebhooksHttpServer"></a>
 # **createNetworkWebhooksHttpServer**
-> Object createNetworkWebhooksHttpServer(bodynetworkId)
+> Object createNetworkWebhooksHttpServer(networkId, createNetworkWebhooksHttpServer)
 
 Add an HTTP server to a network
 
@@ -20,34 +21,38 @@ Add an HTTP server to a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.HttpServersApi();
-let body = new MerakiDashboardApi.Body105(); // Body105 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.HttpServersApi();
 
-apiInstance.createNetworkWebhooksHttpServer(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkWebhooksHttpServer = new MerakiDashboardApi.CreateNetworkWebhooksHttpServer(); // CreateNetworkWebhooksHttpServer | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkWebhooksHttpServer(networkId, createNetworkWebhooksHttpServer, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body105**](Body105.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkWebhooksHttpServer** | [**CreateNetworkWebhooksHttpServer**](CreateNetworkWebhooksHttpServer.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Delete an HTTP server from a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.HttpServersApi();
-let networkId = "networkId_example"; // String | 
-let httpServerId = "httpServerId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.HttpServersApi();
 
-apiInstance.deleteNetworkWebhooksHttpServer(networkId, httpServerId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var httpServerId = "httpServerId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkWebhooksHttpServer(networkId, httpServerId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkWebhooksHttpServer"></a>
 # **getNetworkWebhooksHttpServer**
@@ -124,26 +133,30 @@ Return an HTTP server for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.HttpServersApi();
-let networkId = "networkId_example"; // String | 
-let httpServerId = "httpServerId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.HttpServersApi();
 
-apiInstance.getNetworkWebhooksHttpServer(networkId, httpServerId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var httpServerId = "httpServerId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWebhooksHttpServer(networkId, httpServerId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWebhooksHttpServers"></a>
@@ -176,25 +189,28 @@ List the HTTP servers for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.HttpServersApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.HttpServersApi();
 
-apiInstance.getNetworkWebhooksHttpServers(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWebhooksHttpServers(networkId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkWebhooksHttpServer"></a>
 # **updateNetworkWebhooksHttpServer**
-> Object updateNetworkWebhooksHttpServer(networkIdhttpServerId, opts)
+> Object updateNetworkWebhooksHttpServer(networkId, httpServerId, opts)
 
 Update an HTTP server
 
@@ -226,28 +242,33 @@ Update an HTTP server
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.HttpServersApi();
-let networkId = "networkId_example"; // String | 
-let httpServerId = "httpServerId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body106() // Body106 | 
+var apiInstance = new MerakiDashboardApi.HttpServersApi();
+
+var networkId = "networkId_example"; // String | 
+
+var httpServerId = "httpServerId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWebhooksHttpServer': new MerakiDashboardApi.UpdateNetworkWebhooksHttpServer() // UpdateNetworkWebhooksHttpServer | 
 };
-apiInstance.updateNetworkWebhooksHttpServer(networkIdhttpServerId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWebhooksHttpServer(networkId, httpServerId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **httpServerId** | **String**|  | 
- **body** | [**Body106**](Body106.md)|  | [optional] 
+ **updateNetworkWebhooksHttpServer** | [**UpdateNetworkWebhooksHttpServer**](UpdateNetworkWebhooksHttpServer.md)|  | [optional] 
 
 ### Return type
 

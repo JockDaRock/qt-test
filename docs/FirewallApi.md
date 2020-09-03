@@ -5,7 +5,7 @@ All URIs are relative to *https://api.meraki.com/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getNetworkApplianceFirewallCellularFirewallRules**](FirewallApi.md#getNetworkApplianceFirewallCellularFirewallRules) | **GET** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Return the cellular firewall rules for an MX network
-[**getNetworkApplianceFirewallFirewalledService**](FirewallApi.md#getNetworkApplianceFirewallFirewalledService) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+[**getNetworkApplianceFirewallFirewalledService**](FirewallApi.md#getNetworkApplianceFirewallFirewalledService) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 [**getNetworkApplianceFirewallFirewalledServices**](FirewallApi.md#getNetworkApplianceFirewallFirewalledServices) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices | List the appliance services and their accessibility rules
 [**getNetworkApplianceFirewallInboundFirewallRules**](FirewallApi.md#getNetworkApplianceFirewallInboundFirewallRules) | **GET** /networks/{networkId}/appliance/firewall/inboundFirewallRules | Return the inbound firewall rules for an MX network
 [**getNetworkApplianceFirewallL3FirewallRules**](FirewallApi.md#getNetworkApplianceFirewallL3FirewallRules) | **GET** /networks/{networkId}/appliance/firewall/l3FirewallRules | Return the L3 firewall rules for an MX network
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**getNetworkWirelessSsidFirewallL3FirewallRules**](FirewallApi.md#getNetworkWirelessSsidFirewallL3FirewallRules) | **GET** /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules | Return the L3 firewall rules for an SSID on an MR network
 [**getNetworkWirelessSsidFirewallL7FirewallRules**](FirewallApi.md#getNetworkWirelessSsidFirewallL7FirewallRules) | **GET** /networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules | Return the L7 firewall rules for an SSID on an MR network
 [**updateNetworkApplianceFirewallCellularFirewallRules**](FirewallApi.md#updateNetworkApplianceFirewallCellularFirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Update the cellular firewall rules of an MX network
-[**updateNetworkApplianceFirewallFirewalledService**](FirewallApi.md#updateNetworkApplianceFirewallFirewalledService) | **PUT** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+[**updateNetworkApplianceFirewallFirewalledService**](FirewallApi.md#updateNetworkApplianceFirewallFirewalledService) | **PUT** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 [**updateNetworkApplianceFirewallInboundFirewallRules**](FirewallApi.md#updateNetworkApplianceFirewallInboundFirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/inboundFirewallRules | Update the inbound firewall rules of an MX network
 [**updateNetworkApplianceFirewallL3FirewallRules**](FirewallApi.md#updateNetworkApplianceFirewallL3FirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/l3FirewallRules | Update the L3 firewall rules of an MX network
 [**updateNetworkApplianceFirewallL7FirewallRules**](FirewallApi.md#updateNetworkApplianceFirewallL7FirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/l7FirewallRules | Update the MX L7 firewall rules for an MX network
@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**updateNetworkApplianceFirewallPortForwardingRules**](FirewallApi.md#updateNetworkApplianceFirewallPortForwardingRules) | **PUT** /networks/{networkId}/appliance/firewall/portForwardingRules | Update the port forwarding rules for an MX network
 [**updateNetworkWirelessSsidFirewallL3FirewallRules**](FirewallApi.md#updateNetworkWirelessSsidFirewallL3FirewallRules) | **PUT** /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules | Update the L3 firewall rules of an SSID on an MR network
 [**updateNetworkWirelessSsidFirewallL7FirewallRules**](FirewallApi.md#updateNetworkWirelessSsidFirewallL7FirewallRules) | **PUT** /networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules | Update the L7 firewall rules of an SSID on an MR network
+
 
 <a name="getNetworkApplianceFirewallCellularFirewallRules"></a>
 # **getNetworkApplianceFirewallCellularFirewallRules**
@@ -37,25 +38,28 @@ Return the cellular firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -74,39 +78,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallFirewalledService"></a>
 # **getNetworkApplianceFirewallFirewalledService**
 > Object getNetworkApplianceFirewallFirewalledService(networkId, service)
 
-Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 
-Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let service = "service_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallFirewalledService(networkId, service, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var service = "service_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallFirewalledService(networkId, service, callback);
 ```
 
 ### Parameters
@@ -126,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallFirewalledServices"></a>
@@ -139,25 +147,28 @@ List the appliance services and their accessibility rules
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallFirewalledServices(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallFirewalledServices(networkId, callback);
 ```
 
 ### Parameters
@@ -176,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallInboundFirewallRules"></a>
@@ -189,25 +200,28 @@ Return the inbound firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallInboundFirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallInboundFirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -226,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL3FirewallRules"></a>
@@ -239,25 +253,28 @@ Return the L3 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallL3FirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL3FirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -276,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL7FirewallRules"></a>
@@ -289,25 +306,28 @@ List the MX L7 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallL7FirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL7FirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -326,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL7FirewallRulesApplicationCategories"></a>
@@ -339,25 +359,28 @@ Return the L7 firewall application categories and their associated applications 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallL7FirewallRulesApplicationCategories(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL7FirewallRulesApplicationCategories(networkId, callback);
 ```
 
 ### Parameters
@@ -376,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallOneToManyNatRules"></a>
@@ -389,25 +412,28 @@ Return the 1:Many NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallOneToManyNatRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallOneToManyNatRules(networkId, callback);
 ```
 
 ### Parameters
@@ -426,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallOneToOneNatRules"></a>
@@ -439,25 +465,28 @@ Return the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, callback);
 ```
 
 ### Parameters
@@ -476,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallPortForwardingRules"></a>
@@ -489,25 +518,28 @@ Return the port forwarding rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkApplianceFirewallPortForwardingRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallPortForwardingRules(networkId, callback);
 ```
 
 ### Parameters
@@ -526,7 +558,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL3FirewallRules"></a>
@@ -539,26 +571,30 @@ Return the L3 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -578,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL7FirewallRules"></a>
@@ -591,26 +627,30 @@ Return the L7 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -630,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceFirewallCellularFirewallRules"></a>
@@ -643,27 +683,31 @@ Update the cellular firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body23() // Body23 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallCellularFirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallCellularFirewallRules() // UpdateNetworkApplianceFirewallCellularFirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -671,7 +715,7 @@ apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body23**](Body23.md)|  | [optional] 
+ **updateNetworkApplianceFirewallCellularFirewallRules** | [**UpdateNetworkApplianceFirewallCellularFirewallRules**](UpdateNetworkApplianceFirewallCellularFirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -688,44 +732,49 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallFirewalledService"></a>
 # **updateNetworkApplianceFirewallFirewalledService**
-> Object updateNetworkApplianceFirewallFirewalledService(bodynetworkIdservice)
+> Object updateNetworkApplianceFirewallFirewalledService(networkId, service, updateNetworkApplianceFirewallFirewalledService)
 
-Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 
-Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let body = new MerakiDashboardApi.Body24(); // Body24 | 
-let networkId = "networkId_example"; // String | 
-let service = "service_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.updateNetworkApplianceFirewallFirewalledService(bodynetworkIdservice, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var service = "service_example"; // String | 
+
+var updateNetworkApplianceFirewallFirewalledService = new MerakiDashboardApi.UpdateNetworkApplianceFirewallFirewalledService(); // UpdateNetworkApplianceFirewallFirewalledService | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallFirewalledService(networkId, service, updateNetworkApplianceFirewallFirewalledService, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body24**](Body24.md)|  | 
  **networkId** | **String**|  | 
  **service** | **String**|  | 
+ **updateNetworkApplianceFirewallFirewalledService** | [**UpdateNetworkApplianceFirewallFirewalledService**](UpdateNetworkApplianceFirewallFirewalledService.md)|  | 
 
 ### Return type
 
@@ -750,27 +799,31 @@ Update the inbound firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body25() // Body25 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallInboundFirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallInboundFirewallRules() // UpdateNetworkApplianceFirewallInboundFirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -778,7 +831,7 @@ apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body25**](Body25.md)|  | [optional] 
+ **updateNetworkApplianceFirewallInboundFirewallRules** | [**UpdateNetworkApplianceFirewallInboundFirewallRules**](UpdateNetworkApplianceFirewallInboundFirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -803,27 +856,31 @@ Update the L3 firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body26() // Body26 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallL3FirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallL3FirewallRules() // UpdateNetworkApplianceFirewallL3FirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -831,7 +888,7 @@ apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, (erro
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body26**](Body26.md)|  | [optional] 
+ **updateNetworkApplianceFirewallL3FirewallRules** | [**UpdateNetworkApplianceFirewallL3FirewallRules**](UpdateNetworkApplianceFirewallL3FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -856,27 +913,31 @@ Update the MX L7 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body27() // Body27 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallL7FirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallL7FirewallRules() // UpdateNetworkApplianceFirewallL7FirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -884,7 +945,7 @@ apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, (erro
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body27**](Body27.md)|  | [optional] 
+ **updateNetworkApplianceFirewallL7FirewallRules** | [**UpdateNetworkApplianceFirewallL7FirewallRules**](UpdateNetworkApplianceFirewallL7FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -901,7 +962,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallOneToManyNatRules"></a>
 # **updateNetworkApplianceFirewallOneToManyNatRules**
-> Object updateNetworkApplianceFirewallOneToManyNatRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallOneToManyNatRules(networkId, updateNetworkApplianceFirewallOneToManyNatRules)
 
 Set the 1:Many NAT mapping rules for an MX network
 
@@ -909,34 +970,38 @@ Set the 1:Many NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let body = new MerakiDashboardApi.Body28(); // Body28 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.updateNetworkApplianceFirewallOneToManyNatRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallOneToManyNatRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallOneToManyNatRules(); // UpdateNetworkApplianceFirewallOneToManyNatRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallOneToManyNatRules(networkId, updateNetworkApplianceFirewallOneToManyNatRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body28**](Body28.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallOneToManyNatRules** | [**UpdateNetworkApplianceFirewallOneToManyNatRules**](UpdateNetworkApplianceFirewallOneToManyNatRules.md)|  | 
 
 ### Return type
 
@@ -953,7 +1018,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallOneToOneNatRules"></a>
 # **updateNetworkApplianceFirewallOneToOneNatRules**
-> Object updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules)
 
 Set the 1:1 NAT mapping rules for an MX network
 
@@ -961,34 +1026,38 @@ Set the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let body = new MerakiDashboardApi.Body29(); // Body29 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallOneToOneNatRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallOneToOneNatRules(); // UpdateNetworkApplianceFirewallOneToOneNatRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body29**](Body29.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallOneToOneNatRules** | [**UpdateNetworkApplianceFirewallOneToOneNatRules**](UpdateNetworkApplianceFirewallOneToOneNatRules.md)|  | 
 
 ### Return type
 
@@ -1005,7 +1074,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallPortForwardingRules"></a>
 # **updateNetworkApplianceFirewallPortForwardingRules**
-> Object updateNetworkApplianceFirewallPortForwardingRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallPortForwardingRules(networkId, updateNetworkApplianceFirewallPortForwardingRules)
 
 Update the port forwarding rules for an MX network
 
@@ -1013,34 +1082,38 @@ Update the port forwarding rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let body = new MerakiDashboardApi.Body30(); // Body30 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
 
-apiInstance.updateNetworkApplianceFirewallPortForwardingRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallPortForwardingRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallPortForwardingRules(); // UpdateNetworkApplianceFirewallPortForwardingRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallPortForwardingRules(networkId, updateNetworkApplianceFirewallPortForwardingRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body30**](Body30.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallPortForwardingRules** | [**UpdateNetworkApplianceFirewallPortForwardingRules**](UpdateNetworkApplianceFirewallPortForwardingRules.md)|  | 
 
 ### Return type
 
@@ -1057,7 +1130,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL3FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL3FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts)
 
 Update the L3 firewall rules of an SSID on an MR network
 
@@ -1065,28 +1138,33 @@ Update the L3 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body114() // Body114 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL3FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules() // UpdateNetworkWirelessSsidFirewallL3FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -1095,7 +1173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body114**](Body114.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL3FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL3FirewallRules**](UpdateNetworkWirelessSsidFirewallL3FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -1112,7 +1190,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL7FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL7FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts)
 
 Update the L7 firewall rules of an SSID on an MR network
 
@@ -1120,28 +1198,33 @@ Update the L7 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FirewallApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body115() // Body115 | 
+var apiInstance = new MerakiDashboardApi.FirewallApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL7FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules() // UpdateNetworkWirelessSsidFirewallL7FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -1150,7 +1233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body115**](Body115.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL7FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL7FirewallRules**](UpdateNetworkWirelessSsidFirewallL7FirewallRules.md)|  | [optional] 
 
 ### Return type
 

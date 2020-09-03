@@ -3,12 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**devicePolicy** | **String** | The policy to apply to the specified client. Can be &#x27;Allowed&#x27;, &#x27;Blocked&#x27; or &#x27;Normal&#x27;. Required. | [optional] 
+**devicePolicy** | **String** | The policy to apply to the specified client. Can be 'Allowed', 'Blocked' or 'Normal'. Required. | [optional] 
+
 
 <a name="DevicePolicyEnum"></a>
 ## Enum: DevicePolicyEnum
 
-* `Allowed` (value: `"Allowed"`)
-* `Blocked` (value: `"Blocked"`)
-* `Normal` (value: `"Normal"`)
+
+* `allowed` (value: `"Allowed"`)
+
+* `blocked` (value: `"Blocked"`)
+
+* `normal` (value: `"Normal"`)
+
+
+
 

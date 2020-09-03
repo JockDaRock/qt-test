@@ -4,50 +4,55 @@ All URIs are relative to *https://api.meraki.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNetworkMerakiAuthUser**](MerakiAuthUsersApi.md#createNetworkMerakiAuthUser) | **POST** /networks/{networkId}/merakiAuthUsers | Create a user configured with Meraki Authentication for a network (currently only 802.1X RADIUS users can be created, and currently, organizations have a 50,000 user cap)
+[**createNetworkMerakiAuthUser**](MerakiAuthUsersApi.md#createNetworkMerakiAuthUser) | **POST** /networks/{networkId}/merakiAuthUsers | Create a user configured with Meraki Authentication for a network (currently supports 802.1X and Splash Guest users, and currently, organizations have a 50,000 user cap)
 [**deleteNetworkMerakiAuthUser**](MerakiAuthUsersApi.md#deleteNetworkMerakiAuthUser) | **DELETE** /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId} | Delete a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be deleted)
 [**getNetworkMerakiAuthUser**](MerakiAuthUsersApi.md#getNetworkMerakiAuthUser) | **GET** /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId} | Return the Meraki Auth splash or RADIUS user
 [**getNetworkMerakiAuthUsers**](MerakiAuthUsersApi.md#getNetworkMerakiAuthUsers) | **GET** /networks/{networkId}/merakiAuthUsers | List the splash or RADIUS users configured under Meraki Authentication for a network
 [**updateNetworkMerakiAuthUser**](MerakiAuthUsersApi.md#updateNetworkMerakiAuthUser) | **PUT** /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId} | Update a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be updated)
 
+
 <a name="createNetworkMerakiAuthUser"></a>
 # **createNetworkMerakiAuthUser**
-> Object createNetworkMerakiAuthUser(bodynetworkId)
+> Object createNetworkMerakiAuthUser(networkId, createNetworkMerakiAuthUser)
 
-Create a user configured with Meraki Authentication for a network (currently only 802.1X RADIUS users can be created, and currently, organizations have a 50,000 user cap)
+Create a user configured with Meraki Authentication for a network (currently supports 802.1X and Splash Guest users, and currently, organizations have a 50,000 user cap)
 
-Create a user configured with Meraki Authentication for a network (currently only 802.1X RADIUS users can be created, and currently, organizations have a 50,000 user cap)
+Create a user configured with Meraki Authentication for a network (currently supports 802.1X and Splash Guest users, and currently, organizations have a 50,000 user cap)
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
-let body = new MerakiDashboardApi.Body64(); // Body64 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
 
-apiInstance.createNetworkMerakiAuthUser(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkMerakiAuthUser = new MerakiDashboardApi.CreateNetworkMerakiAuthUser(); // CreateNetworkMerakiAuthUser | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkMerakiAuthUser(networkId, createNetworkMerakiAuthUser, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body64**](Body64.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkMerakiAuthUser** | [**CreateNetworkMerakiAuthUser**](CreateNetworkMerakiAuthUser.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Delete a user configured with Meraki Authentication (currently only 802.1X RADIU
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
-let networkId = "networkId_example"; // String | 
-let merakiAuthUserId = "merakiAuthUserId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
 
-apiInstance.deleteNetworkMerakiAuthUser(networkId, merakiAuthUserId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var merakiAuthUserId = "merakiAuthUserId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkMerakiAuthUser(networkId, merakiAuthUserId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkMerakiAuthUser"></a>
 # **getNetworkMerakiAuthUser**
@@ -124,26 +133,30 @@ Return the Meraki Auth splash or RADIUS user
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
-let networkId = "networkId_example"; // String | 
-let merakiAuthUserId = "merakiAuthUserId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
 
-apiInstance.getNetworkMerakiAuthUser(networkId, merakiAuthUserId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var merakiAuthUserId = "merakiAuthUserId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkMerakiAuthUser(networkId, merakiAuthUserId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkMerakiAuthUsers"></a>
@@ -176,25 +189,28 @@ List the splash or RADIUS users configured under Meraki Authentication for a net
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
 
-apiInstance.getNetworkMerakiAuthUsers(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkMerakiAuthUsers(networkId, callback);
 ```
 
 ### Parameters
@@ -213,12 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkMerakiAuthUser"></a>
 # **updateNetworkMerakiAuthUser**
-> Object updateNetworkMerakiAuthUser(networkIdmerakiAuthUserId, opts)
+> Object updateNetworkMerakiAuthUser(networkId, merakiAuthUserId, opts)
 
 Update a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be updated)
 
@@ -226,28 +242,33 @@ Update a user configured with Meraki Authentication (currently only 802.1X RADIU
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
-let networkId = "networkId_example"; // String | 
-let merakiAuthUserId = "merakiAuthUserId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body65() // Body65 | 
+var apiInstance = new MerakiDashboardApi.MerakiAuthUsersApi();
+
+var networkId = "networkId_example"; // String | 
+
+var merakiAuthUserId = "merakiAuthUserId_example"; // String | 
+
+var opts = { 
+  'updateNetworkMerakiAuthUser': new MerakiDashboardApi.UpdateNetworkMerakiAuthUser() // UpdateNetworkMerakiAuthUser | 
 };
-apiInstance.updateNetworkMerakiAuthUser(networkIdmerakiAuthUserId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkMerakiAuthUser(networkId, merakiAuthUserId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **merakiAuthUserId** | **String**|  | 
- **body** | [**Body65**](Body65.md)|  | [optional] 
+ **updateNetworkMerakiAuthUser** | [**UpdateNetworkMerakiAuthUser**](UpdateNetworkMerakiAuthUser.md)|  | [optional] 
 
 ### Return type
 

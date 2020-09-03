@@ -4,38 +4,42 @@ All URIs are relative to *https://api.meraki.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getOrganizationApplianceVpnVpnFirewallRules**](VpnFirewallRulesApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization&#x27;s site-to-site VPN
-[**updateOrganizationApplianceVpnVpnFirewallRules**](VpnFirewallRulesApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization&#x27;s site-to-site VPN
+[**getOrganizationApplianceVpnVpnFirewallRules**](VpnFirewallRulesApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization's site-to-site VPN
+[**updateOrganizationApplianceVpnVpnFirewallRules**](VpnFirewallRulesApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization's site-to-site VPN
+
 
 <a name="getOrganizationApplianceVpnVpnFirewallRules"></a>
 # **getOrganizationApplianceVpnVpnFirewallRules**
 > Object getOrganizationApplianceVpnVpnFirewallRules(organizationId)
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnFirewallRulesApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnFirewallRulesApi();
 
-apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, callback);
 ```
 
 ### Parameters
@@ -54,40 +58,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateOrganizationApplianceVpnVpnFirewallRules"></a>
 # **updateOrganizationApplianceVpnVpnFirewallRules**
 > Object updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts)
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnFirewallRulesApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body128() // Body128 | 
+var apiInstance = new MerakiDashboardApi.VpnFirewallRulesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationApplianceVpnVpnFirewallRules': new MerakiDashboardApi.UpdateOrganizationApplianceVpnVpnFirewallRules() // UpdateOrganizationApplianceVpnVpnFirewallRules | 
 };
-apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body128**](Body128.md)|  | [optional] 
+ **updateOrganizationApplianceVpnVpnFirewallRules** | [**UpdateOrganizationApplianceVpnVpnFirewallRules**](UpdateOrganizationApplianceVpnVpnFirewallRules.md)|  | [optional] 
 
 ### Return type
 

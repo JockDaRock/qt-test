@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceVlansSettings**](SettingsApi.md#getNetworkApplianceVlansSettings) | **GET** /networks/{networkId}/appliance/vlans/settings | Returns the enabled status of VLANs for the network
 [**getNetworkSettings**](SettingsApi.md#getNetworkSettings) | **GET** /networks/{networkId}/settings | Return the settings for a network
 [**getNetworkSwitchSettings**](SettingsApi.md#getNetworkSwitchSettings) | **GET** /networks/{networkId}/switch/settings | Returns the switch network settings
-[**getNetworkWirelessBluetoothSettings**](SettingsApi.md#getNetworkWirelessBluetoothSettings) | **GET** /networks/{networkId}/wireless/bluetooth/settings | Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+[**getNetworkWirelessBluetoothSettings**](SettingsApi.md#getNetworkWirelessBluetoothSettings) | **GET** /networks/{networkId}/wireless/bluetooth/settings | Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 [**getNetworkWirelessSettings**](SettingsApi.md#getNetworkWirelessSettings) | **GET** /networks/{networkId}/wireless/settings | Return the wireless settings for a network
 [**getNetworkWirelessSsidSplashSettings**](SettingsApi.md#getNetworkWirelessSsidSplashSettings) | **GET** /networks/{networkId}/wireless/ssids/{number}/splash/settings | Display the splash page settings for the given SSID
 [**updateDeviceCameraVideoSettings**](SettingsApi.md#updateDeviceCameraVideoSettings) | **PUT** /devices/{serial}/camera/video/settings | Update video settings for the given camera
@@ -21,9 +21,10 @@ Method | HTTP request | Description
 [**updateNetworkApplianceVlansSettings**](SettingsApi.md#updateNetworkApplianceVlansSettings) | **PUT** /networks/{networkId}/appliance/vlans/settings | Enable/Disable VLANs for the given network
 [**updateNetworkSettings**](SettingsApi.md#updateNetworkSettings) | **PUT** /networks/{networkId}/settings | Update the settings for a network
 [**updateNetworkSwitchSettings**](SettingsApi.md#updateNetworkSwitchSettings) | **PUT** /networks/{networkId}/switch/settings | Update switch network settings
-[**updateNetworkWirelessBluetoothSettings**](SettingsApi.md#updateNetworkWirelessBluetoothSettings) | **PUT** /networks/{networkId}/wireless/bluetooth/settings | Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+[**updateNetworkWirelessBluetoothSettings**](SettingsApi.md#updateNetworkWirelessBluetoothSettings) | **PUT** /networks/{networkId}/wireless/bluetooth/settings | Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 [**updateNetworkWirelessSettings**](SettingsApi.md#updateNetworkWirelessSettings) | **PUT** /networks/{networkId}/wireless/settings | Update the wireless settings for a network
 [**updateNetworkWirelessSsidSplashSettings**](SettingsApi.md#updateNetworkWirelessSsidSplashSettings) | **PUT** /networks/{networkId}/wireless/ssids/{number}/splash/settings | Modify the splash page settings for the given SSID
+
 
 <a name="getDeviceCameraVideoSettings"></a>
 # **getDeviceCameraVideoSettings**
@@ -35,25 +36,28 @@ Returns video settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getDeviceCameraVideoSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceCameraVideoSettings(serial, callback);
 ```
 
 ### Parameters
@@ -72,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessBluetoothSettings"></a>
@@ -85,25 +89,28 @@ Return the bluetooth settings for a wireless device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getDeviceWirelessBluetoothSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessBluetoothSettings(serial, callback);
 ```
 
 ### Parameters
@@ -122,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessRadioSettings"></a>
@@ -135,25 +142,28 @@ Return the radio settings of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getDeviceWirelessRadioSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessRadioSettings(serial, callback);
 ```
 
 ### Parameters
@@ -172,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkAlertsSettings"></a>
@@ -185,25 +195,28 @@ Return the alert configuration for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkAlertsSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkAlertsSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -222,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlansSettings"></a>
@@ -235,25 +248,28 @@ Returns the enabled status of VLANs for the network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkApplianceVlansSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlansSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -272,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSettings"></a>
@@ -285,25 +301,28 @@ Return the settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -322,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchSettings"></a>
@@ -335,25 +354,28 @@ Returns the switch network settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkSwitchSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -372,38 +394,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessBluetoothSettings"></a>
 # **getNetworkWirelessBluetoothSettings**
 > Object getNetworkWirelessBluetoothSettings(networkId)
 
-Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 
-Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkWirelessBluetoothSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessBluetoothSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -422,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSettings"></a>
@@ -435,25 +460,28 @@ Return the wireless settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkWirelessSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -472,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidSplashSettings"></a>
@@ -485,26 +513,30 @@ Display the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
 
-apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -524,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceCameraVideoSettings"></a>
@@ -537,27 +569,31 @@ Update video settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body5() // Body5 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceCameraVideoSettings': new MerakiDashboardApi.UpdateDeviceCameraVideoSettings() // UpdateDeviceCameraVideoSettings | 
 };
-apiInstance.updateDeviceCameraVideoSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceCameraVideoSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -565,7 +601,7 @@ apiInstance.updateDeviceCameraVideoSettings(serial, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body5**](Body5.md)|  | [optional] 
+ **updateDeviceCameraVideoSettings** | [**UpdateDeviceCameraVideoSettings**](UpdateDeviceCameraVideoSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -590,27 +626,31 @@ Update the bluetooth settings for a wireless device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body17() // Body17 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceWirelessBluetoothSettings': new MerakiDashboardApi.UpdateDeviceWirelessBluetoothSettings() // UpdateDeviceWirelessBluetoothSettings | 
 };
-apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -618,7 +658,7 @@ apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body17**](Body17.md)|  | [optional] 
+ **updateDeviceWirelessBluetoothSettings** | [**UpdateDeviceWirelessBluetoothSettings**](UpdateDeviceWirelessBluetoothSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -643,27 +683,31 @@ Update the radio settings of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body18() // Body18 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceWirelessRadioSettings': new MerakiDashboardApi.UpdateDeviceWirelessRadioSettings() // UpdateDeviceWirelessRadioSettings | 
 };
-apiInstance.updateDeviceWirelessRadioSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceWirelessRadioSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -671,7 +715,7 @@ apiInstance.updateDeviceWirelessRadioSettings(serial, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body18**](Body18.md)|  | [optional] 
+ **updateDeviceWirelessRadioSettings** | [**UpdateDeviceWirelessRadioSettings**](UpdateDeviceWirelessRadioSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -696,27 +740,31 @@ Update the alert configuration for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body20() // Body20 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkAlertsSettings': new MerakiDashboardApi.UpdateNetworkAlertsSettings() // UpdateNetworkAlertsSettings | 
 };
-apiInstance.updateNetworkAlertsSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkAlertsSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -724,7 +772,7 @@ apiInstance.updateNetworkAlertsSettings(networkId, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body20**](Body20.md)|  | [optional] 
+ **updateNetworkAlertsSettings** | [**UpdateNetworkAlertsSettings**](UpdateNetworkAlertsSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -749,27 +797,31 @@ Enable/Disable VLANs for the given network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body43() // Body43 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceVlansSettings': new MerakiDashboardApi.UpdateNetworkApplianceVlansSettings() // UpdateNetworkApplianceVlansSettings | 
 };
-apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -777,7 +829,7 @@ apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body43**](Body43.md)|  | [optional] 
+ **updateNetworkApplianceVlansSettings** | [**UpdateNetworkApplianceVlansSettings**](UpdateNetworkApplianceVlansSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -802,27 +854,31 @@ Update the settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body70() // Body70 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSettings': new MerakiDashboardApi.UpdateNetworkSettings() // UpdateNetworkSettings | 
 };
-apiInstance.updateNetworkSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -830,7 +886,7 @@ apiInstance.updateNetworkSettings(networkId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body70**](Body70.md)|  | [optional] 
+ **updateNetworkSettings** | [**UpdateNetworkSettings**](UpdateNetworkSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -855,27 +911,31 @@ Update switch network settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body92() // Body92 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchSettings': new MerakiDashboardApi.UpdateNetworkSwitchSettings() // UpdateNetworkSwitchSettings | 
 };
-apiInstance.updateNetworkSwitchSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -883,7 +943,7 @@ apiInstance.updateNetworkSwitchSettings(networkId, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body92**](Body92.md)|  | [optional] 
+ **updateNetworkSwitchSettings** | [**UpdateNetworkSwitchSettings**](UpdateNetworkSwitchSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -902,33 +962,37 @@ Name | Type | Description  | Notes
 # **updateNetworkWirelessBluetoothSettings**
 > Object updateNetworkWirelessBluetoothSettings(networkId, opts)
 
-Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 
-Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body109() // Body109 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessBluetoothSettings': new MerakiDashboardApi.UpdateNetworkWirelessBluetoothSettings() // UpdateNetworkWirelessBluetoothSettings | 
 };
-apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -936,7 +1000,7 @@ apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body109**](Body109.md)|  | [optional] 
+ **updateNetworkWirelessBluetoothSettings** | [**UpdateNetworkWirelessBluetoothSettings**](UpdateNetworkWirelessBluetoothSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -961,27 +1025,31 @@ Update the wireless settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body112() // Body112 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSettings': new MerakiDashboardApi.UpdateNetworkWirelessSettings() // UpdateNetworkWirelessSettings | 
 };
-apiInstance.updateNetworkWirelessSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -989,7 +1057,7 @@ apiInstance.updateNetworkWirelessSettings(networkId, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body112**](Body112.md)|  | [optional] 
+ **updateNetworkWirelessSettings** | [**UpdateNetworkWirelessSettings**](UpdateNetworkWirelessSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -1006,7 +1074,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidSplashSettings"></a>
 # **updateNetworkWirelessSsidSplashSettings**
-> Object updateNetworkWirelessSsidSplashSettings(networkId_number, opts)
+> Object updateNetworkWirelessSsidSplashSettings(networkId, _number, opts)
 
 Modify the splash page settings for the given SSID
 
@@ -1014,28 +1082,33 @@ Modify the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SettingsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body118() // Body118 | 
+var apiInstance = new MerakiDashboardApi.SettingsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidSplashSettings': new MerakiDashboardApi.UpdateNetworkWirelessSsidSplashSettings() // UpdateNetworkWirelessSsidSplashSettings | 
 };
-apiInstance.updateNetworkWirelessSsidSplashSettings(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidSplashSettings(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -1044,7 +1117,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body118**](Body118.md)|  | [optional] 
+ **updateNetworkWirelessSsidSplashSettings** | [**UpdateNetworkWirelessSsidSplashSettings**](UpdateNetworkWirelessSsidSplashSettings.md)|  | [optional] 
 
 ### Return type
 

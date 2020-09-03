@@ -7,9 +7,10 @@ Method | HTTP request | Description
 [**createNetworkSmBypassActivationLockAttempt**](BypassActivationLockAttemptsApi.md#createNetworkSmBypassActivationLockAttempt) | **POST** /networks/{networkId}/sm/bypassActivationLockAttempts | Bypass activation lock attempt
 [**getNetworkSmBypassActivationLockAttempt**](BypassActivationLockAttemptsApi.md#getNetworkSmBypassActivationLockAttempt) | **GET** /networks/{networkId}/sm/bypassActivationLockAttempts/{attemptId} | Bypass activation lock attempt status
 
+
 <a name="createNetworkSmBypassActivationLockAttempt"></a>
 # **createNetworkSmBypassActivationLockAttempt**
-> Object createNetworkSmBypassActivationLockAttempt(bodynetworkId)
+> Object createNetworkSmBypassActivationLockAttempt(networkId, createNetworkSmBypassActivationLockAttempt)
 
 Bypass activation lock attempt
 
@@ -17,34 +18,38 @@ Bypass activation lock attempt
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.BypassActivationLockAttemptsApi();
-let body = new MerakiDashboardApi.Body71(); // Body71 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.BypassActivationLockAttemptsApi();
 
-apiInstance.createNetworkSmBypassActivationLockAttempt(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkSmBypassActivationLockAttempt = new MerakiDashboardApi.CreateNetworkSmBypassActivationLockAttempt(); // CreateNetworkSmBypassActivationLockAttempt | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSmBypassActivationLockAttempt(networkId, createNetworkSmBypassActivationLockAttempt, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body71**](Body71.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkSmBypassActivationLockAttempt** | [**CreateNetworkSmBypassActivationLockAttempt**](CreateNetworkSmBypassActivationLockAttempt.md)|  | 
 
 ### Return type
 
@@ -69,26 +74,30 @@ Bypass activation lock attempt status
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.BypassActivationLockAttemptsApi();
-let networkId = "networkId_example"; // String | 
-let attemptId = "attemptId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.BypassActivationLockAttemptsApi();
 
-apiInstance.getNetworkSmBypassActivationLockAttempt(networkId, attemptId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var attemptId = "attemptId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmBypassActivationLockAttempt(networkId, attemptId, callback);
 ```
 
 ### Parameters
@@ -108,6 +117,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

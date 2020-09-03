@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**updateNetworkApplianceSecurityIntrusion**](IntrusionApi.md#updateNetworkApplianceSecurityIntrusion) | **PUT** /networks/{networkId}/appliance/security/intrusion | Set the supported intrusion settings for an MX network
 [**updateOrganizationApplianceSecurityIntrusion**](IntrusionApi.md#updateOrganizationApplianceSecurityIntrusion) | **PUT** /organizations/{organizationId}/appliance/security/intrusion | Sets supported intrusion settings for an organization
 
+
 <a name="getNetworkApplianceSecurityIntrusion"></a>
 # **getNetworkApplianceSecurityIntrusion**
 > Object getNetworkApplianceSecurityIntrusion(networkId)
@@ -19,25 +20,28 @@ Returns all supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IntrusionApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IntrusionApi();
 
-apiInstance.getNetworkApplianceSecurityIntrusion(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityIntrusion(networkId, callback);
 ```
 
 ### Parameters
@@ -56,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityIntrusion"></a>
@@ -69,25 +73,28 @@ Returns all supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IntrusionApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IntrusionApi();
 
-apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, callback);
 ```
 
 ### Parameters
@@ -106,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceSecurityIntrusion"></a>
@@ -119,27 +126,31 @@ Set the supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IntrusionApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body32() // Body32 | 
+var apiInstance = new MerakiDashboardApi.IntrusionApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceSecurityIntrusion': new MerakiDashboardApi.UpdateNetworkApplianceSecurityIntrusion() // UpdateNetworkApplianceSecurityIntrusion | 
 };
-apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -147,7 +158,7 @@ apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body32**](Body32.md)|  | [optional] 
+ **updateNetworkApplianceSecurityIntrusion** | [**UpdateNetworkApplianceSecurityIntrusion**](UpdateNetworkApplianceSecurityIntrusion.md)|  | [optional] 
 
 ### Return type
 
@@ -164,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationApplianceSecurityIntrusion"></a>
 # **updateOrganizationApplianceSecurityIntrusion**
-> Object updateOrganizationApplianceSecurityIntrusion(bodyorganizationId)
+> Object updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion)
 
 Sets supported intrusion settings for an organization
 
@@ -172,34 +183,38 @@ Sets supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.IntrusionApi();
-let body = new MerakiDashboardApi.Body126(); // Body126 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.IntrusionApi();
 
-apiInstance.updateOrganizationApplianceSecurityIntrusion(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationApplianceSecurityIntrusion = new MerakiDashboardApi.UpdateOrganizationApplianceSecurityIntrusion(); // UpdateOrganizationApplianceSecurityIntrusion | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body126**](Body126.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationApplianceSecurityIntrusion** | [**UpdateOrganizationApplianceSecurityIntrusion**](UpdateOrganizationApplianceSecurityIntrusion.md)|  | 
 
 ### Return type
 

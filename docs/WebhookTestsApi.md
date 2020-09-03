@@ -7,9 +7,10 @@ Method | HTTP request | Description
 [**createNetworkWebhooksWebhookTest**](WebhookTestsApi.md#createNetworkWebhooksWebhookTest) | **POST** /networks/{networkId}/webhooks/webhookTests | Send a test webhook for a network
 [**getNetworkWebhooksWebhookTest**](WebhookTestsApi.md#getNetworkWebhooksWebhookTest) | **GET** /networks/{networkId}/webhooks/webhookTests/{webhookTestId} | Return the status of a webhook test for a network
 
+
 <a name="createNetworkWebhooksWebhookTest"></a>
 # **createNetworkWebhooksWebhookTest**
-> Object createNetworkWebhooksWebhookTest(bodynetworkId)
+> Object createNetworkWebhooksWebhookTest(networkId, createNetworkWebhooksWebhookTest)
 
 Send a test webhook for a network
 
@@ -17,34 +18,38 @@ Send a test webhook for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WebhookTestsApi();
-let body = new MerakiDashboardApi.Body107(); // Body107 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WebhookTestsApi();
 
-apiInstance.createNetworkWebhooksWebhookTest(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkWebhooksWebhookTest = new MerakiDashboardApi.CreateNetworkWebhooksWebhookTest(); // CreateNetworkWebhooksWebhookTest | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkWebhooksWebhookTest(networkId, createNetworkWebhooksWebhookTest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body107**](Body107.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkWebhooksWebhookTest** | [**CreateNetworkWebhooksWebhookTest**](CreateNetworkWebhooksWebhookTest.md)|  | 
 
 ### Return type
 
@@ -69,26 +74,30 @@ Return the status of a webhook test for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WebhookTestsApi();
-let networkId = "networkId_example"; // String | 
-let webhookTestId = "webhookTestId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WebhookTestsApi();
 
-apiInstance.getNetworkWebhooksWebhookTest(networkId, webhookTestId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var webhookTestId = "webhookTestId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWebhooksWebhookTest(networkId, webhookTestId, callback);
 ```
 
 ### Parameters
@@ -108,6 +117,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

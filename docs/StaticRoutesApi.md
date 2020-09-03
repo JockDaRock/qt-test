@@ -20,9 +20,10 @@ Method | HTTP request | Description
 [**updateNetworkApplianceStaticRoute**](StaticRoutesApi.md#updateNetworkApplianceStaticRoute) | **PUT** /networks/{networkId}/appliance/staticRoutes/{staticRouteId} | Update a static route for an MX or teleworker network
 [**updateNetworkSwitchStackRoutingStaticRoute**](StaticRoutesApi.md#updateNetworkSwitchStackRoutingStaticRoute) | **PUT** /networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes/{staticRouteId} | Update a layer 3 static route for a switch stack
 
+
 <a name="createDeviceSwitchRoutingStaticRoute"></a>
 # **createDeviceSwitchRoutingStaticRoute**
-> Object createDeviceSwitchRoutingStaticRoute(bodyserial)
+> Object createDeviceSwitchRoutingStaticRoute(serial, createDeviceSwitchRoutingStaticRoute)
 
 Create a layer 3 static route for a switch
 
@@ -30,34 +31,38 @@ Create a layer 3 static route for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let body = new MerakiDashboardApi.Body14(); // Body14 | 
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.createDeviceSwitchRoutingStaticRoute(bodyserial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var createDeviceSwitchRoutingStaticRoute = new MerakiDashboardApi.CreateDeviceSwitchRoutingStaticRoute(); // CreateDeviceSwitchRoutingStaticRoute | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createDeviceSwitchRoutingStaticRoute(serial, createDeviceSwitchRoutingStaticRoute, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body14**](Body14.md)|  | 
  **serial** | **String**|  | 
+ **createDeviceSwitchRoutingStaticRoute** | [**CreateDeviceSwitchRoutingStaticRoute**](CreateDeviceSwitchRoutingStaticRoute.md)|  | 
 
 ### Return type
 
@@ -74,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="createNetworkApplianceStaticRoute"></a>
 # **createNetworkApplianceStaticRoute**
-> Object createNetworkApplianceStaticRoute(bodynetworkId)
+> Object createNetworkApplianceStaticRoute(networkId, createNetworkApplianceStaticRoute)
 
 Add a static route for an MX or teleworker network
 
@@ -82,34 +87,38 @@ Add a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let body = new MerakiDashboardApi.Body35(); // Body35 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.createNetworkApplianceStaticRoute(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceStaticRoute = new MerakiDashboardApi.CreateNetworkApplianceStaticRoute(); // CreateNetworkApplianceStaticRoute | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceStaticRoute(networkId, createNetworkApplianceStaticRoute, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body35**](Body35.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceStaticRoute** | [**CreateNetworkApplianceStaticRoute**](CreateNetworkApplianceStaticRoute.md)|  | 
 
 ### Return type
 
@@ -126,7 +135,7 @@ Name | Type | Description  | Notes
 
 <a name="createNetworkSwitchStackRoutingStaticRoute"></a>
 # **createNetworkSwitchStackRoutingStaticRoute**
-> Object createNetworkSwitchStackRoutingStaticRoute(bodynetworkIdswitchStackId)
+> Object createNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, createNetworkSwitchStackRoutingStaticRoute)
 
 Create a layer 3 static route for a switch stack
 
@@ -134,36 +143,41 @@ Create a layer 3 static route for a switch stack
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let body = new MerakiDashboardApi.Body99(); // Body99 | 
-let networkId = "networkId_example"; // String | 
-let switchStackId = "switchStackId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.createNetworkSwitchStackRoutingStaticRoute(bodynetworkIdswitchStackId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var switchStackId = "switchStackId_example"; // String | 
+
+var createNetworkSwitchStackRoutingStaticRoute = new MerakiDashboardApi.CreateNetworkSwitchStackRoutingStaticRoute(); // CreateNetworkSwitchStackRoutingStaticRoute | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, createNetworkSwitchStackRoutingStaticRoute, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body99**](Body99.md)|  | 
  **networkId** | **String**|  | 
  **switchStackId** | **String**|  | 
+ **createNetworkSwitchStackRoutingStaticRoute** | [**CreateNetworkSwitchStackRoutingStaticRoute**](CreateNetworkSwitchStackRoutingStaticRoute.md)|  | 
 
 ### Return type
 
@@ -188,26 +202,30 @@ Delete a layer 3 static route for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let serial = "serial_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.deleteDeviceSwitchRoutingStaticRoute(serial, staticRouteId, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteDeviceSwitchRoutingStaticRoute(serial, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -227,8 +245,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteNetworkApplianceStaticRoute"></a>
 # **deleteNetworkApplianceStaticRoute**
@@ -240,26 +258,30 @@ Delete a static route from an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.deleteNetworkApplianceStaticRoute(networkId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceStaticRoute(networkId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -279,8 +301,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteNetworkSwitchStackRoutingStaticRoute"></a>
 # **deleteNetworkSwitchStackRoutingStaticRoute**
@@ -292,27 +314,32 @@ Delete a layer 3 static route for a switch stack
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let switchStackId = "switchStackId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.deleteNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var switchStackId = "switchStackId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -333,8 +360,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getDeviceSwitchRoutingStaticRoute"></a>
 # **getDeviceSwitchRoutingStaticRoute**
@@ -346,26 +373,30 @@ Return a layer 3 static route for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let serial = "serial_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getDeviceSwitchRoutingStaticRoute(serial, staticRouteId, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchRoutingStaticRoute(serial, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -385,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceSwitchRoutingStaticRoutes"></a>
@@ -398,25 +429,28 @@ List layer 3 static routes for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getDeviceSwitchRoutingStaticRoutes(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchRoutingStaticRoutes(serial, callback);
 ```
 
 ### Parameters
@@ -435,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceStaticRoute"></a>
@@ -448,26 +482,30 @@ Return a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getNetworkApplianceStaticRoute(networkId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceStaticRoute(networkId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -487,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceStaticRoutes"></a>
@@ -500,25 +538,28 @@ List the static routes for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getNetworkApplianceStaticRoutes(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceStaticRoutes(networkId, callback);
 ```
 
 ### Parameters
@@ -537,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchStackRoutingStaticRoute"></a>
@@ -550,27 +591,32 @@ Return a layer 3 static route for a switch stack
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let switchStackId = "switchStackId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var switchStackId = "switchStackId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -591,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchStackRoutingStaticRoutes"></a>
@@ -604,26 +650,30 @@ List layer 3 static routes for a switch stack
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let switchStackId = "switchStackId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
 
-apiInstance.getNetworkSwitchStackRoutingStaticRoutes(networkId, switchStackId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var switchStackId = "switchStackId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchStackRoutingStaticRoutes(networkId, switchStackId, callback);
 ```
 
 ### Parameters
@@ -643,12 +693,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceSwitchRoutingStaticRoute"></a>
 # **updateDeviceSwitchRoutingStaticRoute**
-> Object updateDeviceSwitchRoutingStaticRoute(serialstaticRouteId, opts)
+> Object updateDeviceSwitchRoutingStaticRoute(serial, staticRouteId, opts)
 
 Update a layer 3 static route for a switch
 
@@ -656,28 +706,33 @@ Update a layer 3 static route for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let serial = "serial_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body15() // Body15 | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
+
+var serial = "serial_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+var opts = { 
+  'updateDeviceSwitchRoutingStaticRoute': new MerakiDashboardApi.UpdateDeviceSwitchRoutingStaticRoute() // UpdateDeviceSwitchRoutingStaticRoute | 
 };
-apiInstance.updateDeviceSwitchRoutingStaticRoute(serialstaticRouteId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceSwitchRoutingStaticRoute(serial, staticRouteId, opts, callback);
 ```
 
 ### Parameters
@@ -686,7 +741,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
  **staticRouteId** | **String**|  | 
- **body** | [**Body15**](Body15.md)|  | [optional] 
+ **updateDeviceSwitchRoutingStaticRoute** | [**UpdateDeviceSwitchRoutingStaticRoute**](UpdateDeviceSwitchRoutingStaticRoute.md)|  | [optional] 
 
 ### Return type
 
@@ -703,7 +758,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceStaticRoute"></a>
 # **updateNetworkApplianceStaticRoute**
-> Object updateNetworkApplianceStaticRoute(networkIdstaticRouteId, opts)
+> Object updateNetworkApplianceStaticRoute(networkId, staticRouteId, opts)
 
 Update a static route for an MX or teleworker network
 
@@ -711,28 +766,33 @@ Update a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body36() // Body36 | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceStaticRoute': new MerakiDashboardApi.UpdateNetworkApplianceStaticRoute() // UpdateNetworkApplianceStaticRoute | 
 };
-apiInstance.updateNetworkApplianceStaticRoute(networkIdstaticRouteId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceStaticRoute(networkId, staticRouteId, opts, callback);
 ```
 
 ### Parameters
@@ -741,7 +801,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **staticRouteId** | **String**|  | 
- **body** | [**Body36**](Body36.md)|  | [optional] 
+ **updateNetworkApplianceStaticRoute** | [**UpdateNetworkApplianceStaticRoute**](UpdateNetworkApplianceStaticRoute.md)|  | [optional] 
 
 ### Return type
 
@@ -758,7 +818,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkSwitchStackRoutingStaticRoute"></a>
 # **updateNetworkSwitchStackRoutingStaticRoute**
-> Object updateNetworkSwitchStackRoutingStaticRoute(networkIdswitchStackIdstaticRouteId, opts)
+> Object updateNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, opts)
 
 Update a layer 3 static route for a switch stack
 
@@ -766,29 +826,35 @@ Update a layer 3 static route for a switch stack
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.StaticRoutesApi();
-let networkId = "networkId_example"; // String | 
-let switchStackId = "switchStackId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body100() // Body100 | 
+var apiInstance = new MerakiDashboardApi.StaticRoutesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var switchStackId = "switchStackId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchStackRoutingStaticRoute': new MerakiDashboardApi.UpdateNetworkSwitchStackRoutingStaticRoute() // UpdateNetworkSwitchStackRoutingStaticRoute | 
 };
-apiInstance.updateNetworkSwitchStackRoutingStaticRoute(networkIdswitchStackIdstaticRouteId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchStackRoutingStaticRoute(networkId, switchStackId, staticRouteId, opts, callback);
 ```
 
 ### Parameters
@@ -798,7 +864,7 @@ Name | Type | Description  | Notes
  **networkId** | **String**|  | 
  **switchStackId** | **String**|  | 
  **staticRouteId** | **String**|  | 
- **body** | [**Body100**](Body100.md)|  | [optional] 
+ **updateNetworkSwitchStackRoutingStaticRoute** | [**UpdateNetworkSwitchStackRoutingStaticRoute**](UpdateNetworkSwitchStackRoutingStaticRoute.md)|  | [optional] 
 
 ### Return type
 

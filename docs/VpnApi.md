@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**getOrganizationApplianceVpnStats**](VpnApi.md#getOrganizationApplianceVpnStats) | **GET** /organizations/{organizationId}/appliance/vpn/stats | Show VPN history stat for networks in an organization
 [**getOrganizationApplianceVpnStatuses**](VpnApi.md#getOrganizationApplianceVpnStatuses) | **GET** /organizations/{organizationId}/appliance/vpn/statuses | Show VPN status for networks in an organization
 [**getOrganizationApplianceVpnThirdPartyVPNPeers**](VpnApi.md#getOrganizationApplianceVpnThirdPartyVPNPeers) | **GET** /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | Return the third party VPN peers for an organization
-[**getOrganizationApplianceVpnVpnFirewallRules**](VpnApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization&#x27;s site-to-site VPN
+[**getOrganizationApplianceVpnVpnFirewallRules**](VpnApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization's site-to-site VPN
 [**updateNetworkApplianceVpnSiteToSiteVpn**](VpnApi.md#updateNetworkApplianceVpnSiteToSiteVpn) | **PUT** /networks/{networkId}/appliance/vpn/siteToSiteVpn | Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
 [**updateOrganizationApplianceVpnThirdPartyVPNPeers**](VpnApi.md#updateOrganizationApplianceVpnThirdPartyVPNPeers) | **PUT** /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | Update the third party VPN peers for an organization
-[**updateOrganizationApplianceVpnVpnFirewallRules**](VpnApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization&#x27;s site-to-site VPN
+[**updateOrganizationApplianceVpnVpnFirewallRules**](VpnApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization's site-to-site VPN
+
 
 <a name="getNetworkApplianceVpnSiteToSiteVpn"></a>
 # **getNetworkApplianceVpnSiteToSiteVpn**
@@ -23,25 +24,28 @@ Return the site-to-site VPN settings of a network. Only valid for MX networks.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
 
-apiInstance.getNetworkApplianceVpnSiteToSiteVpn(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVpnSiteToSiteVpn(networkId, callback);
 ```
 
 ### Parameters
@@ -60,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnStats"></a>
@@ -73,18 +77,20 @@ Show VPN history stat for networks in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.VpnApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
@@ -93,13 +99,15 @@ let opts = {
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
 };
-apiInstance.getOrganizationApplianceVpnStats(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnStats(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -110,7 +118,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 300. Default is 300. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456 | [optional] 
+ **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456 | [optional] 
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 31 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day. | [optional] 
@@ -125,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnStatuses"></a>
@@ -138,30 +146,34 @@ Show VPN status for networks in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.VpnApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'networkIds': ["networkIds_example"] // [String] | A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456
 };
-apiInstance.getOrganizationApplianceVpnStatuses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnStatuses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -172,7 +184,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 300. Default is 300. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456 | [optional] 
+ **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456 | [optional] 
 
 ### Return type
 
@@ -184,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnThirdPartyVPNPeers"></a>
@@ -197,25 +209,28 @@ Return the third party VPN peers for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
 
-apiInstance.getOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, callback);
 ```
 
 ### Parameters
@@ -234,38 +249,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnVpnFirewallRules"></a>
 # **getOrganizationApplianceVpnVpnFirewallRules**
 > Object getOrganizationApplianceVpnVpnFirewallRules(organizationId)
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
 
-apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, callback);
 ```
 
 ### Parameters
@@ -284,12 +302,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceVpnSiteToSiteVpn"></a>
 # **updateNetworkApplianceVpnSiteToSiteVpn**
-> Object updateNetworkApplianceVpnSiteToSiteVpn(bodynetworkId)
+> Object updateNetworkApplianceVpnSiteToSiteVpn(networkId, updateNetworkApplianceVpnSiteToSiteVpn)
 
 Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
 
@@ -297,34 +315,38 @@ Update the site-to-site VPN settings of a network. Only valid for MX networks in
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let body = new MerakiDashboardApi.Body45(); // Body45 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
 
-apiInstance.updateNetworkApplianceVpnSiteToSiteVpn(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceVpnSiteToSiteVpn = new MerakiDashboardApi.UpdateNetworkApplianceVpnSiteToSiteVpn(); // UpdateNetworkApplianceVpnSiteToSiteVpn | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVpnSiteToSiteVpn(networkId, updateNetworkApplianceVpnSiteToSiteVpn, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body45**](Body45.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceVpnSiteToSiteVpn** | [**UpdateNetworkApplianceVpnSiteToSiteVpn**](UpdateNetworkApplianceVpnSiteToSiteVpn.md)|  | 
 
 ### Return type
 
@@ -341,7 +363,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationApplianceVpnThirdPartyVPNPeers"></a>
 # **updateOrganizationApplianceVpnThirdPartyVPNPeers**
-> Object updateOrganizationApplianceVpnThirdPartyVPNPeers(bodyorganizationId)
+> Object updateOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, updateOrganizationApplianceVpnThirdPartyVPNPeers)
 
 Update the third party VPN peers for an organization
 
@@ -349,34 +371,38 @@ Update the third party VPN peers for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let body = new MerakiDashboardApi.Body127(); // Body127 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
 
-apiInstance.updateOrganizationApplianceVpnThirdPartyVPNPeers(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationApplianceVpnThirdPartyVPNPeers = new MerakiDashboardApi.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(); // UpdateOrganizationApplianceVpnThirdPartyVPNPeers | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, updateOrganizationApplianceVpnThirdPartyVPNPeers, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body127**](Body127.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationApplianceVpnThirdPartyVPNPeers** | [**UpdateOrganizationApplianceVpnThirdPartyVPNPeers**](UpdateOrganizationApplianceVpnThirdPartyVPNPeers.md)|  | 
 
 ### Return type
 
@@ -395,33 +421,37 @@ Name | Type | Description  | Notes
 # **updateOrganizationApplianceVpnVpnFirewallRules**
 > Object updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts)
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VpnApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body128() // Body128 | 
+var apiInstance = new MerakiDashboardApi.VpnApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationApplianceVpnVpnFirewallRules': new MerakiDashboardApi.UpdateOrganizationApplianceVpnVpnFirewallRules() // UpdateOrganizationApplianceVpnVpnFirewallRules | 
 };
-apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -429,7 +459,7 @@ apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body128**](Body128.md)|  | [optional] 
+ **updateOrganizationApplianceVpnVpnFirewallRules** | [**UpdateOrganizationApplianceVpnVpnFirewallRules**](UpdateOrganizationApplianceVpnVpnFirewallRules.md)|  | [optional] 
 
 ### Return type
 

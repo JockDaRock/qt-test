@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getDeviceCameraAnalyticsRecent**](RecentApi.md#getDeviceCameraAnalyticsRecent) | **GET** /devices/{serial}/camera/analytics/recent | Returns most recent record for analytics zones
 
+
 <a name="getDeviceCameraAnalyticsRecent"></a>
 # **getDeviceCameraAnalyticsRecent**
 > Object getDeviceCameraAnalyticsRecent(serial, opts)
@@ -16,27 +17,31 @@ Returns most recent record for analytics zones
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.RecentApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.RecentApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   'objectType': "objectType_example" // String | [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
 };
-apiInstance.getDeviceCameraAnalyticsRecent(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceCameraAnalyticsRecent(serial, opts, callback);
 ```
 
 ### Parameters
@@ -56,6 +61,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

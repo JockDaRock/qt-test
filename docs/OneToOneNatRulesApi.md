@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceFirewallOneToOneNatRules**](OneToOneNatRulesApi.md#getNetworkApplianceFirewallOneToOneNatRules) | **GET** /networks/{networkId}/appliance/firewall/oneToOneNatRules | Return the 1:1 NAT mapping rules for an MX network
 [**updateNetworkApplianceFirewallOneToOneNatRules**](OneToOneNatRulesApi.md#updateNetworkApplianceFirewallOneToOneNatRules) | **PUT** /networks/{networkId}/appliance/firewall/oneToOneNatRules | Set the 1:1 NAT mapping rules for an MX network
 
+
 <a name="getNetworkApplianceFirewallOneToOneNatRules"></a>
 # **getNetworkApplianceFirewallOneToOneNatRules**
 > Object getNetworkApplianceFirewallOneToOneNatRules(networkId)
@@ -17,25 +18,28 @@ Return the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OneToOneNatRulesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OneToOneNatRulesApi();
 
-apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, callback);
 ```
 
 ### Parameters
@@ -54,12 +58,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceFirewallOneToOneNatRules"></a>
 # **updateNetworkApplianceFirewallOneToOneNatRules**
-> Object updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules)
 
 Set the 1:1 NAT mapping rules for an MX network
 
@@ -67,34 +71,38 @@ Set the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OneToOneNatRulesApi();
-let body = new MerakiDashboardApi.Body29(); // Body29 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OneToOneNatRulesApi();
 
-apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallOneToOneNatRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallOneToOneNatRules(); // UpdateNetworkApplianceFirewallOneToOneNatRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body29**](Body29.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallOneToOneNatRules** | [**UpdateNetworkApplianceFirewallOneToOneNatRules**](UpdateNetworkApplianceFirewallOneToOneNatRules.md)|  | 
 
 ### Return type
 

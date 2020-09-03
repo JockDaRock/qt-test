@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getDeviceManagementInterface**](ManagementInterfaceApi.md#getDeviceManagementInterface) | **GET** /devices/{serial}/managementInterface | Return the management interface settings for a device
 [**updateDeviceManagementInterface**](ManagementInterfaceApi.md#updateDeviceManagementInterface) | **PUT** /devices/{serial}/managementInterface | Update the management interface settings for a device
 
+
 <a name="getDeviceManagementInterface"></a>
 # **getDeviceManagementInterface**
 > Object getDeviceManagementInterface(serial)
@@ -17,25 +18,28 @@ Return the management interface settings for a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ManagementInterfaceApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ManagementInterfaceApi();
 
-apiInstance.getDeviceManagementInterface(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceManagementInterface(serial, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceManagementInterface"></a>
@@ -67,27 +71,31 @@ Update the management interface settings for a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ManagementInterfaceApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body8() // Body8 | 
+var apiInstance = new MerakiDashboardApi.ManagementInterfaceApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceManagementInterface': new MerakiDashboardApi.UpdateDeviceManagementInterface() // UpdateDeviceManagementInterface | 
 };
-apiInstance.updateDeviceManagementInterface(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceManagementInterface(serial, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateDeviceManagementInterface(serial, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body8**](Body8.md)|  | [optional] 
+ **updateDeviceManagementInterface** | [**UpdateDeviceManagementInterface**](UpdateDeviceManagementInterface.md)|  | [optional] 
 
 ### Return type
 

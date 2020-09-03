@@ -12,11 +12,11 @@ Method | HTTP request | Description
 [**getDeviceLossAndLatencyHistory**](DevicesApi.md#getDeviceLossAndLatencyHistory) | **GET** /devices/{serial}/lossAndLatencyHistory | Get the uplink loss percentage and latency in milliseconds for a wired network device.
 [**getDeviceManagementInterface**](DevicesApi.md#getDeviceManagementInterface) | **GET** /devices/{serial}/managementInterface | Return the management interface settings for a device
 [**getNetworkDevices**](DevicesApi.md#getNetworkDevices) | **GET** /networks/{networkId}/devices | List the devices in a network
-[**getNetworkSmDeviceCellularUsageHistory**](DevicesApi.md#getNetworkSmDeviceCellularUsageHistory) | **GET** /networks/{networkId}/sm/devices/{deviceId}/cellularUsageHistory | Return the client&#x27;s daily cellular data usage history. Usage data is in kilobytes.
+[**getNetworkSmDeviceCellularUsageHistory**](DevicesApi.md#getNetworkSmDeviceCellularUsageHistory) | **GET** /networks/{networkId}/sm/devices/{deviceId}/cellularUsageHistory | Return the client's daily cellular data usage history. Usage data is in kilobytes.
 [**getNetworkSmDeviceCerts**](DevicesApi.md#getNetworkSmDeviceCerts) | **GET** /networks/{networkId}/sm/devices/{deviceId}/certs | List the certs on a device
 [**getNetworkSmDeviceConnectivity**](DevicesApi.md#getNetworkSmDeviceConnectivity) | **GET** /networks/{networkId}/sm/devices/{deviceId}/connectivity | Returns historical connectivity data (whether a device is regularly checking in to Dashboard).
 [**getNetworkSmDeviceDesktopLogs**](DevicesApi.md#getNetworkSmDeviceDesktopLogs) | **GET** /networks/{networkId}/sm/devices/{deviceId}/desktopLogs | Return historical records of various Systems Manager network connection details for desktop devices.
-[**getNetworkSmDeviceDeviceCommandLogs**](DevicesApi.md#getNetworkSmDeviceDeviceCommandLogs) | **GET** /networks/{networkId}/sm/devices/{deviceId}/deviceCommandLogs |     Return historical records of commands sent to Systems Manager devices.     &lt;p&gt;Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.&lt;/p&gt; 
+[**getNetworkSmDeviceDeviceCommandLogs**](DevicesApi.md#getNetworkSmDeviceDeviceCommandLogs) | **GET** /networks/{networkId}/sm/devices/{deviceId}/deviceCommandLogs |     Return historical records of commands sent to Systems Manager devices.     <p>Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.</p> 
 [**getNetworkSmDeviceDeviceProfiles**](DevicesApi.md#getNetworkSmDeviceDeviceProfiles) | **GET** /networks/{networkId}/sm/devices/{deviceId}/deviceProfiles | Get the profiles associated with a device
 [**getNetworkSmDeviceNetworkAdapters**](DevicesApi.md#getNetworkSmDeviceNetworkAdapters) | **GET** /networks/{networkId}/sm/devices/{deviceId}/networkAdapters | List the network adapters of a device
 [**getNetworkSmDevicePerformanceHistory**](DevicesApi.md#getNetworkSmDevicePerformanceHistory) | **GET** /networks/{networkId}/sm/devices/{deviceId}/performanceHistory | Return historical records of various Systems Manager client metrics for desktop devices.
@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**updateNetworkSmDevicesFields**](DevicesApi.md#updateNetworkSmDevicesFields) | **PUT** /networks/{networkId}/sm/devices/fields | Modify the fields of a device
 [**wipeNetworkSmDevices**](DevicesApi.md#wipeNetworkSmDevices) | **POST** /networks/{networkId}/sm/devices/wipe | Wipe a device
 
+
 <a name="blinkDeviceLeds"></a>
 # **blinkDeviceLeds**
 > Object blinkDeviceLeds(serial, opts)
@@ -48,27 +49,31 @@ Blink the LEDs on a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
-let opts = {
-  'body': new MerakiDashboardApi.Body1() // Body1 | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'blinkDeviceLeds': new MerakiDashboardApi.BlinkDeviceLeds() // BlinkDeviceLeds | 
 };
-apiInstance.blinkDeviceLeds(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.blinkDeviceLeds(serial, opts, callback);
 ```
 
 ### Parameters
@@ -76,7 +81,7 @@ apiInstance.blinkDeviceLeds(serial, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body1**](Body1.md)|  | [optional] 
+ **blinkDeviceLeds** | [**BlinkDeviceLeds**](BlinkDeviceLeds.md)|  | [optional] 
 
 ### Return type
 
@@ -93,7 +98,7 @@ Name | Type | Description  | Notes
 
 <a name="claimNetworkDevices"></a>
 # **claimNetworkDevices**
-> claimNetworkDevices(bodynetworkId)
+> claimNetworkDevices(networkId, claimNetworkDevices)
 
 Claim devices into a network
 
@@ -101,34 +106,38 @@ Claim devices into a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let body = new MerakiDashboardApi.Body57(); // Body57 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.claimNetworkDevices(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var claimNetworkDevices = new MerakiDashboardApi.ClaimNetworkDevices(); // ClaimNetworkDevices | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.claimNetworkDevices(networkId, claimNetworkDevices, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body57**](Body57.md)|  | 
  **networkId** | **String**|  | 
+ **claimNetworkDevices** | [**ClaimNetworkDevices**](ClaimNetworkDevices.md)|  | 
 
 ### Return type
 
@@ -141,7 +150,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 <a name="getDevice"></a>
 # **getDevice**
@@ -153,25 +162,28 @@ Return a single device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getDevice(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDevice(serial, callback);
 ```
 
 ### Parameters
@@ -190,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceClients"></a>
@@ -203,28 +215,32 @@ List the clients of a device, up to a maximum of a month ago. The usage of each 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
 };
-apiInstance.getDeviceClients(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceClients(serial, opts, callback);
 ```
 
 ### Parameters
@@ -245,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceLldpCdp"></a>
@@ -258,25 +274,28 @@ List LLDP and CDP information for a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getDeviceLldpCdp(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceLldpCdp(serial, callback);
 ```
 
 ### Parameters
@@ -295,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceLossAndLatencyHistory"></a>
@@ -308,32 +327,37 @@ Get the uplink loss percentage and latency in milliseconds for a wired network d
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
-let ip = "ip_example"; // String | The destination IP used to obtain the requested stats. This is required.
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var serial = "serial_example"; // String | 
+
+var ip = "ip_example"; // String | The destination IP used to obtain the requested stats. This is required.
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
   'resolution': 56, // Number | The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
   'uplink': "uplink_example" // String | The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, cellular. The default is wan1.
 };
-apiInstance.getDeviceLossAndLatencyHistory(serial, ip, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceLossAndLatencyHistory(serial, ip, opts, callback);
 ```
 
 ### Parameters
@@ -358,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceManagementInterface"></a>
@@ -371,25 +395,28 @@ Return the management interface settings for a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getDeviceManagementInterface(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceManagementInterface(serial, callback);
 ```
 
 ### Parameters
@@ -408,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkDevices"></a>
@@ -421,25 +448,28 @@ List the devices in a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkDevices(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkDevices(networkId, callback);
 ```
 
 ### Parameters
@@ -458,39 +488,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceCellularUsageHistory"></a>
 # **getNetworkSmDeviceCellularUsageHistory**
 > Object getNetworkSmDeviceCellularUsageHistory(networkId, deviceId)
 
-Return the client&#x27;s daily cellular data usage history. Usage data is in kilobytes.
+Return the client's daily cellular data usage history. Usage data is in kilobytes.
 
-Return the client&#x27;s daily cellular data usage history. Usage data is in kilobytes.
+Return the client's daily cellular data usage history. Usage data is in kilobytes.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceCellularUsageHistory(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceCellularUsageHistory(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -510,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceCerts"></a>
@@ -523,26 +557,30 @@ List the certs on a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceCerts(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceCerts(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -562,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceConnectivity"></a>
@@ -575,30 +613,35 @@ Returns historical connectivity data (whether a device is regularly checking in 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkSmDeviceConnectivity(networkId, deviceId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceConnectivity(networkId, deviceId, opts, callback);
 ```
 
 ### Parameters
@@ -621,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceDesktopLogs"></a>
@@ -634,30 +677,35 @@ Return historical records of various Systems Manager network connection details 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkSmDeviceDesktopLogs(networkId, deviceId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceDesktopLogs(networkId, deviceId, opts, callback);
 ```
 
 ### Parameters
@@ -680,43 +728,48 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceDeviceCommandLogs"></a>
 # **getNetworkSmDeviceDeviceCommandLogs**
 > Object getNetworkSmDeviceDeviceCommandLogs(networkId, deviceId, opts)
 
-    Return historical records of commands sent to Systems Manager devices.     &lt;p&gt;Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.&lt;/p&gt; 
+    Return historical records of commands sent to Systems Manager devices.     <p>Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.</p> 
 
-    Return historical records of commands sent to Systems Manager devices.     &lt;p&gt;Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.&lt;/p&gt; 
+    Return historical records of commands sent to Systems Manager devices.     <p>Note that this will include the name of the Dashboard user who initiated the command if it was generated     by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out     of any reports.</p> 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkSmDeviceDeviceCommandLogs(networkId, deviceId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceDeviceCommandLogs(networkId, deviceId, opts, callback);
 ```
 
 ### Parameters
@@ -739,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceDeviceProfiles"></a>
@@ -752,26 +805,30 @@ Get the profiles associated with a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceDeviceProfiles(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceDeviceProfiles(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -791,7 +848,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceNetworkAdapters"></a>
@@ -804,26 +861,30 @@ List the network adapters of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceNetworkAdapters(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceNetworkAdapters(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -843,7 +904,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDevicePerformanceHistory"></a>
@@ -856,30 +917,35 @@ Return historical records of various Systems Manager client metrics for desktop 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkSmDevicePerformanceHistory(networkId, deviceId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDevicePerformanceHistory(networkId, deviceId, opts, callback);
 ```
 
 ### Parameters
@@ -902,7 +968,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceRestrictions"></a>
@@ -915,26 +981,30 @@ List the restrictions on a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceRestrictions(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceRestrictions(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -954,7 +1024,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceSecurityCenters"></a>
@@ -967,26 +1037,30 @@ List the security centers on a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceSecurityCenters(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceSecurityCenters(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -1006,7 +1080,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceSoftwares"></a>
@@ -1019,26 +1093,30 @@ Get a list of softwares associated with a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceSoftwares(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceSoftwares(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -1058,7 +1136,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmDeviceWlanLists"></a>
@@ -1071,26 +1149,30 @@ List the saved SSID names on a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.getNetworkSmDeviceWlanLists(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmDeviceWlanLists(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -1110,7 +1192,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessDevicesConnectionStats"></a>
@@ -1123,18 +1205,20 @@ Aggregated connectivity info for this network, grouped by node
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1143,13 +1227,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getNetworkWirelessDevicesConnectionStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessDevicesConnectionStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1160,7 +1246,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -1175,7 +1261,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessDevicesLatencyStats"></a>
@@ -1188,18 +1274,20 @@ Aggregated latency info for this network, grouped by node
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1209,13 +1297,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getNetworkWirelessDevicesLatencyStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessDevicesLatencyStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1226,11 +1316,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -1242,7 +1332,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevices"></a>
@@ -1255,30 +1345,34 @@ List the devices in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'configurationUpdatedAfter': "configurationUpdatedAfter_example" // String | Filter results by whether or not the device's configuration has been updated after the given timestamp
 };
-apiInstance.getOrganizationDevices(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevices(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1289,7 +1383,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **configurationUpdatedAfter** | **String**| Filter results by whether or not the device&#x27;s configuration has been updated after the given timestamp | [optional] 
+ **configurationUpdatedAfter** | **String**| Filter results by whether or not the device's configuration has been updated after the given timestamp | [optional] 
 
 ### Return type
 
@@ -1301,7 +1395,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevicesStatuses"></a>
@@ -1314,29 +1408,33 @@ List the status of every Meraki device in the organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getOrganizationDevicesStatuses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevicesStatuses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1358,7 +1456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevicesUplinksLossAndLatency"></a>
@@ -1371,31 +1469,35 @@ Return the uplink loss and latency for every MX in the organization from at late
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
   'uplink': "uplink_example", // String | Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.
   'ip': "ip_example" // String | Optional filter for a specific destination IP. Default will return all destination IPs.
 };
-apiInstance.getOrganizationDevicesUplinksLossAndLatency(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevicesUplinksLossAndLatency(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1419,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="rebootDevice"></a>
@@ -1432,25 +1534,28 @@ Reboot a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.rebootDevice(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.rebootDevice(serial, callback);
 ```
 
 ### Parameters
@@ -1469,7 +1574,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="refreshNetworkSmDeviceDetails"></a>
@@ -1482,26 +1587,30 @@ Refresh the details of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.refreshNetworkSmDeviceDetails(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.refreshNetworkSmDeviceDetails(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -1521,12 +1630,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="removeNetworkDevices"></a>
 # **removeNetworkDevices**
-> removeNetworkDevices(bodynetworkId)
+> removeNetworkDevices(networkId, removeNetworkDevices)
 
 Remove a single device
 
@@ -1534,34 +1643,38 @@ Remove a single device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let body = new MerakiDashboardApi.Body58(); // Body58 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.removeNetworkDevices(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var removeNetworkDevices = new MerakiDashboardApi.RemoveNetworkDevices(); // RemoveNetworkDevices | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.removeNetworkDevices(networkId, removeNetworkDevices, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body58**](Body58.md)|  | 
  **networkId** | **String**|  | 
+ **removeNetworkDevices** | [**RemoveNetworkDevices**](RemoveNetworkDevices.md)|  | 
 
 ### Return type
 
@@ -1574,7 +1687,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 <a name="unenrollNetworkSmDevice"></a>
 # **unenrollNetworkSmDevice**
@@ -1586,26 +1699,30 @@ Unenroll a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let deviceId = "deviceId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.unenrollNetworkSmDevice(networkId, deviceId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var deviceId = "deviceId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.unenrollNetworkSmDevice(networkId, deviceId, callback);
 ```
 
 ### Parameters
@@ -1625,7 +1742,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDevice"></a>
@@ -1638,27 +1755,31 @@ Update the attributes of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body() // Body | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDevice': new MerakiDashboardApi.UpdateDevice() // UpdateDevice | 
 };
-apiInstance.updateDevice(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDevice(serial, opts, callback);
 ```
 
 ### Parameters
@@ -1666,7 +1787,7 @@ apiInstance.updateDevice(serial, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body**](Body.md)|  | [optional] 
+ **updateDevice** | [**UpdateDevice**](UpdateDevice.md)|  | [optional] 
 
 ### Return type
 
@@ -1691,27 +1812,31 @@ Update the management interface settings for a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body8() // Body8 | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceManagementInterface': new MerakiDashboardApi.UpdateDeviceManagementInterface() // UpdateDeviceManagementInterface | 
 };
-apiInstance.updateDeviceManagementInterface(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceManagementInterface(serial, opts, callback);
 ```
 
 ### Parameters
@@ -1719,7 +1844,7 @@ apiInstance.updateDeviceManagementInterface(serial, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body8**](Body8.md)|  | [optional] 
+ **updateDeviceManagementInterface** | [**UpdateDeviceManagementInterface**](UpdateDeviceManagementInterface.md)|  | [optional] 
 
 ### Return type
 
@@ -1736,7 +1861,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkSmDevicesFields"></a>
 # **updateNetworkSmDevicesFields**
-> Object updateNetworkSmDevicesFields(bodynetworkId)
+> Object updateNetworkSmDevicesFields(networkId, updateNetworkSmDevicesFields)
 
 Modify the fields of a device
 
@@ -1744,34 +1869,38 @@ Modify the fields of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let body = new MerakiDashboardApi.Body72(); // Body72 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
 
-apiInstance.updateNetworkSmDevicesFields(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkSmDevicesFields = new MerakiDashboardApi.UpdateNetworkSmDevicesFields(); // UpdateNetworkSmDevicesFields | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSmDevicesFields(networkId, updateNetworkSmDevicesFields, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body72**](Body72.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkSmDevicesFields** | [**UpdateNetworkSmDevicesFields**](UpdateNetworkSmDevicesFields.md)|  | 
 
 ### Return type
 
@@ -1796,27 +1925,31 @@ Wipe a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DevicesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body73() // Body73 | 
+var apiInstance = new MerakiDashboardApi.DevicesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'wipeNetworkSmDevices': new MerakiDashboardApi.WipeNetworkSmDevices() // WipeNetworkSmDevices | 
 };
-apiInstance.wipeNetworkSmDevices(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.wipeNetworkSmDevices(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1824,7 +1957,7 @@ apiInstance.wipeNetworkSmDevices(networkId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body73**](Body73.md)|  | [optional] 
+ **wipeNetworkSmDevices** | [**WipeNetworkSmDevices**](WipeNetworkSmDevices.md)|  | [optional] 
 
 ### Return type
 

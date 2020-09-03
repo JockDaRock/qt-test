@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**updateDeviceSwitchWarmSpare**](WarmSpareApi.md#updateDeviceSwitchWarmSpare) | **PUT** /devices/{serial}/switch/warmSpare | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.
 [**updateNetworkApplianceWarmSpare**](WarmSpareApi.md#updateNetworkApplianceWarmSpare) | **PUT** /networks/{networkId}/appliance/warmSpare | Update MX warm spare settings
 
+
 <a name="getDeviceSwitchWarmSpare"></a>
 # **getDeviceSwitchWarmSpare**
 > Object getDeviceSwitchWarmSpare(serial)
@@ -20,25 +21,28 @@ Return warm spare configuration for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WarmSpareApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WarmSpareApi();
 
-apiInstance.getDeviceSwitchWarmSpare(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchWarmSpare(serial, callback);
 ```
 
 ### Parameters
@@ -57,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceWarmSpare"></a>
@@ -70,25 +74,28 @@ Return MX warm spare settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WarmSpareApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WarmSpareApi();
 
-apiInstance.getNetworkApplianceWarmSpare(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceWarmSpare(networkId, callback);
 ```
 
 ### Parameters
@@ -107,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="swapNetworkApplianceWarmSpare"></a>
@@ -120,25 +127,28 @@ Swap MX primary and warm spare appliances
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WarmSpareApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WarmSpareApi();
 
-apiInstance.swapNetworkApplianceWarmSpare(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.swapNetworkApplianceWarmSpare(networkId, callback);
 ```
 
 ### Parameters
@@ -157,12 +167,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceSwitchWarmSpare"></a>
 # **updateDeviceSwitchWarmSpare**
-> Object updateDeviceSwitchWarmSpare(bodyserial)
+> Object updateDeviceSwitchWarmSpare(serial, updateDeviceSwitchWarmSpare)
 
 Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.
 
@@ -170,34 +180,38 @@ Update warm spare configuration for a switch. The spare will use the same L3 con
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WarmSpareApi();
-let body = new MerakiDashboardApi.Body16(); // Body16 | 
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WarmSpareApi();
 
-apiInstance.updateDeviceSwitchWarmSpare(bodyserial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var updateDeviceSwitchWarmSpare = new MerakiDashboardApi.UpdateDeviceSwitchWarmSpare(); // UpdateDeviceSwitchWarmSpare | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceSwitchWarmSpare(serial, updateDeviceSwitchWarmSpare, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body16**](Body16.md)|  | 
  **serial** | **String**|  | 
+ **updateDeviceSwitchWarmSpare** | [**UpdateDeviceSwitchWarmSpare**](UpdateDeviceSwitchWarmSpare.md)|  | 
 
 ### Return type
 
@@ -214,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceWarmSpare"></a>
 # **updateNetworkApplianceWarmSpare**
-> Object updateNetworkApplianceWarmSpare(bodynetworkId)
+> Object updateNetworkApplianceWarmSpare(networkId, updateNetworkApplianceWarmSpare)
 
 Update MX warm spare settings
 
@@ -222,34 +236,38 @@ Update MX warm spare settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WarmSpareApi();
-let body = new MerakiDashboardApi.Body46(); // Body46 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WarmSpareApi();
 
-apiInstance.updateNetworkApplianceWarmSpare(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceWarmSpare = new MerakiDashboardApi.UpdateNetworkApplianceWarmSpare(); // UpdateNetworkApplianceWarmSpare | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceWarmSpare(networkId, updateNetworkApplianceWarmSpare, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body46**](Body46.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceWarmSpare** | [**UpdateNetworkApplianceWarmSpare**](UpdateNetworkApplianceWarmSpare.md)|  | 
 
 ### Return type
 

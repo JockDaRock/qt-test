@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getDeviceWirelessStatus**](WirelessApi.md#getDeviceWirelessStatus) | **GET** /devices/{serial}/wireless/status | Return the SSID statuses of an access point
 [**getNetworkWirelessAirMarshal**](WirelessApi.md#getNetworkWirelessAirMarshal) | **GET** /networks/{networkId}/wireless/airMarshal | List Air Marshal scan results from a network
 [**getNetworkWirelessAlternateManagementInterface**](WirelessApi.md#getNetworkWirelessAlternateManagementInterface) | **GET** /networks/{networkId}/wireless/alternateManagementInterface | Return alternate management interface and devices with IP assigned
-[**getNetworkWirelessBluetoothSettings**](WirelessApi.md#getNetworkWirelessBluetoothSettings) | **GET** /networks/{networkId}/wireless/bluetooth/settings | Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+[**getNetworkWirelessBluetoothSettings**](WirelessApi.md#getNetworkWirelessBluetoothSettings) | **GET** /networks/{networkId}/wireless/bluetooth/settings | Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 [**getNetworkWirelessChannelUtilizationHistory**](WirelessApi.md#getNetworkWirelessChannelUtilizationHistory) | **GET** /networks/{networkId}/wireless/channelUtilizationHistory | Return AP channel utilization over time for a device or network client
 [**getNetworkWirelessClientConnectionStats**](WirelessApi.md#getNetworkWirelessClientConnectionStats) | **GET** /networks/{networkId}/wireless/clients/{clientId}/connectionStats | Aggregated connectivity info for a given client on this network. Clients are identified by their MAC.
 [**getNetworkWirelessClientConnectivityEvents**](WirelessApi.md#getNetworkWirelessClientConnectivityEvents) | **GET** /networks/{networkId}/wireless/clients/{clientId}/connectivityEvents | List the wireless connectivity events for a client within a network in the timespan.
@@ -48,7 +48,7 @@ Method | HTTP request | Description
 [**updateDeviceWirelessBluetoothSettings**](WirelessApi.md#updateDeviceWirelessBluetoothSettings) | **PUT** /devices/{serial}/wireless/bluetooth/settings | Update the bluetooth settings for a wireless device
 [**updateDeviceWirelessRadioSettings**](WirelessApi.md#updateDeviceWirelessRadioSettings) | **PUT** /devices/{serial}/wireless/radio/settings | Update the radio settings of a device
 [**updateNetworkWirelessAlternateManagementInterface**](WirelessApi.md#updateNetworkWirelessAlternateManagementInterface) | **PUT** /networks/{networkId}/wireless/alternateManagementInterface | Update alternate management interface and device static IP
-[**updateNetworkWirelessBluetoothSettings**](WirelessApi.md#updateNetworkWirelessBluetoothSettings) | **PUT** /networks/{networkId}/wireless/bluetooth/settings | Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+[**updateNetworkWirelessBluetoothSettings**](WirelessApi.md#updateNetworkWirelessBluetoothSettings) | **PUT** /networks/{networkId}/wireless/bluetooth/settings | Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 [**updateNetworkWirelessRfProfile**](WirelessApi.md#updateNetworkWirelessRfProfile) | **PUT** /networks/{networkId}/wireless/rfProfiles/{rfProfileId} | Updates specified RF profile for this network
 [**updateNetworkWirelessSettings**](WirelessApi.md#updateNetworkWirelessSettings) | **PUT** /networks/{networkId}/wireless/settings | Update the wireless settings for a network
 [**updateNetworkWirelessSsid**](WirelessApi.md#updateNetworkWirelessSsid) | **PUT** /networks/{networkId}/wireless/ssids/{number} | Update the attributes of an MR SSID
@@ -58,9 +58,10 @@ Method | HTTP request | Description
 [**updateNetworkWirelessSsidSplashSettings**](WirelessApi.md#updateNetworkWirelessSsidSplashSettings) | **PUT** /networks/{networkId}/wireless/ssids/{number}/splash/settings | Modify the splash page settings for the given SSID
 [**updateNetworkWirelessSsidTrafficShapingRules**](WirelessApi.md#updateNetworkWirelessSsidTrafficShapingRules) | **PUT** /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | Update the traffic shaping settings for an SSID on an MR network
 
+
 <a name="createNetworkWirelessRfProfile"></a>
 # **createNetworkWirelessRfProfile**
-> Object createNetworkWirelessRfProfile(bodynetworkId)
+> Object createNetworkWirelessRfProfile(networkId, createNetworkWirelessRfProfile)
 
 Creates new RF profile for this network
 
@@ -68,34 +69,38 @@ Creates new RF profile for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let body = new MerakiDashboardApi.Body110(); // Body110 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.createNetworkWirelessRfProfile(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkWirelessRfProfile = new MerakiDashboardApi.CreateNetworkWirelessRfProfile(); // CreateNetworkWirelessRfProfile | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkWirelessRfProfile(networkId, createNetworkWirelessRfProfile, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body110**](Body110.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkWirelessRfProfile** | [**CreateNetworkWirelessRfProfile**](CreateNetworkWirelessRfProfile.md)|  | 
 
 ### Return type
 
@@ -112,7 +117,7 @@ Name | Type | Description  | Notes
 
 <a name="createNetworkWirelessSsidIdentityPsk"></a>
 # **createNetworkWirelessSsidIdentityPsk**
-> Object createNetworkWirelessSsidIdentityPsk(bodynetworkId_number)
+> Object createNetworkWirelessSsidIdentityPsk(networkId, _number, createNetworkWirelessSsidIdentityPsk)
 
 Create an Identity PSK
 
@@ -120,36 +125,41 @@ Create an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let body = new MerakiDashboardApi.Body116(); // Body116 | 
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.createNetworkWirelessSsidIdentityPsk(bodynetworkId_number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var createNetworkWirelessSsidIdentityPsk = new MerakiDashboardApi.CreateNetworkWirelessSsidIdentityPsk(); // CreateNetworkWirelessSsidIdentityPsk | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkWirelessSsidIdentityPsk(networkId, _number, createNetworkWirelessSsidIdentityPsk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body116**](Body116.md)|  | 
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
+ **createNetworkWirelessSsidIdentityPsk** | [**CreateNetworkWirelessSsidIdentityPsk**](CreateNetworkWirelessSsidIdentityPsk.md)|  | 
 
 ### Return type
 
@@ -174,26 +184,30 @@ Delete a RF Profile
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let rfProfileId = "rfProfileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.deleteNetworkWirelessRfProfile(networkId, rfProfileId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var rfProfileId = "rfProfileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkWirelessRfProfile(networkId, rfProfileId, callback);
 ```
 
 ### Parameters
@@ -213,8 +227,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteNetworkWirelessSsidIdentityPsk"></a>
 # **deleteNetworkWirelessSsidIdentityPsk**
@@ -226,27 +240,32 @@ Delete an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.deleteNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, callback);
 ```
 
 ### Parameters
@@ -267,8 +286,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getDeviceWirelessBluetoothSettings"></a>
 # **getDeviceWirelessBluetoothSettings**
@@ -280,25 +299,28 @@ Return the bluetooth settings for a wireless device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getDeviceWirelessBluetoothSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessBluetoothSettings(serial, callback);
 ```
 
 ### Parameters
@@ -317,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessConnectionStats"></a>
@@ -330,18 +352,20 @@ Aggregated connectivity info for a given AP on this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -350,13 +374,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getDeviceWirelessConnectionStats(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessConnectionStats(serial, opts, callback);
 ```
 
 ### Parameters
@@ -367,7 +393,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -382,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessLatencyStats"></a>
@@ -395,18 +421,20 @@ Aggregated latency info for a given AP on this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -416,13 +444,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getDeviceWirelessLatencyStats(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessLatencyStats(serial, opts, callback);
 ```
 
 ### Parameters
@@ -433,11 +463,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -449,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessRadioSettings"></a>
@@ -462,25 +492,28 @@ Return the radio settings of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getDeviceWirelessRadioSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessRadioSettings(serial, callback);
 ```
 
 ### Parameters
@@ -499,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceWirelessStatus"></a>
@@ -512,25 +545,28 @@ Return the SSID statuses of an access point
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getDeviceWirelessStatus(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceWirelessStatus(serial, callback);
 ```
 
 ### Parameters
@@ -549,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessAirMarshal"></a>
@@ -562,28 +598,32 @@ List Air Marshal scan results from a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
 };
-apiInstance.getNetworkWirelessAirMarshal(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessAirMarshal(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -604,7 +644,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessAlternateManagementInterface"></a>
@@ -617,25 +657,28 @@ Return alternate management interface and devices with IP assigned
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessAlternateManagementInterface(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessAlternateManagementInterface(networkId, callback);
 ```
 
 ### Parameters
@@ -654,38 +697,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessBluetoothSettings"></a>
 # **getNetworkWirelessBluetoothSettings**
 > Object getNetworkWirelessBluetoothSettings(networkId)
 
-Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 
-Return the Bluetooth settings for a network. &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt; must be enabled on the network.
+Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessBluetoothSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessBluetoothSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -704,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessChannelUtilizationHistory"></a>
@@ -717,18 +763,20 @@ Return AP channel utilization over time for a device or network client
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -739,13 +787,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP tag to return AP channel utilization metrics for devices labeled with the given tag; either :clientId or :deviceSerial must be jointly specified.
   'band': "band_example" // String | Filter results by band (either '2.4' or '5').
 };
-apiInstance.getNetworkWirelessChannelUtilizationHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessChannelUtilizationHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -757,11 +807,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
- **clientId** | **String**| Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client&#x27;s connection history. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
+ **clientId** | **String**| Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client's connection history. | [optional] 
  **deviceSerial** | **String**| Filter results by device to return AP channel utilization metrics for the queried device; either :band or :clientId must be jointly specified. | [optional] 
  **apTag** | **String**| Filter results by AP tag to return AP channel utilization metrics for devices labeled with the given tag; either :clientId or :deviceSerial must be jointly specified. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
 
 ### Return type
 
@@ -773,7 +823,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientConnectionStats"></a>
@@ -786,19 +836,22 @@ Aggregated connectivity info for a given client on this network. Clients are ide
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -807,13 +860,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getNetworkWirelessClientConnectionStats(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientConnectionStats(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -825,7 +880,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -840,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientConnectivityEvents"></a>
@@ -853,19 +908,22 @@ List the wireless connectivity events for a client within a network in the times
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
@@ -878,13 +936,15 @@ let opts = {
   'ssidNumber': 56, // Number | An SSID number to include. If not specified, events for all SSIDs will be returned.
   'deviceSerial': "deviceSerial_example" // String | Filter results by an AP's serial number.
 };
-apiInstance.getNetworkWirelessClientConnectivityEvents(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientConnectivityEvents(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -899,11 +959,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 31 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day. | [optional] 
- **types** | [**[String]**](String.md)| A list of event types to include. If not specified, events of all types will be returned. Valid types are &#x27;assoc&#x27;, &#x27;disassoc&#x27;, &#x27;auth&#x27;, &#x27;deauth&#x27;, &#x27;dns&#x27;, &#x27;dhcp&#x27;, &#x27;roam&#x27; and/or &#x27;connection&#x27;. | [optional] 
- **includedSeverities** | [**[String]**](String.md)| A list of severities to include. If not specified, events of all severities will be returned. Valid severities are &#x27;good&#x27;, &#x27;info&#x27;, &#x27;warn&#x27; and/or &#x27;bad&#x27;. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **types** | [**[String]**](String.md)| A list of event types to include. If not specified, events of all types will be returned. Valid types are 'assoc', 'disassoc', 'auth', 'deauth', 'dns', 'dhcp', 'roam' and/or 'connection'. | [optional] 
+ **includedSeverities** | [**[String]**](String.md)| A list of severities to include. If not specified, events of all severities will be returned. Valid severities are 'good', 'info', 'warn' and/or 'bad'. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssidNumber** | **Number**| An SSID number to include. If not specified, events for all SSIDs will be returned. | [optional] 
- **deviceSerial** | **String**| Filter results by an AP&#x27;s serial number. | [optional] 
+ **deviceSerial** | **String**| Filter results by an AP's serial number. | [optional] 
 
 ### Return type
 
@@ -915,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientCountHistory"></a>
@@ -928,18 +988,20 @@ Return wireless client counts over time for a network, device, or network client
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -951,13 +1013,15 @@ let opts = {
   'band': "band_example", // String | Filter results by band (either '2.4' or '5').
   'ssid': 56 // Number | Filter results by SSID number.
 };
-apiInstance.getNetworkWirelessClientCountHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientCountHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -969,11 +1033,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
- **clientId** | **String**| Filter results by network client to return per-device client counts over time inner joined by the queried client&#x27;s connection history. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
+ **clientId** | **String**| Filter results by network client to return per-device client counts over time inner joined by the queried client's connection history. | [optional] 
  **deviceSerial** | **String**| Filter results by device. | [optional] 
  **apTag** | **String**| Filter results by AP tag. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssid** | **Number**| Filter results by SSID number. | [optional] 
 
 ### Return type
@@ -986,7 +1050,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientLatencyHistory"></a>
@@ -999,31 +1063,36 @@ Return the latency history for a client. Clients can be identified by a client k
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
   'resolution': 56 // Number | The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
 };
-apiInstance.getNetworkWirelessClientLatencyHistory(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientLatencyHistory(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -1047,7 +1116,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientLatencyStats"></a>
@@ -1060,19 +1129,22 @@ Aggregated latency info for a given client on this network. Clients are identifi
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1082,13 +1154,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getNetworkWirelessClientLatencyStats(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientLatencyStats(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -1100,11 +1174,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -1116,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientsConnectionStats"></a>
@@ -1129,18 +1203,20 @@ Aggregated connectivity info for this network, grouped by clients
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1149,13 +1225,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getNetworkWirelessClientsConnectionStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientsConnectionStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1166,7 +1244,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -1181,7 +1259,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessClientsLatencyStats"></a>
@@ -1194,18 +1272,20 @@ Aggregated latency info for this network, grouped by clients
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1215,13 +1295,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getNetworkWirelessClientsLatencyStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessClientsLatencyStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1232,11 +1314,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -1248,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessConnectionStats"></a>
@@ -1261,18 +1343,20 @@ Aggregated connectivity info for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1281,13 +1365,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getNetworkWirelessConnectionStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessConnectionStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1298,7 +1384,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -1313,7 +1399,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessDataRateHistory"></a>
@@ -1326,18 +1412,20 @@ Return PHY data rates over time for a network, device, or network client
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -1349,13 +1437,15 @@ let opts = {
   'band': "band_example", // String | Filter results by band (either '2.4' or '5').
   'ssid': 56 // Number | Filter results by SSID number.
 };
-apiInstance.getNetworkWirelessDataRateHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessDataRateHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1367,11 +1457,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
  **clientId** | **String**| Filter results by network client. | [optional] 
  **deviceSerial** | **String**| Filter results by device. | [optional] 
  **apTag** | **String**| Filter results by AP tag. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssid** | **Number**| Filter results by SSID number. | [optional] 
 
 ### Return type
@@ -1384,7 +1474,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessDevicesConnectionStats"></a>
@@ -1397,18 +1487,20 @@ Aggregated connectivity info for this network, grouped by node
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1417,13 +1509,15 @@ let opts = {
   'vlan': 56, // Number | Filter results by VLAN
   'apTag': "apTag_example" // String | Filter results by AP Tag
 };
-apiInstance.getNetworkWirelessDevicesConnectionStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessDevicesConnectionStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1434,7 +1528,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -1449,7 +1543,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessDevicesLatencyStats"></a>
@@ -1462,18 +1556,20 @@ Aggregated latency info for this network, grouped by node
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1483,13 +1579,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getNetworkWirelessDevicesLatencyStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessDevicesLatencyStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1500,11 +1598,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -1516,7 +1614,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessFailedConnections"></a>
@@ -1529,18 +1627,20 @@ List of all failed client connection events on this network in a given time rang
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1551,13 +1651,15 @@ let opts = {
   'serial': "serial_example", // String | Filter by AP
   'clientId': "clientId_example" // String | Filter by client MAC
 };
-apiInstance.getNetworkWirelessFailedConnections(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessFailedConnections(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1568,7 +1670,7 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
@@ -1585,7 +1687,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessLatencyHistory"></a>
@@ -1598,18 +1700,20 @@ Return average wireless latency over time for a network, device, or network clie
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -1622,13 +1726,15 @@ let opts = {
   'ssid': 56, // Number | Filter results by SSID number.
   'accessCategory': "accessCategory_example" // String | Filter by access category.
 };
-apiInstance.getNetworkWirelessLatencyHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessLatencyHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1640,11 +1746,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
  **clientId** | **String**| Filter results by network client. | [optional] 
  **deviceSerial** | **String**| Filter results by device. | [optional] 
  **apTag** | **String**| Filter results by AP tag. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssid** | **Number**| Filter results by SSID number. | [optional] 
  **accessCategory** | **String**| Filter by access category. | [optional] 
 
@@ -1658,7 +1764,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessLatencyStats"></a>
@@ -1671,18 +1777,20 @@ Aggregated latency info for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
@@ -1692,13 +1800,15 @@ let opts = {
   'apTag': "apTag_example", // String | Filter results by AP Tag
   'fields': "fields_example" // String | Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 };
-apiInstance.getNetworkWirelessLatencyStats(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessLatencyStats(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1709,11 +1819,11 @@ Name | Type | Description  | Notes
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 180 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 7 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). Note that data prior to February 2020 will not have band information. | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). Note that data prior to February 2020 will not have band information. | [optional] 
  **ssid** | **Number**| Filter results by SSID | [optional] 
  **vlan** | **Number**| Filter results by VLAN | [optional] 
  **apTag** | **String**| Filter results by AP Tag | [optional] 
- **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
+ **fields** | **String**| Partial selection: If present, this call will return only the selected fields of [\"rawDistribution\", \"avg\"]. All fields will be returned by default. Selected fields must be entered as a comma separated string. | [optional] 
 
 ### Return type
 
@@ -1725,7 +1835,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessMeshStatuses"></a>
@@ -1738,29 +1848,33 @@ List wireless mesh statuses for repeaters
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getNetworkWirelessMeshStatuses(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessMeshStatuses(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1782,7 +1896,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessRfProfile"></a>
@@ -1795,26 +1909,30 @@ Return a RF profile
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let rfProfileId = "rfProfileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessRfProfile(networkId, rfProfileId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var rfProfileId = "rfProfileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessRfProfile(networkId, rfProfileId, callback);
 ```
 
 ### Parameters
@@ -1834,7 +1952,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessRfProfiles"></a>
@@ -1847,27 +1965,31 @@ List the non-basic RF profiles for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   'includeTemplateProfiles': true // Boolean |     If the network is bound to a template, this parameter controls whether or not the non-basic RF profiles defined on the template     should be included in the response alongside the non-basic profiles defined on the bound network. Defaults to false. 
 };
-apiInstance.getNetworkWirelessRfProfiles(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessRfProfiles(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1887,7 +2009,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSettings"></a>
@@ -1900,25 +2022,28 @@ Return the wireless settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -1937,7 +2062,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSignalQualityHistory"></a>
@@ -1950,18 +2075,20 @@ Return signal quality (SNR/RSSI) over time for a device or network client
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -1973,13 +2100,15 @@ let opts = {
   'band': "band_example", // String | Filter results by band (either '2.4' or '5').
   'ssid': 56 // Number | Filter results by SSID number.
 };
-apiInstance.getNetworkWirelessSignalQualityHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSignalQualityHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1991,11 +2120,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
  **clientId** | **String**| Filter results by network client. | [optional] 
  **deviceSerial** | **String**| Filter results by device. | [optional] 
  **apTag** | **String**| Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssid** | **Number**| Filter results by SSID number. | [optional] 
 
 ### Return type
@@ -2008,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsid"></a>
@@ -2021,26 +2150,30 @@ Return a single MR SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsid(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsid(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2060,7 +2193,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL3FirewallRules"></a>
@@ -2073,26 +2206,30 @@ Return the L3 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2112,7 +2249,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL7FirewallRules"></a>
@@ -2125,26 +2262,30 @@ Return the L7 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2164,7 +2305,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidIdentityPsk"></a>
@@ -2177,27 +2318,32 @@ Return an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, callback);
 ```
 
 ### Parameters
@@ -2218,7 +2364,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidIdentityPsks"></a>
@@ -2231,26 +2377,30 @@ List all Identity PSKs in a wireless network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidIdentityPsks(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidIdentityPsks(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2270,7 +2420,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidSplashSettings"></a>
@@ -2283,26 +2433,30 @@ Display the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2322,7 +2476,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidTrafficShapingRules"></a>
@@ -2335,26 +2489,30 @@ Display the traffic shaping settings for a SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -2374,7 +2532,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsids"></a>
@@ -2387,25 +2545,28 @@ List the MR SSIDs in a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
 
-apiInstance.getNetworkWirelessSsids(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsids(networkId, callback);
 ```
 
 ### Parameters
@@ -2424,7 +2585,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessUsageHistory"></a>
@@ -2437,18 +2598,20 @@ Return AP usage over time for a device or network client
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
@@ -2460,13 +2623,15 @@ let opts = {
   'band': "band_example", // String | Filter results by band (either '2.4' or '5').
   'ssid': 56 // Number | Filter results by SSID number.
 };
-apiInstance.getNetworkWirelessUsageHistory(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessUsageHistory(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2478,11 +2643,11 @@ Name | Type | Description  | Notes
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days. | [optional] 
  **resolution** | **Number**| The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400. | [optional] 
- **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#x27;resolution&#x27; parameter. The default setting is false. | [optional] 
- **clientId** | **String**| Filter results by network client to return per-device AP usage over time inner joined by the queried client&#x27;s connection history. | [optional] 
+ **autoResolution** | **Boolean**| Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false. | [optional] 
+ **clientId** | **String**| Filter results by network client to return per-device AP usage over time inner joined by the queried client's connection history. | [optional] 
  **deviceSerial** | **String**| Filter results by device. Requires :band. | [optional] 
  **apTag** | **String**| Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified. | [optional] 
- **band** | **String**| Filter results by band (either &#x27;2.4&#x27; or &#x27;5&#x27;). | [optional] 
+ **band** | **String**| Filter results by band (either '2.4' or '5'). | [optional] 
  **ssid** | **Number**| Filter results by SSID number. | [optional] 
 
 ### Return type
@@ -2495,7 +2660,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceWirelessBluetoothSettings"></a>
@@ -2508,27 +2673,31 @@ Update the bluetooth settings for a wireless device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body17() // Body17 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceWirelessBluetoothSettings': new MerakiDashboardApi.UpdateDeviceWirelessBluetoothSettings() // UpdateDeviceWirelessBluetoothSettings | 
 };
-apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -2536,7 +2705,7 @@ apiInstance.updateDeviceWirelessBluetoothSettings(serial, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body17**](Body17.md)|  | [optional] 
+ **updateDeviceWirelessBluetoothSettings** | [**UpdateDeviceWirelessBluetoothSettings**](UpdateDeviceWirelessBluetoothSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -2561,27 +2730,31 @@ Update the radio settings of a device
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body18() // Body18 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceWirelessRadioSettings': new MerakiDashboardApi.UpdateDeviceWirelessRadioSettings() // UpdateDeviceWirelessRadioSettings | 
 };
-apiInstance.updateDeviceWirelessRadioSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceWirelessRadioSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -2589,7 +2762,7 @@ apiInstance.updateDeviceWirelessRadioSettings(serial, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body18**](Body18.md)|  | [optional] 
+ **updateDeviceWirelessRadioSettings** | [**UpdateDeviceWirelessRadioSettings**](UpdateDeviceWirelessRadioSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -2614,27 +2787,31 @@ Update alternate management interface and device static IP
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body108() // Body108 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessAlternateManagementInterface': new MerakiDashboardApi.UpdateNetworkWirelessAlternateManagementInterface() // UpdateNetworkWirelessAlternateManagementInterface | 
 };
-apiInstance.updateNetworkWirelessAlternateManagementInterface(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessAlternateManagementInterface(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2642,7 +2819,7 @@ apiInstance.updateNetworkWirelessAlternateManagementInterface(networkId, opts, (
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body108**](Body108.md)|  | [optional] 
+ **updateNetworkWirelessAlternateManagementInterface** | [**UpdateNetworkWirelessAlternateManagementInterface**](UpdateNetworkWirelessAlternateManagementInterface.md)|  | [optional] 
 
 ### Return type
 
@@ -2661,33 +2838,37 @@ Name | Type | Description  | Notes
 # **updateNetworkWirelessBluetoothSettings**
 > Object updateNetworkWirelessBluetoothSettings(networkId, opts)
 
-Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 
-Update the Bluetooth settings for a network. See the docs page for &lt;a href&#x3D;\&quot;https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\&quot;&gt;Bluetooth settings&lt;/a&gt;.
+Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body109() // Body109 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessBluetoothSettings': new MerakiDashboardApi.UpdateNetworkWirelessBluetoothSettings() // UpdateNetworkWirelessBluetoothSettings | 
 };
-apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2695,7 +2876,7 @@ apiInstance.updateNetworkWirelessBluetoothSettings(networkId, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body109**](Body109.md)|  | [optional] 
+ **updateNetworkWirelessBluetoothSettings** | [**UpdateNetworkWirelessBluetoothSettings**](UpdateNetworkWirelessBluetoothSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -2712,7 +2893,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessRfProfile"></a>
 # **updateNetworkWirelessRfProfile**
-> Object updateNetworkWirelessRfProfile(networkIdrfProfileId, opts)
+> Object updateNetworkWirelessRfProfile(networkId, rfProfileId, opts)
 
 Updates specified RF profile for this network
 
@@ -2720,28 +2901,33 @@ Updates specified RF profile for this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let rfProfileId = "rfProfileId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body111() // Body111 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var rfProfileId = "rfProfileId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessRfProfile': new MerakiDashboardApi.UpdateNetworkWirelessRfProfile() // UpdateNetworkWirelessRfProfile | 
 };
-apiInstance.updateNetworkWirelessRfProfile(networkIdrfProfileId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessRfProfile(networkId, rfProfileId, opts, callback);
 ```
 
 ### Parameters
@@ -2750,7 +2936,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **rfProfileId** | **String**|  | 
- **body** | [**Body111**](Body111.md)|  | [optional] 
+ **updateNetworkWirelessRfProfile** | [**UpdateNetworkWirelessRfProfile**](UpdateNetworkWirelessRfProfile.md)|  | [optional] 
 
 ### Return type
 
@@ -2775,27 +2961,31 @@ Update the wireless settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body112() // Body112 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSettings': new MerakiDashboardApi.UpdateNetworkWirelessSettings() // UpdateNetworkWirelessSettings | 
 };
-apiInstance.updateNetworkWirelessSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2803,7 +2993,7 @@ apiInstance.updateNetworkWirelessSettings(networkId, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body112**](Body112.md)|  | [optional] 
+ **updateNetworkWirelessSettings** | [**UpdateNetworkWirelessSettings**](UpdateNetworkWirelessSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -2820,7 +3010,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsid"></a>
 # **updateNetworkWirelessSsid**
-> Object updateNetworkWirelessSsid(networkId_number, opts)
+> Object updateNetworkWirelessSsid(networkId, _number, opts)
 
 Update the attributes of an MR SSID
 
@@ -2828,28 +3018,33 @@ Update the attributes of an MR SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body113() // Body113 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsid': new MerakiDashboardApi.UpdateNetworkWirelessSsid() // UpdateNetworkWirelessSsid | 
 };
-apiInstance.updateNetworkWirelessSsid(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsid(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -2858,7 +3053,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body113**](Body113.md)|  | [optional] 
+ **updateNetworkWirelessSsid** | [**UpdateNetworkWirelessSsid**](UpdateNetworkWirelessSsid.md)|  | [optional] 
 
 ### Return type
 
@@ -2875,7 +3070,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL3FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL3FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts)
 
 Update the L3 firewall rules of an SSID on an MR network
 
@@ -2883,28 +3078,33 @@ Update the L3 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body114() // Body114 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL3FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules() // UpdateNetworkWirelessSsidFirewallL3FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -2913,7 +3113,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body114**](Body114.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL3FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL3FirewallRules**](UpdateNetworkWirelessSsidFirewallL3FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2930,7 +3130,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL7FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL7FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts)
 
 Update the L7 firewall rules of an SSID on an MR network
 
@@ -2938,28 +3138,33 @@ Update the L7 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body115() // Body115 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL7FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules() // UpdateNetworkWirelessSsidFirewallL7FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -2968,7 +3173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body115**](Body115.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL7FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL7FirewallRules**](UpdateNetworkWirelessSsidFirewallL7FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2985,7 +3190,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidIdentityPsk"></a>
 # **updateNetworkWirelessSsidIdentityPsk**
-> Object updateNetworkWirelessSsidIdentityPsk(networkId_numberidentityPskId, opts)
+> Object updateNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, opts)
 
 Update an Identity PSK
 
@@ -2993,29 +3198,35 @@ Update an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body117() // Body117 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidIdentityPsk': new MerakiDashboardApi.UpdateNetworkWirelessSsidIdentityPsk() // UpdateNetworkWirelessSsidIdentityPsk | 
 };
-apiInstance.updateNetworkWirelessSsidIdentityPsk(networkId_numberidentityPskId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, opts, callback);
 ```
 
 ### Parameters
@@ -3025,7 +3236,7 @@ Name | Type | Description  | Notes
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
  **identityPskId** | **String**|  | 
- **body** | [**Body117**](Body117.md)|  | [optional] 
+ **updateNetworkWirelessSsidIdentityPsk** | [**UpdateNetworkWirelessSsidIdentityPsk**](UpdateNetworkWirelessSsidIdentityPsk.md)|  | [optional] 
 
 ### Return type
 
@@ -3042,7 +3253,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidSplashSettings"></a>
 # **updateNetworkWirelessSsidSplashSettings**
-> Object updateNetworkWirelessSsidSplashSettings(networkId_number, opts)
+> Object updateNetworkWirelessSsidSplashSettings(networkId, _number, opts)
 
 Modify the splash page settings for the given SSID
 
@@ -3050,28 +3261,33 @@ Modify the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body118() // Body118 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidSplashSettings': new MerakiDashboardApi.UpdateNetworkWirelessSsidSplashSettings() // UpdateNetworkWirelessSsidSplashSettings | 
 };
-apiInstance.updateNetworkWirelessSsidSplashSettings(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidSplashSettings(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -3080,7 +3296,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body118**](Body118.md)|  | [optional] 
+ **updateNetworkWirelessSsidSplashSettings** | [**UpdateNetworkWirelessSsidSplashSettings**](UpdateNetworkWirelessSsidSplashSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -3097,7 +3313,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidTrafficShapingRules"></a>
 # **updateNetworkWirelessSsidTrafficShapingRules**
-> Object updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts)
 
 Update the traffic shaping settings for an SSID on an MR network
 
@@ -3105,28 +3321,33 @@ Update the traffic shaping settings for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.WirelessApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body119() // Body119 | 
+var apiInstance = new MerakiDashboardApi.WirelessApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidTrafficShapingRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidTrafficShapingRules() // UpdateNetworkWirelessSsidTrafficShapingRules | 
 };
-apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -3135,7 +3356,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body119**](Body119.md)|  | [optional] 
+ **updateNetworkWirelessSsidTrafficShapingRules** | [**UpdateNetworkWirelessSsidTrafficShapingRules**](UpdateNetworkWirelessSsidTrafficShapingRules.md)|  | [optional] 
 
 ### Return type
 

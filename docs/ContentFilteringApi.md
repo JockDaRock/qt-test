@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceContentFilteringCategories**](ContentFilteringApi.md#getNetworkApplianceContentFilteringCategories) | **GET** /networks/{networkId}/appliance/contentFiltering/categories | List all available content filtering categories for an MX network
 [**updateNetworkApplianceContentFiltering**](ContentFilteringApi.md#updateNetworkApplianceContentFiltering) | **PUT** /networks/{networkId}/appliance/contentFiltering | Update the content filtering settings for an MX network
 
+
 <a name="getNetworkApplianceContentFiltering"></a>
 # **getNetworkApplianceContentFiltering**
 > Object getNetworkApplianceContentFiltering(networkId)
@@ -18,25 +19,28 @@ Return the content filtering settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ContentFilteringApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ContentFilteringApi();
 
-apiInstance.getNetworkApplianceContentFiltering(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceContentFiltering(networkId, callback);
 ```
 
 ### Parameters
@@ -55,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceContentFilteringCategories"></a>
@@ -68,25 +72,28 @@ List all available content filtering categories for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ContentFilteringApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ContentFilteringApi();
 
-apiInstance.getNetworkApplianceContentFilteringCategories(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceContentFilteringCategories(networkId, callback);
 ```
 
 ### Parameters
@@ -105,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceContentFiltering"></a>
@@ -118,27 +125,31 @@ Update the content filtering settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ContentFilteringApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body22() // Body22 | 
+var apiInstance = new MerakiDashboardApi.ContentFilteringApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceContentFiltering': new MerakiDashboardApi.UpdateNetworkApplianceContentFiltering() // UpdateNetworkApplianceContentFiltering | 
 };
-apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -146,7 +157,7 @@ apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body22**](Body22.md)|  | [optional] 
+ **updateNetworkApplianceContentFiltering** | [**UpdateNetworkApplianceContentFiltering**](UpdateNetworkApplianceContentFiltering.md)|  | [optional] 
 
 ### Return type
 

@@ -21,9 +21,10 @@ Method | HTTP request | Description
 [**updateNetworkWirelessSsidSplashSettings**](SsidsApi.md#updateNetworkWirelessSsidSplashSettings) | **PUT** /networks/{networkId}/wireless/ssids/{number}/splash/settings | Modify the splash page settings for the given SSID
 [**updateNetworkWirelessSsidTrafficShapingRules**](SsidsApi.md#updateNetworkWirelessSsidTrafficShapingRules) | **PUT** /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | Update the traffic shaping settings for an SSID on an MR network
 
+
 <a name="createNetworkWirelessSsidIdentityPsk"></a>
 # **createNetworkWirelessSsidIdentityPsk**
-> Object createNetworkWirelessSsidIdentityPsk(bodynetworkId_number)
+> Object createNetworkWirelessSsidIdentityPsk(networkId, _number, createNetworkWirelessSsidIdentityPsk)
 
 Create an Identity PSK
 
@@ -31,36 +32,41 @@ Create an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let body = new MerakiDashboardApi.Body116(); // Body116 | 
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.createNetworkWirelessSsidIdentityPsk(bodynetworkId_number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var createNetworkWirelessSsidIdentityPsk = new MerakiDashboardApi.CreateNetworkWirelessSsidIdentityPsk(); // CreateNetworkWirelessSsidIdentityPsk | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkWirelessSsidIdentityPsk(networkId, _number, createNetworkWirelessSsidIdentityPsk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body116**](Body116.md)|  | 
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
+ **createNetworkWirelessSsidIdentityPsk** | [**CreateNetworkWirelessSsidIdentityPsk**](CreateNetworkWirelessSsidIdentityPsk.md)|  | 
 
 ### Return type
 
@@ -85,27 +91,32 @@ Delete an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.deleteNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, callback);
 ```
 
 ### Parameters
@@ -126,8 +137,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkWirelessSsid"></a>
 # **getNetworkWirelessSsid**
@@ -139,26 +150,30 @@ Return a single MR SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsid(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsid(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -178,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL3FirewallRules"></a>
@@ -191,26 +206,30 @@ Return the L3 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -230,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidFirewallL7FirewallRules"></a>
@@ -243,26 +262,30 @@ Return the L7 firewall rules for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -282,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidIdentityPsk"></a>
@@ -295,27 +318,32 @@ Return an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, callback);
 ```
 
 ### Parameters
@@ -336,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidIdentityPsks"></a>
@@ -349,26 +377,30 @@ List all Identity PSKs in a wireless network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidIdentityPsks(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidIdentityPsks(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -388,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidSplashSettings"></a>
@@ -401,26 +433,30 @@ Display the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidSplashSettings(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -440,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidTrafficShapingRules"></a>
@@ -453,26 +489,30 @@ Display the traffic shaping settings for a SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -492,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsids"></a>
@@ -505,25 +545,28 @@ List the MR SSIDs in a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
 
-apiInstance.getNetworkWirelessSsids(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsids(networkId, callback);
 ```
 
 ### Parameters
@@ -542,12 +585,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkWirelessSsid"></a>
 # **updateNetworkWirelessSsid**
-> Object updateNetworkWirelessSsid(networkId_number, opts)
+> Object updateNetworkWirelessSsid(networkId, _number, opts)
 
 Update the attributes of an MR SSID
 
@@ -555,28 +598,33 @@ Update the attributes of an MR SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body113() // Body113 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsid': new MerakiDashboardApi.UpdateNetworkWirelessSsid() // UpdateNetworkWirelessSsid | 
 };
-apiInstance.updateNetworkWirelessSsid(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsid(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -585,7 +633,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body113**](Body113.md)|  | [optional] 
+ **updateNetworkWirelessSsid** | [**UpdateNetworkWirelessSsid**](UpdateNetworkWirelessSsid.md)|  | [optional] 
 
 ### Return type
 
@@ -602,7 +650,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL3FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL3FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts)
 
 Update the L3 firewall rules of an SSID on an MR network
 
@@ -610,28 +658,33 @@ Update the L3 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body114() // Body114 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL3FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules() // UpdateNetworkWirelessSsidFirewallL3FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL3FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -640,7 +693,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body114**](Body114.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL3FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL3FirewallRules**](UpdateNetworkWirelessSsidFirewallL3FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -657,7 +710,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidFirewallL7FirewallRules"></a>
 # **updateNetworkWirelessSsidFirewallL7FirewallRules**
-> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts)
 
 Update the L7 firewall rules of an SSID on an MR network
 
@@ -665,28 +718,33 @@ Update the L7 firewall rules of an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body115() // Body115 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidFirewallL7FirewallRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules() // UpdateNetworkWirelessSsidFirewallL7FirewallRules | 
 };
-apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidFirewallL7FirewallRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -695,7 +753,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body115**](Body115.md)|  | [optional] 
+ **updateNetworkWirelessSsidFirewallL7FirewallRules** | [**UpdateNetworkWirelessSsidFirewallL7FirewallRules**](UpdateNetworkWirelessSsidFirewallL7FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -712,7 +770,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidIdentityPsk"></a>
 # **updateNetworkWirelessSsidIdentityPsk**
-> Object updateNetworkWirelessSsidIdentityPsk(networkId_numberidentityPskId, opts)
+> Object updateNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, opts)
 
 Update an Identity PSK
 
@@ -720,29 +778,35 @@ Update an Identity PSK
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let identityPskId = "identityPskId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body117() // Body117 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var identityPskId = "identityPskId_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidIdentityPsk': new MerakiDashboardApi.UpdateNetworkWirelessSsidIdentityPsk() // UpdateNetworkWirelessSsidIdentityPsk | 
 };
-apiInstance.updateNetworkWirelessSsidIdentityPsk(networkId_numberidentityPskId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidIdentityPsk(networkId, _number, identityPskId, opts, callback);
 ```
 
 ### Parameters
@@ -752,7 +816,7 @@ Name | Type | Description  | Notes
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
  **identityPskId** | **String**|  | 
- **body** | [**Body117**](Body117.md)|  | [optional] 
+ **updateNetworkWirelessSsidIdentityPsk** | [**UpdateNetworkWirelessSsidIdentityPsk**](UpdateNetworkWirelessSsidIdentityPsk.md)|  | [optional] 
 
 ### Return type
 
@@ -769,7 +833,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidSplashSettings"></a>
 # **updateNetworkWirelessSsidSplashSettings**
-> Object updateNetworkWirelessSsidSplashSettings(networkId_number, opts)
+> Object updateNetworkWirelessSsidSplashSettings(networkId, _number, opts)
 
 Modify the splash page settings for the given SSID
 
@@ -777,28 +841,33 @@ Modify the splash page settings for the given SSID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body118() // Body118 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidSplashSettings': new MerakiDashboardApi.UpdateNetworkWirelessSsidSplashSettings() // UpdateNetworkWirelessSsidSplashSettings | 
 };
-apiInstance.updateNetworkWirelessSsidSplashSettings(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidSplashSettings(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -807,7 +876,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body118**](Body118.md)|  | [optional] 
+ **updateNetworkWirelessSsidSplashSettings** | [**UpdateNetworkWirelessSsidSplashSettings**](UpdateNetworkWirelessSsidSplashSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -824,7 +893,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidTrafficShapingRules"></a>
 # **updateNetworkWirelessSsidTrafficShapingRules**
-> Object updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts)
 
 Update the traffic shaping settings for an SSID on an MR network
 
@@ -832,28 +901,33 @@ Update the traffic shaping settings for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SsidsApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body119() // Body119 | 
+var apiInstance = new MerakiDashboardApi.SsidsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidTrafficShapingRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidTrafficShapingRules() // UpdateNetworkWirelessSsidTrafficShapingRules | 
 };
-apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -862,7 +936,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body119**](Body119.md)|  | [optional] 
+ **updateNetworkWirelessSsidTrafficShapingRules** | [**UpdateNetworkWirelessSsidTrafficShapingRules**](UpdateNetworkWirelessSsidTrafficShapingRules.md)|  | [optional] 
 
 ### Return type
 

@@ -5,7 +5,7 @@ All URIs are relative to *https://api.meraki.com/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**assignOrganizationLicensesSeats**](OrganizationsApi.md#assignOrganizationLicensesSeats) | **POST** /organizations/{organizationId}/licenses/assignSeats | Assign SM seats to a network. This will increase the managed SM device limit of the network
-[**claimIntoOrganization**](OrganizationsApi.md#claimIntoOrganization) | **POST** /organizations/{organizationId}/claim | Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization&#x27;s inventory.
+[**claimIntoOrganization**](OrganizationsApi.md#claimIntoOrganization) | **POST** /organizations/{organizationId}/claim | Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization's inventory.
 [**cloneOrganization**](OrganizationsApi.md#cloneOrganization) | **POST** /organizations/{organizationId}/clone | Create a new organization by cloning the addressed organization
 [**combineOrganizationNetworks**](OrganizationsApi.md#combineOrganizationNetworks) | **POST** /organizations/{organizationId}/networks/combine | Combine multiple networks into a single network
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /organizations | Create a new organization
@@ -38,12 +38,13 @@ Method | HTTP request | Description
 [**getOrganizationDevices**](OrganizationsApi.md#getOrganizationDevices) | **GET** /organizations/{organizationId}/devices | List the devices in an organization
 [**getOrganizationDevicesStatuses**](OrganizationsApi.md#getOrganizationDevicesStatuses) | **GET** /organizations/{organizationId}/devices/statuses | List the status of every Meraki device in the organization
 [**getOrganizationDevicesUplinksLossAndLatency**](OrganizationsApi.md#getOrganizationDevicesUplinksLossAndLatency) | **GET** /organizations/{organizationId}/devices/uplinksLossAndLatency | Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago
+[**getOrganizationInventoryDevice**](OrganizationsApi.md#getOrganizationInventoryDevice) | **GET** /organizations/{organizationId}/inventoryDevices/{serial} | Return a single device from the inventory of an organization
 [**getOrganizationInventoryDevices**](OrganizationsApi.md#getOrganizationInventoryDevices) | **GET** /organizations/{organizationId}/inventoryDevices | Return the device inventory for an organization
 [**getOrganizationLicense**](OrganizationsApi.md#getOrganizationLicense) | **GET** /organizations/{organizationId}/licenses/{licenseId} | Display a license
 [**getOrganizationLicenses**](OrganizationsApi.md#getOrganizationLicenses) | **GET** /organizations/{organizationId}/licenses | List the licenses for an organization
 [**getOrganizationLicensesOverview**](OrganizationsApi.md#getOrganizationLicensesOverview) | **GET** /organizations/{organizationId}/licenses/overview | Return an overview of the license state for an organization
 [**getOrganizationNetworks**](OrganizationsApi.md#getOrganizationNetworks) | **GET** /organizations/{organizationId}/networks | List the networks that the user has privileges on in an organization
-[**getOrganizationOpenapiSpec**](OrganizationsApi.md#getOrganizationOpenapiSpec) | **GET** /organizations/{organizationId}/openapiSpec | Return the OpenAPI 2.0 Specification of the organization&#x27;s API documentation in JSON
+[**getOrganizationOpenapiSpec**](OrganizationsApi.md#getOrganizationOpenapiSpec) | **GET** /organizations/{organizationId}/openapiSpec | Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON
 [**getOrganizationSaml**](OrganizationsApi.md#getOrganizationSaml) | **GET** /organizations/{organizationId}/saml | Returns the SAML SSO enabled settings for an organization.
 [**getOrganizationSamlIdp**](OrganizationsApi.md#getOrganizationSamlIdp) | **GET** /organizations/{organizationId}/saml/idps/{idpId} | Get a SAML IdP from your organization.
 [**getOrganizationSamlIdps**](OrganizationsApi.md#getOrganizationSamlIdps) | **GET** /organizations/{organizationId}/saml/idps | List the SAML IdPs in your organization.
@@ -58,7 +59,7 @@ Method | HTTP request | Description
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /organizations/{organizationId} | Update an organization
 [**updateOrganizationActionBatch**](OrganizationsApi.md#updateOrganizationActionBatch) | **PUT** /organizations/{organizationId}/actionBatches/{actionBatchId} | Update an action batch
 [**updateOrganizationAdmin**](OrganizationsApi.md#updateOrganizationAdmin) | **PUT** /organizations/{organizationId}/admins/{adminId} | Update an administrator
-[**updateOrganizationBrandingPoliciesPriorities**](OrganizationsApi.md#updateOrganizationBrandingPoliciesPriorities) | **PUT** /organizations/{organizationId}/brandingPolicies/priorities | Update the priority ordering of an organization&#x27;s branding policies.
+[**updateOrganizationBrandingPoliciesPriorities**](OrganizationsApi.md#updateOrganizationBrandingPoliciesPriorities) | **PUT** /organizations/{organizationId}/brandingPolicies/priorities | Update the priority ordering of an organization's branding policies.
 [**updateOrganizationBrandingPolicy**](OrganizationsApi.md#updateOrganizationBrandingPolicy) | **PUT** /organizations/{organizationId}/brandingPolicies/{brandingPolicyId} | Update a branding policy
 [**updateOrganizationConfigTemplate**](OrganizationsApi.md#updateOrganizationConfigTemplate) | **PUT** /organizations/{organizationId}/configTemplates/{configTemplateId} | Update a configuration template
 [**updateOrganizationLicense**](OrganizationsApi.md#updateOrganizationLicense) | **PUT** /organizations/{organizationId}/licenses/{licenseId} | Update a license
@@ -67,9 +68,10 @@ Method | HTTP request | Description
 [**updateOrganizationSamlRole**](OrganizationsApi.md#updateOrganizationSamlRole) | **PUT** /organizations/{organizationId}/samlRoles/{samlRoleId} | Update a SAML role
 [**updateOrganizationSnmp**](OrganizationsApi.md#updateOrganizationSnmp) | **PUT** /organizations/{organizationId}/snmp | Update the SNMP settings for an organization
 
+
 <a name="assignOrganizationLicensesSeats"></a>
 # **assignOrganizationLicensesSeats**
-> Object assignOrganizationLicensesSeats(bodyorganizationId)
+> Object assignOrganizationLicensesSeats(organizationId, assignOrganizationLicensesSeats)
 
 Assign SM seats to a network. This will increase the managed SM device limit of the network
 
@@ -77,34 +79,38 @@ Assign SM seats to a network. This will increase the managed SM device limit of 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body139(); // Body139 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.assignOrganizationLicensesSeats(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var assignOrganizationLicensesSeats = new MerakiDashboardApi.AssignOrganizationLicensesSeats(); // AssignOrganizationLicensesSeats | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.assignOrganizationLicensesSeats(organizationId, assignOrganizationLicensesSeats, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body139**](Body139.md)|  | 
  **organizationId** | **String**|  | 
+ **assignOrganizationLicensesSeats** | [**AssignOrganizationLicensesSeats**](AssignOrganizationLicensesSeats.md)|  | 
 
 ### Return type
 
@@ -123,33 +129,37 @@ Name | Type | Description  | Notes
 # **claimIntoOrganization**
 > Object claimIntoOrganization(organizationId, opts)
 
-Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization&#x27;s inventory.
+Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization's inventory.
 
-Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization&#x27;s inventory.
+Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization's inventory.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body132() // Body132 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'claimIntoOrganization': new MerakiDashboardApi.ClaimIntoOrganization() // ClaimIntoOrganization | 
 };
-apiInstance.claimIntoOrganization(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.claimIntoOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -157,7 +167,7 @@ apiInstance.claimIntoOrganization(organizationId, opts, (error, data, response) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body132**](Body132.md)|  | [optional] 
+ **claimIntoOrganization** | [**ClaimIntoOrganization**](ClaimIntoOrganization.md)|  | [optional] 
 
 ### Return type
 
@@ -174,7 +184,7 @@ Name | Type | Description  | Notes
 
 <a name="cloneOrganization"></a>
 # **cloneOrganization**
-> Object cloneOrganization(bodyorganizationId)
+> Object cloneOrganization(organizationId, cloneOrganization)
 
 Create a new organization by cloning the addressed organization
 
@@ -182,34 +192,38 @@ Create a new organization by cloning the addressed organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body133(); // Body133 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.cloneOrganization(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var cloneOrganization = new MerakiDashboardApi.CloneOrganization(); // CloneOrganization | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.cloneOrganization(organizationId, cloneOrganization, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body133**](Body133.md)|  | 
  **organizationId** | **String**|  | 
+ **cloneOrganization** | [**CloneOrganization**](CloneOrganization.md)|  | 
 
 ### Return type
 
@@ -226,7 +240,7 @@ Name | Type | Description  | Notes
 
 <a name="combineOrganizationNetworks"></a>
 # **combineOrganizationNetworks**
-> Object combineOrganizationNetworks(bodyorganizationId)
+> Object combineOrganizationNetworks(organizationId, combineOrganizationNetworks)
 
 Combine multiple networks into a single network
 
@@ -234,34 +248,38 @@ Combine multiple networks into a single network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body145(); // Body145 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.combineOrganizationNetworks(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var combineOrganizationNetworks = new MerakiDashboardApi.CombineOrganizationNetworks(); // CombineOrganizationNetworks | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.combineOrganizationNetworks(organizationId, combineOrganizationNetworks, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body145**](Body145.md)|  | 
  **organizationId** | **String**|  | 
+ **combineOrganizationNetworks** | [**CombineOrganizationNetworks**](CombineOrganizationNetworks.md)|  | 
 
 ### Return type
 
@@ -278,7 +296,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganization"></a>
 # **createOrganization**
-> Object createOrganization(body)
+> Object createOrganization(createOrganization)
 
 Create a new organization
 
@@ -286,32 +304,35 @@ Create a new organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body120(); // Body120 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganization(body, (error, data, response) => {
+var createOrganization = new MerakiDashboardApi.CreateOrganization(); // CreateOrganization | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganization(createOrganization, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body120**](Body120.md)|  | 
+ **createOrganization** | [**CreateOrganization**](CreateOrganization.md)|  | 
 
 ### Return type
 
@@ -328,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationActionBatch"></a>
 # **createOrganizationActionBatch**
-> Object createOrganizationActionBatch(bodyorganizationId)
+> Object createOrganizationActionBatch(organizationId, createOrganizationActionBatch)
 
 Create an action batch
 
@@ -336,34 +357,38 @@ Create an action batch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body122(); // Body122 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationActionBatch(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationActionBatch = new MerakiDashboardApi.CreateOrganizationActionBatch(); // CreateOrganizationActionBatch | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationActionBatch(organizationId, createOrganizationActionBatch, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body122**](Body122.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationActionBatch** | [**CreateOrganizationActionBatch**](CreateOrganizationActionBatch.md)|  | 
 
 ### Return type
 
@@ -380,7 +405,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationAdmin"></a>
 # **createOrganizationAdmin**
-> Object createOrganizationAdmin(bodyorganizationId)
+> Object createOrganizationAdmin(organizationId, createOrganizationAdmin)
 
 Create a new dashboard administrator
 
@@ -388,34 +413,38 @@ Create a new dashboard administrator
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body124(); // Body124 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationAdmin(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationAdmin = new MerakiDashboardApi.CreateOrganizationAdmin(); // CreateOrganizationAdmin | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationAdmin(organizationId, createOrganizationAdmin, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body124**](Body124.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationAdmin** | [**CreateOrganizationAdmin**](CreateOrganizationAdmin.md)|  | 
 
 ### Return type
 
@@ -432,7 +461,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationBrandingPolicy"></a>
 # **createOrganizationBrandingPolicy**
-> Object createOrganizationBrandingPolicy(bodyorganizationId)
+> Object createOrganizationBrandingPolicy(organizationId, createOrganizationBrandingPolicy)
 
 Add a new branding policy to an organization
 
@@ -440,34 +469,38 @@ Add a new branding policy to an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body129(); // Body129 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationBrandingPolicy(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationBrandingPolicy = new MerakiDashboardApi.CreateOrganizationBrandingPolicy(); // CreateOrganizationBrandingPolicy | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationBrandingPolicy(organizationId, createOrganizationBrandingPolicy, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body129**](Body129.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationBrandingPolicy** | [**CreateOrganizationBrandingPolicy**](CreateOrganizationBrandingPolicy.md)|  | 
 
 ### Return type
 
@@ -484,7 +517,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationConfigTemplate"></a>
 # **createOrganizationConfigTemplate**
-> Object createOrganizationConfigTemplate(bodyorganizationId)
+> Object createOrganizationConfigTemplate(organizationId, createOrganizationConfigTemplate)
 
 Create a new configuration template
 
@@ -492,34 +525,38 @@ Create a new configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body134(); // Body134 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationConfigTemplate(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationConfigTemplate = new MerakiDashboardApi.CreateOrganizationConfigTemplate(); // CreateOrganizationConfigTemplate | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationConfigTemplate(organizationId, createOrganizationConfigTemplate, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body134**](Body134.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationConfigTemplate** | [**CreateOrganizationConfigTemplate**](CreateOrganizationConfigTemplate.md)|  | 
 
 ### Return type
 
@@ -536,7 +573,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationNetwork"></a>
 # **createOrganizationNetwork**
-> Object createOrganizationNetwork(bodyorganizationId)
+> Object createOrganizationNetwork(organizationId, createOrganizationNetwork)
 
 Create a network
 
@@ -544,34 +581,38 @@ Create a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body144(); // Body144 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationNetwork(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationNetwork = new MerakiDashboardApi.CreateOrganizationNetwork(); // CreateOrganizationNetwork | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationNetwork(organizationId, createOrganizationNetwork, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body144**](Body144.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationNetwork** | [**CreateOrganizationNetwork**](CreateOrganizationNetwork.md)|  | 
 
 ### Return type
 
@@ -588,7 +629,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationSamlIdp"></a>
 # **createOrganizationSamlIdp**
-> Object createOrganizationSamlIdp(bodyorganizationId)
+> Object createOrganizationSamlIdp(organizationId, createOrganizationSamlIdp)
 
 Create a SAML IdP for your organization.
 
@@ -596,34 +637,38 @@ Create a SAML IdP for your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body147(); // Body147 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationSamlIdp(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationSamlIdp = new MerakiDashboardApi.CreateOrganizationSamlIdp(); // CreateOrganizationSamlIdp | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationSamlIdp(organizationId, createOrganizationSamlIdp, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body147**](Body147.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationSamlIdp** | [**CreateOrganizationSamlIdp**](CreateOrganizationSamlIdp.md)|  | 
 
 ### Return type
 
@@ -640,7 +685,7 @@ Name | Type | Description  | Notes
 
 <a name="createOrganizationSamlRole"></a>
 # **createOrganizationSamlRole**
-> Object createOrganizationSamlRole(bodyorganizationId)
+> Object createOrganizationSamlRole(organizationId, createOrganizationSamlRole)
 
 Create a SAML role
 
@@ -648,34 +693,38 @@ Create a SAML role
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body149(); // Body149 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.createOrganizationSamlRole(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var createOrganizationSamlRole = new MerakiDashboardApi.CreateOrganizationSamlRole(); // CreateOrganizationSamlRole | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createOrganizationSamlRole(organizationId, createOrganizationSamlRole, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body149**](Body149.md)|  | 
  **organizationId** | **String**|  | 
+ **createOrganizationSamlRole** | [**CreateOrganizationSamlRole**](CreateOrganizationSamlRole.md)|  | 
 
 ### Return type
 
@@ -700,25 +749,28 @@ Delete an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganization(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganization(organizationId, callback);
 ```
 
 ### Parameters
@@ -737,8 +789,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationActionBatch"></a>
 # **deleteOrganizationActionBatch**
@@ -750,26 +802,30 @@ Delete an action batch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let actionBatchId = "actionBatchId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationActionBatch(organizationId, actionBatchId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var actionBatchId = "actionBatchId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationActionBatch(organizationId, actionBatchId, callback);
 ```
 
 ### Parameters
@@ -789,8 +845,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationAdmin"></a>
 # **deleteOrganizationAdmin**
@@ -802,26 +858,30 @@ Revoke all access for a dashboard administrator within this organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let adminId = "adminId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationAdmin(organizationId, adminId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var adminId = "adminId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationAdmin(organizationId, adminId, callback);
 ```
 
 ### Parameters
@@ -841,8 +901,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationBrandingPolicy"></a>
 # **deleteOrganizationBrandingPolicy**
@@ -854,26 +914,30 @@ Delete a branding policy
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let brandingPolicyId = "brandingPolicyId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationBrandingPolicy(organizationId, brandingPolicyId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var brandingPolicyId = "brandingPolicyId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationBrandingPolicy(organizationId, brandingPolicyId, callback);
 ```
 
 ### Parameters
@@ -893,8 +957,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationConfigTemplate"></a>
 # **deleteOrganizationConfigTemplate**
@@ -906,26 +970,30 @@ Remove a configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationConfigTemplate(organizationId, configTemplateId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationConfigTemplate(organizationId, configTemplateId, callback);
 ```
 
 ### Parameters
@@ -945,8 +1013,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationSamlIdp"></a>
 # **deleteOrganizationSamlIdp**
@@ -958,26 +1026,30 @@ Remove a SAML IdP in your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationSamlIdp(organizationId, idpId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationSamlIdp(organizationId, idpId, callback);
 ```
 
 ### Parameters
@@ -997,8 +1069,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteOrganizationSamlRole"></a>
 # **deleteOrganizationSamlRole**
@@ -1010,26 +1082,30 @@ Remove a SAML role
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let samlRoleId = "samlRoleId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.deleteOrganizationSamlRole(organizationId, samlRoleId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var samlRoleId = "samlRoleId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteOrganizationSamlRole(organizationId, samlRoleId, callback);
 ```
 
 ### Parameters
@@ -1049,8 +1125,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getOrganization"></a>
 # **getOrganization**
@@ -1062,25 +1138,28 @@ Return an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganization(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganization(organizationId, callback);
 ```
 
 ### Parameters
@@ -1099,7 +1178,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationActionBatch"></a>
@@ -1112,26 +1191,30 @@ Return an action batch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let actionBatchId = "actionBatchId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationActionBatch(organizationId, actionBatchId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var actionBatchId = "actionBatchId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationActionBatch(organizationId, actionBatchId, callback);
 ```
 
 ### Parameters
@@ -1151,7 +1234,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationActionBatches"></a>
@@ -1164,27 +1247,31 @@ Return the list of action batches in the organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'status': "status_example" // String | Filter batches by status. Valid types are pending, completed, and failed.
 };
-apiInstance.getOrganizationActionBatches(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationActionBatches(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1204,7 +1291,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationAdmins"></a>
@@ -1217,25 +1304,28 @@ List the dashboard administrators in this organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationAdmins(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationAdmins(organizationId, callback);
 ```
 
 ### Parameters
@@ -1254,7 +1344,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApiRequests"></a>
@@ -1267,18 +1357,20 @@ List the API requests made by an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
@@ -1291,13 +1383,15 @@ let opts = {
   'responseCode': 56, // Number | Filter the results by the response code of the API requests
   'sourceIp': "sourceIp_example" // String | Filter the results by the IP address of the originating API request
 };
-apiInstance.getOrganizationApiRequests(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApiRequests(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1313,7 +1407,7 @@ Name | Type | Description  | Notes
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **adminId** | **String**| Filter the results by the ID of the admin who made the API requests | [optional] 
  **path** | **String**| Filter the results by the path of the API requests | [optional] 
- **method** | **String**| Filter the results by the method of the API requests (must be &#x27;GET&#x27;, &#x27;PUT&#x27;, &#x27;POST&#x27; or &#x27;DELETE&#x27;) | [optional] 
+ **method** | **String**| Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST' or 'DELETE') | [optional] 
  **responseCode** | **Number**| Filter the results by the response code of the API requests | [optional] 
  **sourceIp** | **String**| Filter the results by the IP address of the originating API request | [optional] 
 
@@ -1327,7 +1421,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApiRequestsOverview"></a>
@@ -1340,29 +1434,33 @@ Return an aggregated overview of API requests data
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
 };
-apiInstance.getOrganizationApiRequestsOverview(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApiRequestsOverview(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1384,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationBrandingPolicies"></a>
@@ -1397,25 +1495,28 @@ List the branding policies of an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationBrandingPolicies(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationBrandingPolicies(organizationId, callback);
 ```
 
 ### Parameters
@@ -1434,7 +1535,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationBrandingPoliciesPriorities"></a>
@@ -1447,25 +1548,28 @@ Return the branding policy IDs of an organization in priority order. IDs are ord
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationBrandingPoliciesPriorities(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationBrandingPoliciesPriorities(organizationId, callback);
 ```
 
 ### Parameters
@@ -1484,7 +1588,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationBrandingPolicy"></a>
@@ -1497,26 +1601,30 @@ Return a branding policy
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let brandingPolicyId = "brandingPolicyId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationBrandingPolicy(organizationId, brandingPolicyId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var brandingPolicyId = "brandingPolicyId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationBrandingPolicy(organizationId, brandingPolicyId, callback);
 ```
 
 ### Parameters
@@ -1536,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplate"></a>
@@ -1549,26 +1657,30 @@ Return a single configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationConfigTemplate(organizationId, configTemplateId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplate(organizationId, configTemplateId, callback);
 ```
 
 ### Parameters
@@ -1588,7 +1700,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplates"></a>
@@ -1601,25 +1713,28 @@ List the configuration templates for this organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationConfigTemplates(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplates(organizationId, callback);
 ```
 
 ### Parameters
@@ -1638,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigurationChanges"></a>
@@ -1651,18 +1766,20 @@ View the Change Log for your organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
@@ -1672,13 +1789,15 @@ let opts = {
   'networkId': "networkId_example", // String | Filters on the given network
   'adminId': "adminId_example" // String | Filters on the given Admin
 };
-apiInstance.getOrganizationConfigurationChanges(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigurationChanges(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1705,7 +1824,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevices"></a>
@@ -1718,30 +1837,34 @@ List the devices in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'configurationUpdatedAfter': "configurationUpdatedAfter_example" // String | Filter results by whether or not the device's configuration has been updated after the given timestamp
 };
-apiInstance.getOrganizationDevices(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevices(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1752,7 +1875,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **configurationUpdatedAfter** | **String**| Filter results by whether or not the device&#x27;s configuration has been updated after the given timestamp | [optional] 
+ **configurationUpdatedAfter** | **String**| Filter results by whether or not the device's configuration has been updated after the given timestamp | [optional] 
 
 ### Return type
 
@@ -1764,7 +1887,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevicesStatuses"></a>
@@ -1777,29 +1900,33 @@ List the status of every Meraki device in the organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getOrganizationDevicesStatuses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevicesStatuses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1821,7 +1948,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationDevicesUplinksLossAndLatency"></a>
@@ -1834,31 +1961,35 @@ Return the uplink loss and latency for every MX in the organization from at late
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
   'uplink': "uplink_example", // String | Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.
   'ip': "ip_example" // String | Optional filter for a specific destination IP. Default will return all destination IPs.
 };
-apiInstance.getOrganizationDevicesUplinksLossAndLatency(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationDevicesUplinksLossAndLatency(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1882,7 +2013,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getOrganizationInventoryDevice"></a>
+# **getOrganizationInventoryDevice**
+> Object getOrganizationInventoryDevice(organizationId, serial)
+
+Return a single device from the inventory of an organization
+
+Return a single device from the inventory of an organization
+
+### Example
+```javascript
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
+
+// Configure API key authorization: meraki_api_key
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
+meraki_api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//meraki_api_key.apiKeyPrefix = 'Token';
+
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOrganizationInventoryDevice(organizationId, serial, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**|  | 
+ **serial** | **String**|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[meraki_api_key](../README.md#meraki_api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationInventoryDevices"></a>
@@ -1895,30 +2082,35 @@ Return the device inventory for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-  'usedState': "usedState_example" // String | Filter results by used or unused inventory. Accepted values are \"used\" or \"unused\".
+  'usedState': "usedState_example", // String | Filter results by used or unused inventory. Accepted values are \"used\" or \"unused\".
+  'search': "search_example" // String | Search for devices in inventory based on serial number, mac address, or model.
 };
-apiInstance.getOrganizationInventoryDevices(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationInventoryDevices(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -1929,7 +2121,8 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **usedState** | **String**| Filter results by used or unused inventory. Accepted values are \&quot;used\&quot; or \&quot;unused\&quot;. | [optional] 
+ **usedState** | **String**| Filter results by used or unused inventory. Accepted values are \"used\" or \"unused\". | [optional] 
+ **search** | **String**| Search for devices in inventory based on serial number, mac address, or model. | [optional] 
 
 ### Return type
 
@@ -1941,7 +2134,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationLicense"></a>
@@ -1954,26 +2147,30 @@ Display a license
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let licenseId = "licenseId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationLicense(organizationId, licenseId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var licenseId = "licenseId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationLicense(organizationId, licenseId, callback);
 ```
 
 ### Parameters
@@ -1993,7 +2190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationLicenses"></a>
@@ -2006,18 +2203,20 @@ List the licenses for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
@@ -2025,13 +2224,15 @@ let opts = {
   'networkId': "networkId_example", // String | Filter the licenses to those assigned in a particular network
   'state': "state_example" // String | Filter the licenses to those in a particular state. Can be one of 'active', 'expired', 'expiring', 'unused', 'unusedActive' or 'recentlyQueued'
 };
-apiInstance.getOrganizationLicenses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationLicenses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2044,7 +2245,7 @@ Name | Type | Description  | Notes
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **deviceSerial** | **String**| Filter the licenses to those assigned to a particular device | [optional] 
  **networkId** | **String**| Filter the licenses to those assigned in a particular network | [optional] 
- **state** | **String**| Filter the licenses to those in a particular state. Can be one of &#x27;active&#x27;, &#x27;expired&#x27;, &#x27;expiring&#x27;, &#x27;unused&#x27;, &#x27;unusedActive&#x27; or &#x27;recentlyQueued&#x27; | [optional] 
+ **state** | **String**| Filter the licenses to those in a particular state. Can be one of 'active', 'expired', 'expiring', 'unused', 'unusedActive' or 'recentlyQueued' | [optional] 
 
 ### Return type
 
@@ -2056,7 +2257,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationLicensesOverview"></a>
@@ -2069,25 +2270,28 @@ Return an overview of the license state for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationLicensesOverview(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationLicensesOverview(organizationId, callback);
 ```
 
 ### Parameters
@@ -2106,7 +2310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationNetworks"></a>
@@ -2119,18 +2323,20 @@ List the networks that the user has privileges on in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'configTemplateId': "configTemplateId_example", // String | An optional parameter that is the ID of a config template. Will return all networks bound to that template.
   'tags': ["tags_example"], // [String] | An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below).
   'tagsFilterType': "tagsFilterType_example", // String | An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
@@ -2138,13 +2344,15 @@ let opts = {
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getOrganizationNetworks(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationNetworks(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2153,8 +2361,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **configTemplateId** | **String**| An optional parameter that is the ID of a config template. Will return all networks bound to that template. | [optional] 
- **tags** | [**[String]**](String.md)| An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, &#x27;tagsFilterType&#x27; should also be included (see below). | [optional] 
- **tagsFilterType** | **String**| An optional parameter of value &#x27;withAnyTags&#x27; or &#x27;withAllTags&#x27; to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, &#x27;withAnyTags&#x27; will be selected. | [optional] 
+ **tags** | [**[String]**](String.md)| An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below). | [optional] 
+ **tagsFilterType** | **String**| An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected. | [optional] 
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
@@ -2169,38 +2377,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationOpenapiSpec"></a>
 # **getOrganizationOpenapiSpec**
 > Object getOrganizationOpenapiSpec(organizationId)
 
-Return the OpenAPI 2.0 Specification of the organization&#x27;s API documentation in JSON
+Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON
 
-Return the OpenAPI 2.0 Specification of the organization&#x27;s API documentation in JSON
+Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationOpenapiSpec(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationOpenapiSpec(organizationId, callback);
 ```
 
 ### Parameters
@@ -2219,7 +2430,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSaml"></a>
@@ -2232,25 +2443,28 @@ Returns the SAML SSO enabled settings for an organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSaml(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSaml(organizationId, callback);
 ```
 
 ### Parameters
@@ -2269,7 +2483,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSamlIdp"></a>
@@ -2282,26 +2496,30 @@ Get a SAML IdP from your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSamlIdp(organizationId, idpId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlIdp(organizationId, idpId, callback);
 ```
 
 ### Parameters
@@ -2321,7 +2539,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSamlIdps"></a>
@@ -2334,25 +2552,28 @@ List the SAML IdPs in your organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSamlIdps(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlIdps(organizationId, callback);
 ```
 
 ### Parameters
@@ -2371,7 +2592,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSamlRole"></a>
@@ -2384,26 +2605,30 @@ Return a SAML role
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let samlRoleId = "samlRoleId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSamlRole(organizationId, samlRoleId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var samlRoleId = "samlRoleId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlRole(organizationId, samlRoleId, callback);
 ```
 
 ### Parameters
@@ -2423,7 +2648,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSamlRoles"></a>
@@ -2436,25 +2661,28 @@ List the SAML roles for this organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSamlRoles(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSamlRoles(organizationId, callback);
 ```
 
 ### Parameters
@@ -2473,7 +2701,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSnmp"></a>
@@ -2486,25 +2714,28 @@ Return the SNMP settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.getOrganizationSnmp(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSnmp(organizationId, callback);
 ```
 
 ### Parameters
@@ -2523,7 +2754,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationWebhooksLogs"></a>
@@ -2536,18 +2767,20 @@ Return the log of webhook POSTs sent
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
@@ -2556,13 +2789,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'url': "url_example" // String | The URL the webhook was sent to
 };
-apiInstance.getOrganizationWebhooksLogs(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationWebhooksLogs(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2588,7 +2823,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizations"></a>
@@ -2601,23 +2836,25 @@ List the organizations that the user has privileges on
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-apiInstance.getOrganizations((error, data, response) => {
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizations(callback);
 ```
 
 ### Parameters
@@ -2633,12 +2870,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="moveOrganizationLicenses"></a>
 # **moveOrganizationLicenses**
-> Object moveOrganizationLicenses(bodyorganizationId)
+> Object moveOrganizationLicenses(organizationId, moveOrganizationLicenses)
 
 Move licenses to another organization. This will also move any devices that the licenses are assigned to
 
@@ -2646,34 +2883,38 @@ Move licenses to another organization. This will also move any devices that the 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body140(); // Body140 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.moveOrganizationLicenses(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var moveOrganizationLicenses = new MerakiDashboardApi.MoveOrganizationLicenses(); // MoveOrganizationLicenses | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.moveOrganizationLicenses(organizationId, moveOrganizationLicenses, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body140**](Body140.md)|  | 
  **organizationId** | **String**|  | 
+ **moveOrganizationLicenses** | [**MoveOrganizationLicenses**](MoveOrganizationLicenses.md)|  | 
 
 ### Return type
 
@@ -2690,7 +2931,7 @@ Name | Type | Description  | Notes
 
 <a name="moveOrganizationLicensesSeats"></a>
 # **moveOrganizationLicensesSeats**
-> Object moveOrganizationLicensesSeats(bodyorganizationId)
+> Object moveOrganizationLicensesSeats(organizationId, moveOrganizationLicensesSeats)
 
 Move SM seats to another organization
 
@@ -2698,34 +2939,38 @@ Move SM seats to another organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body141(); // Body141 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.moveOrganizationLicensesSeats(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var moveOrganizationLicensesSeats = new MerakiDashboardApi.MoveOrganizationLicensesSeats(); // MoveOrganizationLicensesSeats | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.moveOrganizationLicensesSeats(organizationId, moveOrganizationLicensesSeats, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body141**](Body141.md)|  | 
  **organizationId** | **String**|  | 
+ **moveOrganizationLicensesSeats** | [**MoveOrganizationLicensesSeats**](MoveOrganizationLicensesSeats.md)|  | 
 
 ### Return type
 
@@ -2742,7 +2987,7 @@ Name | Type | Description  | Notes
 
 <a name="renewOrganizationLicensesSeats"></a>
 # **renewOrganizationLicensesSeats**
-> Object renewOrganizationLicensesSeats(bodyorganizationId)
+> Object renewOrganizationLicensesSeats(organizationId, renewOrganizationLicensesSeats)
 
 Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license
 
@@ -2750,34 +2995,38 @@ Renew SM seats of a license. This will extend the license expiration date of man
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body142(); // Body142 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.renewOrganizationLicensesSeats(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var renewOrganizationLicensesSeats = new MerakiDashboardApi.RenewOrganizationLicensesSeats(); // RenewOrganizationLicensesSeats | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.renewOrganizationLicensesSeats(organizationId, renewOrganizationLicensesSeats, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body142**](Body142.md)|  | 
  **organizationId** | **String**|  | 
+ **renewOrganizationLicensesSeats** | [**RenewOrganizationLicensesSeats**](RenewOrganizationLicensesSeats.md)|  | 
 
 ### Return type
 
@@ -2802,27 +3051,31 @@ Update an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body121() // Body121 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganization': new MerakiDashboardApi.UpdateOrganization() // UpdateOrganization | 
 };
-apiInstance.updateOrganization(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2830,7 +3083,7 @@ apiInstance.updateOrganization(organizationId, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body121**](Body121.md)|  | [optional] 
+ **updateOrganization** | [**UpdateOrganization**](UpdateOrganization.md)|  | [optional] 
 
 ### Return type
 
@@ -2847,7 +3100,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationActionBatch"></a>
 # **updateOrganizationActionBatch**
-> Object updateOrganizationActionBatch(organizationIdactionBatchId, opts)
+> Object updateOrganizationActionBatch(organizationId, actionBatchId, opts)
 
 Update an action batch
 
@@ -2855,28 +3108,33 @@ Update an action batch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let actionBatchId = "actionBatchId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body123() // Body123 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var actionBatchId = "actionBatchId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationActionBatch': new MerakiDashboardApi.UpdateOrganizationActionBatch() // UpdateOrganizationActionBatch | 
 };
-apiInstance.updateOrganizationActionBatch(organizationIdactionBatchId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationActionBatch(organizationId, actionBatchId, opts, callback);
 ```
 
 ### Parameters
@@ -2885,7 +3143,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **actionBatchId** | **String**|  | 
- **body** | [**Body123**](Body123.md)|  | [optional] 
+ **updateOrganizationActionBatch** | [**UpdateOrganizationActionBatch**](UpdateOrganizationActionBatch.md)|  | [optional] 
 
 ### Return type
 
@@ -2902,7 +3160,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationAdmin"></a>
 # **updateOrganizationAdmin**
-> Object updateOrganizationAdmin(organizationIdadminId, opts)
+> Object updateOrganizationAdmin(organizationId, adminId, opts)
 
 Update an administrator
 
@@ -2910,28 +3168,33 @@ Update an administrator
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let adminId = "adminId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body125() // Body125 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var adminId = "adminId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationAdmin': new MerakiDashboardApi.UpdateOrganizationAdmin() // UpdateOrganizationAdmin | 
 };
-apiInstance.updateOrganizationAdmin(organizationIdadminId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationAdmin(organizationId, adminId, opts, callback);
 ```
 
 ### Parameters
@@ -2940,7 +3203,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **adminId** | **String**|  | 
- **body** | [**Body125**](Body125.md)|  | [optional] 
+ **updateOrganizationAdmin** | [**UpdateOrganizationAdmin**](UpdateOrganizationAdmin.md)|  | [optional] 
 
 ### Return type
 
@@ -2957,42 +3220,46 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationBrandingPoliciesPriorities"></a>
 # **updateOrganizationBrandingPoliciesPriorities**
-> Object updateOrganizationBrandingPoliciesPriorities(bodyorganizationId)
+> Object updateOrganizationBrandingPoliciesPriorities(organizationId, updateOrganizationBrandingPoliciesPriorities)
 
-Update the priority ordering of an organization&#x27;s branding policies.
+Update the priority ordering of an organization's branding policies.
 
-Update the priority ordering of an organization&#x27;s branding policies.
+Update the priority ordering of an organization's branding policies.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let body = new MerakiDashboardApi.Body130(); // Body130 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
 
-apiInstance.updateOrganizationBrandingPoliciesPriorities(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationBrandingPoliciesPriorities = new MerakiDashboardApi.UpdateOrganizationBrandingPoliciesPriorities(); // UpdateOrganizationBrandingPoliciesPriorities | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationBrandingPoliciesPriorities(organizationId, updateOrganizationBrandingPoliciesPriorities, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body130**](Body130.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationBrandingPoliciesPriorities** | [**UpdateOrganizationBrandingPoliciesPriorities**](UpdateOrganizationBrandingPoliciesPriorities.md)|  | 
 
 ### Return type
 
@@ -3009,7 +3276,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationBrandingPolicy"></a>
 # **updateOrganizationBrandingPolicy**
-> Object updateOrganizationBrandingPolicy(organizationIdbrandingPolicyId, opts)
+> Object updateOrganizationBrandingPolicy(organizationId, brandingPolicyId, opts)
 
 Update a branding policy
 
@@ -3017,28 +3284,33 @@ Update a branding policy
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let brandingPolicyId = "brandingPolicyId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body131() // Body131 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var brandingPolicyId = "brandingPolicyId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationBrandingPolicy': new MerakiDashboardApi.UpdateOrganizationBrandingPolicy() // UpdateOrganizationBrandingPolicy | 
 };
-apiInstance.updateOrganizationBrandingPolicy(organizationIdbrandingPolicyId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationBrandingPolicy(organizationId, brandingPolicyId, opts, callback);
 ```
 
 ### Parameters
@@ -3047,7 +3319,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **brandingPolicyId** | **String**|  | 
- **body** | [**Body131**](Body131.md)|  | [optional] 
+ **updateOrganizationBrandingPolicy** | [**UpdateOrganizationBrandingPolicy**](UpdateOrganizationBrandingPolicy.md)|  | [optional] 
 
 ### Return type
 
@@ -3064,7 +3336,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationConfigTemplate"></a>
 # **updateOrganizationConfigTemplate**
-> Object updateOrganizationConfigTemplate(organizationIdconfigTemplateId, opts)
+> Object updateOrganizationConfigTemplate(organizationId, configTemplateId, opts)
 
 Update a configuration template
 
@@ -3072,28 +3344,33 @@ Update a configuration template
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body135() // Body135 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationConfigTemplate': new MerakiDashboardApi.UpdateOrganizationConfigTemplate() // UpdateOrganizationConfigTemplate | 
 };
-apiInstance.updateOrganizationConfigTemplate(organizationIdconfigTemplateId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationConfigTemplate(organizationId, configTemplateId, opts, callback);
 ```
 
 ### Parameters
@@ -3102,7 +3379,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **configTemplateId** | **String**|  | 
- **body** | [**Body135**](Body135.md)|  | [optional] 
+ **updateOrganizationConfigTemplate** | [**UpdateOrganizationConfigTemplate**](UpdateOrganizationConfigTemplate.md)|  | [optional] 
 
 ### Return type
 
@@ -3119,7 +3396,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationLicense"></a>
 # **updateOrganizationLicense**
-> Object updateOrganizationLicense(organizationIdlicenseId, opts)
+> Object updateOrganizationLicense(organizationId, licenseId, opts)
 
 Update a license
 
@@ -3127,28 +3404,33 @@ Update a license
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let licenseId = "licenseId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body143() // Body143 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var licenseId = "licenseId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationLicense': new MerakiDashboardApi.UpdateOrganizationLicense() // UpdateOrganizationLicense | 
 };
-apiInstance.updateOrganizationLicense(organizationIdlicenseId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationLicense(organizationId, licenseId, opts, callback);
 ```
 
 ### Parameters
@@ -3157,7 +3439,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **licenseId** | **String**|  | 
- **body** | [**Body143**](Body143.md)|  | [optional] 
+ **updateOrganizationLicense** | [**UpdateOrganizationLicense**](UpdateOrganizationLicense.md)|  | [optional] 
 
 ### Return type
 
@@ -3182,27 +3464,31 @@ Updates the SAML SSO enabled settings for an organization.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body146() // Body146 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSaml': new MerakiDashboardApi.UpdateOrganizationSaml() // UpdateOrganizationSaml | 
 };
-apiInstance.updateOrganizationSaml(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSaml(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -3210,7 +3496,7 @@ apiInstance.updateOrganizationSaml(organizationId, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body146**](Body146.md)|  | [optional] 
+ **updateOrganizationSaml** | [**UpdateOrganizationSaml**](UpdateOrganizationSaml.md)|  | [optional] 
 
 ### Return type
 
@@ -3227,7 +3513,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationSamlIdp"></a>
 # **updateOrganizationSamlIdp**
-> Object updateOrganizationSamlIdp(organizationIdidpId, opts)
+> Object updateOrganizationSamlIdp(organizationId, idpId, opts)
 
 Update a SAML IdP in your organization
 
@@ -3235,28 +3521,33 @@ Update a SAML IdP in your organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let idpId = "idpId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body148() // Body148 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var idpId = "idpId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSamlIdp': new MerakiDashboardApi.UpdateOrganizationSamlIdp() // UpdateOrganizationSamlIdp | 
 };
-apiInstance.updateOrganizationSamlIdp(organizationIdidpId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSamlIdp(organizationId, idpId, opts, callback);
 ```
 
 ### Parameters
@@ -3265,7 +3556,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **idpId** | **String**|  | 
- **body** | [**Body148**](Body148.md)|  | [optional] 
+ **updateOrganizationSamlIdp** | [**UpdateOrganizationSamlIdp**](UpdateOrganizationSamlIdp.md)|  | [optional] 
 
 ### Return type
 
@@ -3282,7 +3573,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationSamlRole"></a>
 # **updateOrganizationSamlRole**
-> Object updateOrganizationSamlRole(organizationIdsamlRoleId, opts)
+> Object updateOrganizationSamlRole(organizationId, samlRoleId, opts)
 
 Update a SAML role
 
@@ -3290,28 +3581,33 @@ Update a SAML role
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let samlRoleId = "samlRoleId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body150() // Body150 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var samlRoleId = "samlRoleId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSamlRole': new MerakiDashboardApi.UpdateOrganizationSamlRole() // UpdateOrganizationSamlRole | 
 };
-apiInstance.updateOrganizationSamlRole(organizationIdsamlRoleId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSamlRole(organizationId, samlRoleId, opts, callback);
 ```
 
 ### Parameters
@@ -3320,7 +3616,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
  **samlRoleId** | **String**|  | 
- **body** | [**Body150**](Body150.md)|  | [optional] 
+ **updateOrganizationSamlRole** | [**UpdateOrganizationSamlRole**](UpdateOrganizationSamlRole.md)|  | [optional] 
 
 ### Return type
 
@@ -3345,27 +3641,31 @@ Update the SNMP settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.OrganizationsApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body151() // Body151 | 
+var apiInstance = new MerakiDashboardApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSnmp': new MerakiDashboardApi.UpdateOrganizationSnmp() // UpdateOrganizationSnmp | 
 };
-apiInstance.updateOrganizationSnmp(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSnmp(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -3373,7 +3673,7 @@ apiInstance.updateOrganizationSnmp(organizationId, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body151**](Body151.md)|  | [optional] 
+ **updateOrganizationSnmp** | [**UpdateOrganizationSnmp**](UpdateOrganizationSnmp.md)|  | [optional] 
 
 ### Return type
 

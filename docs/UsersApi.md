@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkSmUserDeviceProfiles**](UsersApi.md#getNetworkSmUserDeviceProfiles) | **GET** /networks/{networkId}/sm/users/{userId}/deviceProfiles | Get the profiles associated with a user
 [**getNetworkSmUserSoftwares**](UsersApi.md#getNetworkSmUserSoftwares) | **GET** /networks/{networkId}/sm/users/{userId}/softwares | Get a list of softwares associated with a user
 
+
 <a name="getNetworkSmUserDeviceProfiles"></a>
 # **getNetworkSmUserDeviceProfiles**
 > Object getNetworkSmUserDeviceProfiles(networkId, userId)
@@ -17,26 +18,30 @@ Get the profiles associated with a user
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.UsersApi();
-let networkId = "networkId_example"; // String | 
-let userId = "userId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.UsersApi();
 
-apiInstance.getNetworkSmUserDeviceProfiles(networkId, userId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var userId = "userId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmUserDeviceProfiles(networkId, userId, callback);
 ```
 
 ### Parameters
@@ -56,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmUserSoftwares"></a>
@@ -69,26 +74,30 @@ Get a list of softwares associated with a user
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.UsersApi();
-let networkId = "networkId_example"; // String | 
-let userId = "userId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.UsersApi();
 
-apiInstance.getNetworkSmUserSoftwares(networkId, userId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var userId = "userId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmUserSoftwares(networkId, userId, callback);
 ```
 
 ### Parameters
@@ -108,6 +117,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

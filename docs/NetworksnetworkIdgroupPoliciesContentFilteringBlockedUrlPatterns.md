@@ -3,13 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**settings** | **String** | How URL patterns are applied. Can be &#x27;network default&#x27;, &#x27;append&#x27; or &#x27;override&#x27;. | [optional] 
+**settings** | **String** | How URL patterns are applied. Can be 'network default', 'append' or 'override'. | [optional] 
 **patterns** | **[String]** | A list of URL patterns that are blocked | [optional] 
+
 
 <a name="SettingsEnum"></a>
 ## Enum: SettingsEnum
 
-* `network default` (value: `"network default"`)
+
+* `networkDefault` (value: `"network default"`)
+
 * `append` (value: `"append"`)
+
 * `override` (value: `"override"`)
+
+
+
 

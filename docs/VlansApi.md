@@ -12,9 +12,10 @@ Method | HTTP request | Description
 [**updateNetworkApplianceVlan**](VlansApi.md#updateNetworkApplianceVlan) | **PUT** /networks/{networkId}/appliance/vlans/{vlanId} | Update a VLAN
 [**updateNetworkApplianceVlansSettings**](VlansApi.md#updateNetworkApplianceVlansSettings) | **PUT** /networks/{networkId}/appliance/vlans/settings | Enable/Disable VLANs for the given network
 
+
 <a name="createNetworkApplianceVlan"></a>
 # **createNetworkApplianceVlan**
-> Object createNetworkApplianceVlan(bodynetworkId)
+> Object createNetworkApplianceVlan(networkId, createNetworkApplianceVlan)
 
 Add a VLAN
 
@@ -22,34 +23,38 @@ Add a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let body = new MerakiDashboardApi.Body42(); // Body42 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
 
-apiInstance.createNetworkApplianceVlan(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceVlan = new MerakiDashboardApi.CreateNetworkApplianceVlan(); // CreateNetworkApplianceVlan | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceVlan(networkId, createNetworkApplianceVlan, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body42**](Body42.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceVlan** | [**CreateNetworkApplianceVlan**](CreateNetworkApplianceVlan.md)|  | 
 
 ### Return type
 
@@ -74,26 +79,30 @@ Delete a VLAN from a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
 
-apiInstance.deleteNetworkApplianceVlan(networkId, vlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceVlan(networkId, vlanId, callback);
 ```
 
 ### Parameters
@@ -113,8 +122,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkApplianceVlan"></a>
 # **getNetworkApplianceVlan**
@@ -126,26 +135,30 @@ Return a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
 
-apiInstance.getNetworkApplianceVlan(networkId, vlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlan(networkId, vlanId, callback);
 ```
 
 ### Parameters
@@ -165,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlans"></a>
@@ -178,25 +191,28 @@ List the VLANs for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
 
-apiInstance.getNetworkApplianceVlans(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlans(networkId, callback);
 ```
 
 ### Parameters
@@ -215,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlansSettings"></a>
@@ -228,25 +244,28 @@ Returns the enabled status of VLANs for the network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
 
-apiInstance.getNetworkApplianceVlansSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlansSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -265,12 +284,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceVlan"></a>
 # **updateNetworkApplianceVlan**
-> Object updateNetworkApplianceVlan(networkIdvlanId, opts)
+> Object updateNetworkApplianceVlan(networkId, vlanId, opts)
 
 Update a VLAN
 
@@ -278,28 +297,33 @@ Update a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body44() // Body44 | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
+
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceVlan': new MerakiDashboardApi.UpdateNetworkApplianceVlan() // UpdateNetworkApplianceVlan | 
 };
-apiInstance.updateNetworkApplianceVlan(networkIdvlanId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVlan(networkId, vlanId, opts, callback);
 ```
 
 ### Parameters
@@ -308,7 +332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **vlanId** | **String**|  | 
- **body** | [**Body44**](Body44.md)|  | [optional] 
+ **updateNetworkApplianceVlan** | [**UpdateNetworkApplianceVlan**](UpdateNetworkApplianceVlan.md)|  | [optional] 
 
 ### Return type
 
@@ -333,27 +357,31 @@ Enable/Disable VLANs for the given network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VlansApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body43() // Body43 | 
+var apiInstance = new MerakiDashboardApi.VlansApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceVlansSettings': new MerakiDashboardApi.UpdateNetworkApplianceVlansSettings() // UpdateNetworkApplianceVlansSettings | 
 };
-apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -361,7 +389,7 @@ apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body43**](Body43.md)|  | [optional] 
+ **updateNetworkApplianceVlansSettings** | [**UpdateNetworkApplianceVlansSettings**](UpdateNetworkApplianceVlansSettings.md)|  | [optional] 
 
 ### Return type
 

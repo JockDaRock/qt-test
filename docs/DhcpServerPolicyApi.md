@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkSwitchDhcpServerPolicy**](DhcpServerPolicyApi.md#getNetworkSwitchDhcpServerPolicy) | **GET** /networks/{networkId}/switch/dhcpServerPolicy | Return the DHCP server policy
 [**updateNetworkSwitchDhcpServerPolicy**](DhcpServerPolicyApi.md#updateNetworkSwitchDhcpServerPolicy) | **PUT** /networks/{networkId}/switch/dhcpServerPolicy | Update the DHCP server policy
 
+
 <a name="getNetworkSwitchDhcpServerPolicy"></a>
 # **getNetworkSwitchDhcpServerPolicy**
 > Object getNetworkSwitchDhcpServerPolicy(networkId)
@@ -17,25 +18,28 @@ Return the DHCP server policy
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DhcpServerPolicyApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.DhcpServerPolicyApi();
 
-apiInstance.getNetworkSwitchDhcpServerPolicy(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchDhcpServerPolicy(networkId, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSwitchDhcpServerPolicy"></a>
@@ -67,27 +71,31 @@ Update the DHCP server policy
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.DhcpServerPolicyApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body78() // Body78 | 
+var apiInstance = new MerakiDashboardApi.DhcpServerPolicyApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchDhcpServerPolicy': new MerakiDashboardApi.UpdateNetworkSwitchDhcpServerPolicy() // UpdateNetworkSwitchDhcpServerPolicy | 
 };
-apiInstance.updateNetworkSwitchDhcpServerPolicy(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchDhcpServerPolicy(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateNetworkSwitchDhcpServerPolicy(networkId, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body78**](Body78.md)|  | [optional] 
+ **updateNetworkSwitchDhcpServerPolicy** | [**UpdateNetworkSwitchDhcpServerPolicy**](UpdateNetworkSwitchDhcpServerPolicy.md)|  | [optional] 
 
 ### Return type
 

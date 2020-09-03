@@ -12,9 +12,10 @@ Method | HTTP request | Description
 [**updateNetworkSwitchQosRule**](QosRulesApi.md#updateNetworkSwitchQosRule) | **PUT** /networks/{networkId}/switch/qosRules/{qosRuleId} | Update a quality of service rule
 [**updateNetworkSwitchQosRulesOrder**](QosRulesApi.md#updateNetworkSwitchQosRulesOrder) | **PUT** /networks/{networkId}/switch/qosRules/order | Update the order in which the rules should be processed by the switch
 
+
 <a name="createNetworkSwitchQosRule"></a>
 # **createNetworkSwitchQosRule**
-> Object createNetworkSwitchQosRule(bodynetworkId)
+> Object createNetworkSwitchQosRule(networkId, createNetworkSwitchQosRule)
 
 Add a quality of service rule
 
@@ -22,34 +23,38 @@ Add a quality of service rule
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let body = new MerakiDashboardApi.Body85(); // Body85 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.createNetworkSwitchQosRule(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkSwitchQosRule = new MerakiDashboardApi.CreateNetworkSwitchQosRule(); // CreateNetworkSwitchQosRule | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSwitchQosRule(networkId, createNetworkSwitchQosRule, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body85**](Body85.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkSwitchQosRule** | [**CreateNetworkSwitchQosRule**](CreateNetworkSwitchQosRule.md)|  | 
 
 ### Return type
 
@@ -74,26 +79,30 @@ Delete a quality of service rule
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let networkId = "networkId_example"; // String | 
-let qosRuleId = "qosRuleId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.deleteNetworkSwitchQosRule(networkId, qosRuleId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var qosRuleId = "qosRuleId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkSwitchQosRule(networkId, qosRuleId, callback);
 ```
 
 ### Parameters
@@ -113,8 +122,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkSwitchQosRule"></a>
 # **getNetworkSwitchQosRule**
@@ -126,26 +135,30 @@ Return a quality of service rule
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let networkId = "networkId_example"; // String | 
-let qosRuleId = "qosRuleId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.getNetworkSwitchQosRule(networkId, qosRuleId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var qosRuleId = "qosRuleId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchQosRule(networkId, qosRuleId, callback);
 ```
 
 ### Parameters
@@ -165,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchQosRules"></a>
@@ -178,25 +191,28 @@ List quality of service rules
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.getNetworkSwitchQosRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchQosRules(networkId, callback);
 ```
 
 ### Parameters
@@ -215,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSwitchQosRulesOrder"></a>
@@ -228,25 +244,28 @@ Return the quality of service rule IDs by order in which they will be processed 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.getNetworkSwitchQosRulesOrder(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchQosRulesOrder(networkId, callback);
 ```
 
 ### Parameters
@@ -265,12 +284,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSwitchQosRule"></a>
 # **updateNetworkSwitchQosRule**
-> Object updateNetworkSwitchQosRule(networkIdqosRuleId, opts)
+> Object updateNetworkSwitchQosRule(networkId, qosRuleId, opts)
 
 Update a quality of service rule
 
@@ -278,28 +297,33 @@ Update a quality of service rule
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let networkId = "networkId_example"; // String | 
-let qosRuleId = "qosRuleId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body87() // Body87 | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var qosRuleId = "qosRuleId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchQosRule': new MerakiDashboardApi.UpdateNetworkSwitchQosRule() // UpdateNetworkSwitchQosRule | 
 };
-apiInstance.updateNetworkSwitchQosRule(networkIdqosRuleId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchQosRule(networkId, qosRuleId, opts, callback);
 ```
 
 ### Parameters
@@ -308,7 +332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **qosRuleId** | **String**|  | 
- **body** | [**Body87**](Body87.md)|  | [optional] 
+ **updateNetworkSwitchQosRule** | [**UpdateNetworkSwitchQosRule**](UpdateNetworkSwitchQosRule.md)|  | [optional] 
 
 ### Return type
 
@@ -325,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkSwitchQosRulesOrder"></a>
 # **updateNetworkSwitchQosRulesOrder**
-> Object updateNetworkSwitchQosRulesOrder(bodynetworkId)
+> Object updateNetworkSwitchQosRulesOrder(networkId, updateNetworkSwitchQosRulesOrder)
 
 Update the order in which the rules should be processed by the switch
 
@@ -333,34 +357,38 @@ Update the order in which the rules should be processed by the switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QosRulesApi();
-let body = new MerakiDashboardApi.Body86(); // Body86 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QosRulesApi();
 
-apiInstance.updateNetworkSwitchQosRulesOrder(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkSwitchQosRulesOrder = new MerakiDashboardApi.UpdateNetworkSwitchQosRulesOrder(); // UpdateNetworkSwitchQosRulesOrder | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchQosRulesOrder(networkId, updateNetworkSwitchQosRulesOrder, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body86**](Body86.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkSwitchQosRulesOrder** | [**UpdateNetworkSwitchQosRulesOrder**](UpdateNetworkSwitchQosRulesOrder.md)|  | 
 
 ### Return type
 

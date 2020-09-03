@@ -9,3 +9,5 @@ Name | Type | Description | Notes
 **gateway** | **String** | Gateway must be in IP format | [optional] 
 **dns1** | **String** | Primary DNS must be in IP format | [optional] 
 **dns2** | **String** | Optional secondary DNS must be in IP format | [optional] 
+
+

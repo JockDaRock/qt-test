@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**updateNetworkSnmp**](SnmpApi.md#updateNetworkSnmp) | **PUT** /networks/{networkId}/snmp | Update the SNMP settings for a network
 [**updateOrganizationSnmp**](SnmpApi.md#updateOrganizationSnmp) | **PUT** /organizations/{organizationId}/snmp | Update the SNMP settings for an organization
 
+
 <a name="getNetworkSnmp"></a>
 # **getNetworkSnmp**
 > Object getNetworkSnmp(networkId)
@@ -19,25 +20,28 @@ Return the SNMP settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SnmpApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SnmpApi();
 
-apiInstance.getNetworkSnmp(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSnmp(networkId, callback);
 ```
 
 ### Parameters
@@ -56,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationSnmp"></a>
@@ -69,25 +73,28 @@ Return the SNMP settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SnmpApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SnmpApi();
 
-apiInstance.getOrganizationSnmp(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationSnmp(organizationId, callback);
 ```
 
 ### Parameters
@@ -106,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSnmp"></a>
@@ -119,27 +126,31 @@ Update the SNMP settings for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SnmpApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body76() // Body76 | 
+var apiInstance = new MerakiDashboardApi.SnmpApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSnmp': new MerakiDashboardApi.UpdateNetworkSnmp() // UpdateNetworkSnmp | 
 };
-apiInstance.updateNetworkSnmp(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSnmp(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -147,7 +158,7 @@ apiInstance.updateNetworkSnmp(networkId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body76**](Body76.md)|  | [optional] 
+ **updateNetworkSnmp** | [**UpdateNetworkSnmp**](UpdateNetworkSnmp.md)|  | [optional] 
 
 ### Return type
 
@@ -172,27 +183,31 @@ Update the SNMP settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SnmpApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body151() // Body151 | 
+var apiInstance = new MerakiDashboardApi.SnmpApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationSnmp': new MerakiDashboardApi.UpdateOrganizationSnmp() // UpdateOrganizationSnmp | 
 };
-apiInstance.updateOrganizationSnmp(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationSnmp(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -200,7 +215,7 @@ apiInstance.updateOrganizationSnmp(organizationId, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body151**](Body151.md)|  | [optional] 
+ **updateOrganizationSnmp** | [**UpdateOrganizationSnmp**](UpdateOrganizationSnmp.md)|  | [optional] 
 
 ### Return type
 

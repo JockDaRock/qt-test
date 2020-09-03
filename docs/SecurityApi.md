@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**updateNetworkApplianceSecurityMalware**](SecurityApi.md#updateNetworkApplianceSecurityMalware) | **PUT** /networks/{networkId}/appliance/security/malware | Set the supported malware settings for an MX network
 [**updateOrganizationApplianceSecurityIntrusion**](SecurityApi.md#updateOrganizationApplianceSecurityIntrusion) | **PUT** /organizations/{organizationId}/appliance/security/intrusion | Sets supported intrusion settings for an organization
 
+
 <a name="getNetworkApplianceClientSecurityEvents"></a>
 # **getNetworkApplianceClientSecurityEvents**
 > Object getNetworkApplianceClientSecurityEvents(networkId, clientId, opts)
@@ -24,19 +25,22 @@ List the security events for a client. Clients can be identified by a client key
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
@@ -45,13 +49,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -66,7 +72,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -78,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityEvents"></a>
@@ -91,18 +97,20 @@ List the security events for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -111,13 +119,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -131,7 +141,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -143,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityIntrusion"></a>
@@ -156,25 +166,28 @@ Returns all supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
 
-apiInstance.getNetworkApplianceSecurityIntrusion(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityIntrusion(networkId, callback);
 ```
 
 ### Parameters
@@ -193,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityMalware"></a>
@@ -206,25 +219,28 @@ Returns all supported malware settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
 
-apiInstance.getNetworkApplianceSecurityMalware(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityMalware(networkId, callback);
 ```
 
 ### Parameters
@@ -243,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityEvents"></a>
@@ -256,18 +272,20 @@ List the security events for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -276,13 +294,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -296,7 +316,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -308,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityIntrusion"></a>
@@ -321,25 +341,28 @@ Returns all supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
 
-apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, callback);
 ```
 
 ### Parameters
@@ -358,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceSecurityIntrusion"></a>
@@ -371,27 +394,31 @@ Set the supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body32() // Body32 | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceSecurityIntrusion': new MerakiDashboardApi.UpdateNetworkApplianceSecurityIntrusion() // UpdateNetworkApplianceSecurityIntrusion | 
 };
-apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -399,7 +426,7 @@ apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body32**](Body32.md)|  | [optional] 
+ **updateNetworkApplianceSecurityIntrusion** | [**UpdateNetworkApplianceSecurityIntrusion**](UpdateNetworkApplianceSecurityIntrusion.md)|  | [optional] 
 
 ### Return type
 
@@ -416,7 +443,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceSecurityMalware"></a>
 # **updateNetworkApplianceSecurityMalware**
-> Object updateNetworkApplianceSecurityMalware(bodynetworkId)
+> Object updateNetworkApplianceSecurityMalware(networkId, updateNetworkApplianceSecurityMalware)
 
 Set the supported malware settings for an MX network
 
@@ -424,34 +451,38 @@ Set the supported malware settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let body = new MerakiDashboardApi.Body33(); // Body33 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
 
-apiInstance.updateNetworkApplianceSecurityMalware(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceSecurityMalware = new MerakiDashboardApi.UpdateNetworkApplianceSecurityMalware(); // UpdateNetworkApplianceSecurityMalware | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSecurityMalware(networkId, updateNetworkApplianceSecurityMalware, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body33**](Body33.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceSecurityMalware** | [**UpdateNetworkApplianceSecurityMalware**](UpdateNetworkApplianceSecurityMalware.md)|  | 
 
 ### Return type
 
@@ -468,7 +499,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationApplianceSecurityIntrusion"></a>
 # **updateOrganizationApplianceSecurityIntrusion**
-> Object updateOrganizationApplianceSecurityIntrusion(bodyorganizationId)
+> Object updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion)
 
 Sets supported intrusion settings for an organization
 
@@ -476,34 +507,38 @@ Sets supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SecurityApi();
-let body = new MerakiDashboardApi.Body126(); // Body126 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.SecurityApi();
 
-apiInstance.updateOrganizationApplianceSecurityIntrusion(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationApplianceSecurityIntrusion = new MerakiDashboardApi.UpdateOrganizationApplianceSecurityIntrusion(); // UpdateOrganizationApplianceSecurityIntrusion | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body126**](Body126.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationApplianceSecurityIntrusion** | [**UpdateOrganizationApplianceSecurityIntrusion**](UpdateOrganizationApplianceSecurityIntrusion.md)|  | 
 
 ### Return type
 

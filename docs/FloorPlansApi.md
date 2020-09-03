@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**deleteNetworkFloorPlan**](FloorPlansApi.md#deleteNetworkFloorPlan) | **DELETE** /networks/{networkId}/floorPlans/{floorPlanId} | Destroy a floor plan
 [**getNetworkFloorPlan**](FloorPlansApi.md#getNetworkFloorPlan) | **GET** /networks/{networkId}/floorPlans/{floorPlanId} | Find a floor plan by ID
 [**getNetworkFloorPlans**](FloorPlansApi.md#getNetworkFloorPlans) | **GET** /networks/{networkId}/floorPlans | List the floor plans that belong to your network
-[**updateNetworkFloorPlan**](FloorPlansApi.md#updateNetworkFloorPlan) | **PUT** /networks/{networkId}/floorPlans/{floorPlanId} | Update a floor plan&#x27;s geolocation and other meta data
+[**updateNetworkFloorPlan**](FloorPlansApi.md#updateNetworkFloorPlan) | **PUT** /networks/{networkId}/floorPlans/{floorPlanId} | Update a floor plan's geolocation and other meta data
+
 
 <a name="createNetworkFloorPlan"></a>
 # **createNetworkFloorPlan**
-> Object createNetworkFloorPlan(bodynetworkId)
+> Object createNetworkFloorPlan(networkId, createNetworkFloorPlan)
 
 Upload a floor plan
 
@@ -20,34 +21,38 @@ Upload a floor plan
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FloorPlansApi();
-let body = new MerakiDashboardApi.Body60(); // Body60 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FloorPlansApi();
 
-apiInstance.createNetworkFloorPlan(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkFloorPlan = new MerakiDashboardApi.CreateNetworkFloorPlan(); // CreateNetworkFloorPlan | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkFloorPlan(networkId, createNetworkFloorPlan, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body60**](Body60.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkFloorPlan** | [**CreateNetworkFloorPlan**](CreateNetworkFloorPlan.md)|  | 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Destroy a floor plan
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FloorPlansApi();
-let networkId = "networkId_example"; // String | 
-let floorPlanId = "floorPlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FloorPlansApi();
 
-apiInstance.deleteNetworkFloorPlan(networkId, floorPlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var floorPlanId = "floorPlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkFloorPlan(networkId, floorPlanId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkFloorPlan"></a>
 # **getNetworkFloorPlan**
@@ -124,26 +133,30 @@ Find a floor plan by ID
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FloorPlansApi();
-let networkId = "networkId_example"; // String | 
-let floorPlanId = "floorPlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FloorPlansApi();
 
-apiInstance.getNetworkFloorPlan(networkId, floorPlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var floorPlanId = "floorPlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkFloorPlan(networkId, floorPlanId, callback);
 ```
 
 ### Parameters
@@ -163,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkFloorPlans"></a>
@@ -176,25 +189,28 @@ List the floor plans that belong to your network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FloorPlansApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.FloorPlansApi();
 
-apiInstance.getNetworkFloorPlans(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkFloorPlans(networkId, callback);
 ```
 
 ### Parameters
@@ -213,41 +229,46 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkFloorPlan"></a>
 # **updateNetworkFloorPlan**
-> Object updateNetworkFloorPlan(networkIdfloorPlanId, opts)
+> Object updateNetworkFloorPlan(networkId, floorPlanId, opts)
 
-Update a floor plan&#x27;s geolocation and other meta data
+Update a floor plan's geolocation and other meta data
 
-Update a floor plan&#x27;s geolocation and other meta data
+Update a floor plan's geolocation and other meta data
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.FloorPlansApi();
-let networkId = "networkId_example"; // String | 
-let floorPlanId = "floorPlanId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body61() // Body61 | 
+var apiInstance = new MerakiDashboardApi.FloorPlansApi();
+
+var networkId = "networkId_example"; // String | 
+
+var floorPlanId = "floorPlanId_example"; // String | 
+
+var opts = { 
+  'updateNetworkFloorPlan': new MerakiDashboardApi.UpdateNetworkFloorPlan() // UpdateNetworkFloorPlan | 
 };
-apiInstance.updateNetworkFloorPlan(networkIdfloorPlanId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkFloorPlan(networkId, floorPlanId, opts, callback);
 ```
 
 ### Parameters
@@ -256,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **floorPlanId** | **String**|  | 
- **body** | [**Body61**](Body61.md)|  | [optional] 
+ **updateNetworkFloorPlan** | [**UpdateNetworkFloorPlan**](UpdateNetworkFloorPlan.md)|  | [optional] 
 
 ### Return type
 

@@ -18,3 +18,5 @@ Name | Type | Description | Notes
 **_12** | [**NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids12**](NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids12.md) |  | [optional] 
 **_13** | [**NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids13**](NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids13.md) |  | [optional] 
 **_14** | [**NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids14**](NetworksnetworkIdclientsclientIdsplashAuthorizationStatusSsids14.md) |  | [optional] 
+
+

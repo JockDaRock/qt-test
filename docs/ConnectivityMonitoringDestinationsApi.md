@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**updateNetworkApplianceConnectivityMonitoringDestinations**](ConnectivityMonitoringDestinationsApi.md#updateNetworkApplianceConnectivityMonitoringDestinations) | **PUT** /networks/{networkId}/appliance/connectivityMonitoringDestinations | Update the connectivity testing destinations for an MX network
 [**updateNetworkCellularGatewayConnectivityMonitoringDestinations**](ConnectivityMonitoringDestinationsApi.md#updateNetworkCellularGatewayConnectivityMonitoringDestinations) | **PUT** /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations | Update the connectivity testing destinations for an MG network
 
+
 <a name="getNetworkApplianceConnectivityMonitoringDestinations"></a>
 # **getNetworkApplianceConnectivityMonitoringDestinations**
 > Object getNetworkApplianceConnectivityMonitoringDestinations(networkId)
@@ -19,25 +20,28 @@ Return the connectivity testing destinations for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
 
-apiInstance.getNetworkApplianceConnectivityMonitoringDestinations(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceConnectivityMonitoringDestinations(networkId, callback);
 ```
 
 ### Parameters
@@ -56,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkCellularGatewayConnectivityMonitoringDestinations"></a>
@@ -69,25 +73,28 @@ Return the connectivity testing destinations for an MG network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
 
-apiInstance.getNetworkCellularGatewayConnectivityMonitoringDestinations(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkCellularGatewayConnectivityMonitoringDestinations(networkId, callback);
 ```
 
 ### Parameters
@@ -106,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceConnectivityMonitoringDestinations"></a>
@@ -119,27 +126,31 @@ Update the connectivity testing destinations for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body21() // Body21 | 
+var apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceConnectivityMonitoringDestinations': new MerakiDashboardApi.UpdateNetworkApplianceConnectivityMonitoringDestinations() // UpdateNetworkApplianceConnectivityMonitoringDestinations | 
 };
-apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -147,7 +158,7 @@ apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body21**](Body21.md)|  | [optional] 
+ **updateNetworkApplianceConnectivityMonitoringDestinations** | [**UpdateNetworkApplianceConnectivityMonitoringDestinations**](UpdateNetworkApplianceConnectivityMonitoringDestinations.md)|  | [optional] 
 
 ### Return type
 
@@ -172,27 +183,31 @@ Update the connectivity testing destinations for an MG network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body50() // Body50 | 
+var apiInstance = new MerakiDashboardApi.ConnectivityMonitoringDestinationsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkCellularGatewayConnectivityMonitoringDestinations': new MerakiDashboardApi.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations() // UpdateNetworkCellularGatewayConnectivityMonitoringDestinations | 
 };
-apiInstance.updateNetworkCellularGatewayConnectivityMonitoringDestinations(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkCellularGatewayConnectivityMonitoringDestinations(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -200,7 +215,7 @@ apiInstance.updateNetworkCellularGatewayConnectivityMonitoringDestinations(netwo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body50**](Body50.md)|  | [optional] 
+ **updateNetworkCellularGatewayConnectivityMonitoringDestinations** | [**UpdateNetworkCellularGatewayConnectivityMonitoringDestinations**](UpdateNetworkCellularGatewayConnectivityMonitoringDestinations.md)|  | [optional] 
 
 ### Return type
 

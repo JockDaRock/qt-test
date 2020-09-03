@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getNetworkSwitchLinkAggregations**](LinkAggregationsApi.md#getNetworkSwitchLinkAggregations) | **GET** /networks/{networkId}/switch/linkAggregations | List link aggregation groups
 [**updateNetworkSwitchLinkAggregation**](LinkAggregationsApi.md#updateNetworkSwitchLinkAggregation) | **PUT** /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | Update a link aggregation group
 
+
 <a name="createNetworkSwitchLinkAggregation"></a>
 # **createNetworkSwitchLinkAggregation**
 > Object createNetworkSwitchLinkAggregation(networkId, opts)
@@ -19,27 +20,31 @@ Create a link aggregation group
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body80() // Body80 | 
+var apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'createNetworkSwitchLinkAggregation': new MerakiDashboardApi.CreateNetworkSwitchLinkAggregation() // CreateNetworkSwitchLinkAggregation | 
 };
-apiInstance.createNetworkSwitchLinkAggregation(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSwitchLinkAggregation(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -47,7 +52,7 @@ apiInstance.createNetworkSwitchLinkAggregation(networkId, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body80**](Body80.md)|  | [optional] 
+ **createNetworkSwitchLinkAggregation** | [**CreateNetworkSwitchLinkAggregation**](CreateNetworkSwitchLinkAggregation.md)|  | [optional] 
 
 ### Return type
 
@@ -72,26 +77,30 @@ Split a link aggregation group into separate ports
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
-let networkId = "networkId_example"; // String | 
-let linkAggregationId = "linkAggregationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
 
-apiInstance.deleteNetworkSwitchLinkAggregation(networkId, linkAggregationId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var linkAggregationId = "linkAggregationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkSwitchLinkAggregation(networkId, linkAggregationId, callback);
 ```
 
 ### Parameters
@@ -111,8 +120,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkSwitchLinkAggregations"></a>
 # **getNetworkSwitchLinkAggregations**
@@ -124,25 +133,28 @@ List link aggregation groups
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
 
-apiInstance.getNetworkSwitchLinkAggregations(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSwitchLinkAggregations(networkId, callback);
 ```
 
 ### Parameters
@@ -161,12 +173,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSwitchLinkAggregation"></a>
 # **updateNetworkSwitchLinkAggregation**
-> Object updateNetworkSwitchLinkAggregation(networkIdlinkAggregationId, opts)
+> Object updateNetworkSwitchLinkAggregation(networkId, linkAggregationId, opts)
 
 Update a link aggregation group
 
@@ -174,28 +186,33 @@ Update a link aggregation group
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
-let networkId = "networkId_example"; // String | 
-let linkAggregationId = "linkAggregationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body81() // Body81 | 
+var apiInstance = new MerakiDashboardApi.LinkAggregationsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var linkAggregationId = "linkAggregationId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSwitchLinkAggregation': new MerakiDashboardApi.UpdateNetworkSwitchLinkAggregation() // UpdateNetworkSwitchLinkAggregation | 
 };
-apiInstance.updateNetworkSwitchLinkAggregation(networkIdlinkAggregationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSwitchLinkAggregation(networkId, linkAggregationId, opts, callback);
 ```
 
 ### Parameters
@@ -204,7 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **linkAggregationId** | **String**|  | 
- **body** | [**Body81**](Body81.md)|  | [optional] 
+ **updateNetworkSwitchLinkAggregation** | [**UpdateNetworkSwitchLinkAggregation**](UpdateNetworkSwitchLinkAggregation.md)|  | [optional] 
 
 ### Return type
 

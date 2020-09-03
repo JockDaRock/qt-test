@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceContentFiltering**](ApplianceApi.md#getNetworkApplianceContentFiltering) | **GET** /networks/{networkId}/appliance/contentFiltering | Return the content filtering settings for an MX network
 [**getNetworkApplianceContentFilteringCategories**](ApplianceApi.md#getNetworkApplianceContentFilteringCategories) | **GET** /networks/{networkId}/appliance/contentFiltering/categories | List all available content filtering categories for an MX network
 [**getNetworkApplianceFirewallCellularFirewallRules**](ApplianceApi.md#getNetworkApplianceFirewallCellularFirewallRules) | **GET** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Return the cellular firewall rules for an MX network
-[**getNetworkApplianceFirewallFirewalledService**](ApplianceApi.md#getNetworkApplianceFirewallFirewalledService) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+[**getNetworkApplianceFirewallFirewalledService**](ApplianceApi.md#getNetworkApplianceFirewallFirewalledService) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 [**getNetworkApplianceFirewallFirewalledServices**](ApplianceApi.md#getNetworkApplianceFirewallFirewalledServices) | **GET** /networks/{networkId}/appliance/firewall/firewalledServices | List the appliance services and their accessibility rules
 [**getNetworkApplianceFirewallInboundFirewallRules**](ApplianceApi.md#getNetworkApplianceFirewallInboundFirewallRules) | **GET** /networks/{networkId}/appliance/firewall/inboundFirewallRules | Return the inbound firewall rules for an MX network
 [**getNetworkApplianceFirewallL3FirewallRules**](ApplianceApi.md#getNetworkApplianceFirewallL3FirewallRules) | **GET** /networks/{networkId}/appliance/firewall/l3FirewallRules | Return the L3 firewall rules for an MX network
@@ -34,9 +34,10 @@ Method | HTTP request | Description
 [**getNetworkApplianceSingleLan**](ApplianceApi.md#getNetworkApplianceSingleLan) | **GET** /networks/{networkId}/appliance/singleLan | Return single LAN configuration
 [**getNetworkApplianceStaticRoute**](ApplianceApi.md#getNetworkApplianceStaticRoute) | **GET** /networks/{networkId}/appliance/staticRoutes/{staticRouteId} | Return a static route for an MX or teleworker network
 [**getNetworkApplianceStaticRoutes**](ApplianceApi.md#getNetworkApplianceStaticRoutes) | **GET** /networks/{networkId}/appliance/staticRoutes | List the static routes for an MX or teleworker network
+[**getNetworkApplianceTrafficShaping**](ApplianceApi.md#getNetworkApplianceTrafficShaping) | **GET** /networks/{networkId}/appliance/trafficShaping | Display the traffic shaping settings for an MX network
 [**getNetworkApplianceTrafficShapingCustomPerformanceClass**](ApplianceApi.md#getNetworkApplianceTrafficShapingCustomPerformanceClass) | **GET** /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId} | Return a custom performance class for an MX network
 [**getNetworkApplianceTrafficShapingCustomPerformanceClasses**](ApplianceApi.md#getNetworkApplianceTrafficShapingCustomPerformanceClasses) | **GET** /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses | List all custom performance classes for an MX network
-[**getNetworkApplianceTrafficShapingRules**](ApplianceApi.md#getNetworkApplianceTrafficShapingRules) | **GET** /networks/{networkId}/appliance/trafficShaping/rules | Display the traffic shaping settings for an MX network
+[**getNetworkApplianceTrafficShapingRules**](ApplianceApi.md#getNetworkApplianceTrafficShapingRules) | **GET** /networks/{networkId}/appliance/trafficShaping/rules | Display the traffic shaping settings rules for an MX network
 [**getNetworkApplianceTrafficShapingUplinkBandwidth**](ApplianceApi.md#getNetworkApplianceTrafficShapingUplinkBandwidth) | **GET** /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | Returns the uplink bandwidth settings for your MX network.
 [**getNetworkApplianceTrafficShapingUplinkSelection**](ApplianceApi.md#getNetworkApplianceTrafficShapingUplinkSelection) | **GET** /networks/{networkId}/appliance/trafficShaping/uplinkSelection | Show uplink selection settings for an MX network
 [**getNetworkApplianceVlan**](ApplianceApi.md#getNetworkApplianceVlan) | **GET** /networks/{networkId}/appliance/vlans/{vlanId} | Return a VLAN
@@ -50,12 +51,12 @@ Method | HTTP request | Description
 [**getOrganizationApplianceVpnStats**](ApplianceApi.md#getOrganizationApplianceVpnStats) | **GET** /organizations/{organizationId}/appliance/vpn/stats | Show VPN history stat for networks in an organization
 [**getOrganizationApplianceVpnStatuses**](ApplianceApi.md#getOrganizationApplianceVpnStatuses) | **GET** /organizations/{organizationId}/appliance/vpn/statuses | Show VPN status for networks in an organization
 [**getOrganizationApplianceVpnThirdPartyVPNPeers**](ApplianceApi.md#getOrganizationApplianceVpnThirdPartyVPNPeers) | **GET** /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | Return the third party VPN peers for an organization
-[**getOrganizationApplianceVpnVpnFirewallRules**](ApplianceApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization&#x27;s site-to-site VPN
+[**getOrganizationApplianceVpnVpnFirewallRules**](ApplianceApi.md#getOrganizationApplianceVpnVpnFirewallRules) | **GET** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Return the firewall rules for an organization's site-to-site VPN
 [**swapNetworkApplianceWarmSpare**](ApplianceApi.md#swapNetworkApplianceWarmSpare) | **POST** /networks/{networkId}/appliance/warmSpare/swap | Swap MX primary and warm spare appliances
 [**updateNetworkApplianceConnectivityMonitoringDestinations**](ApplianceApi.md#updateNetworkApplianceConnectivityMonitoringDestinations) | **PUT** /networks/{networkId}/appliance/connectivityMonitoringDestinations | Update the connectivity testing destinations for an MX network
 [**updateNetworkApplianceContentFiltering**](ApplianceApi.md#updateNetworkApplianceContentFiltering) | **PUT** /networks/{networkId}/appliance/contentFiltering | Update the content filtering settings for an MX network
 [**updateNetworkApplianceFirewallCellularFirewallRules**](ApplianceApi.md#updateNetworkApplianceFirewallCellularFirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Update the cellular firewall rules of an MX network
-[**updateNetworkApplianceFirewallFirewalledService**](ApplianceApi.md#updateNetworkApplianceFirewallFirewalledService) | **PUT** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+[**updateNetworkApplianceFirewallFirewalledService**](ApplianceApi.md#updateNetworkApplianceFirewallFirewalledService) | **PUT** /networks/{networkId}/appliance/firewall/firewalledServices/{service} | Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 [**updateNetworkApplianceFirewallInboundFirewallRules**](ApplianceApi.md#updateNetworkApplianceFirewallInboundFirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/inboundFirewallRules | Update the inbound firewall rules of an MX network
 [**updateNetworkApplianceFirewallL3FirewallRules**](ApplianceApi.md#updateNetworkApplianceFirewallL3FirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/l3FirewallRules | Update the L3 firewall rules of an MX network
 [**updateNetworkApplianceFirewallL7FirewallRules**](ApplianceApi.md#updateNetworkApplianceFirewallL7FirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/l7FirewallRules | Update the MX L7 firewall rules for an MX network
@@ -67,8 +68,9 @@ Method | HTTP request | Description
 [**updateNetworkApplianceSecurityMalware**](ApplianceApi.md#updateNetworkApplianceSecurityMalware) | **PUT** /networks/{networkId}/appliance/security/malware | Set the supported malware settings for an MX network
 [**updateNetworkApplianceSingleLan**](ApplianceApi.md#updateNetworkApplianceSingleLan) | **PUT** /networks/{networkId}/appliance/singleLan | Update single LAN configuration
 [**updateNetworkApplianceStaticRoute**](ApplianceApi.md#updateNetworkApplianceStaticRoute) | **PUT** /networks/{networkId}/appliance/staticRoutes/{staticRouteId} | Update a static route for an MX or teleworker network
+[**updateNetworkApplianceTrafficShaping**](ApplianceApi.md#updateNetworkApplianceTrafficShaping) | **PUT** /networks/{networkId}/appliance/trafficShaping | Update the traffic shaping settings for an MX network
 [**updateNetworkApplianceTrafficShapingCustomPerformanceClass**](ApplianceApi.md#updateNetworkApplianceTrafficShapingCustomPerformanceClass) | **PUT** /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId} | Update a custom performance class for an MX network
-[**updateNetworkApplianceTrafficShapingRules**](ApplianceApi.md#updateNetworkApplianceTrafficShapingRules) | **PUT** /networks/{networkId}/appliance/trafficShaping/rules | Update the traffic shaping settings for an MX network
+[**updateNetworkApplianceTrafficShapingRules**](ApplianceApi.md#updateNetworkApplianceTrafficShapingRules) | **PUT** /networks/{networkId}/appliance/trafficShaping/rules | Update the traffic shaping settings rules for an MX network
 [**updateNetworkApplianceTrafficShapingUplinkBandwidth**](ApplianceApi.md#updateNetworkApplianceTrafficShapingUplinkBandwidth) | **PUT** /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | Updates the uplink bandwidth settings for your MX network.
 [**updateNetworkApplianceTrafficShapingUplinkSelection**](ApplianceApi.md#updateNetworkApplianceTrafficShapingUplinkSelection) | **PUT** /networks/{networkId}/appliance/trafficShaping/uplinkSelection | Update uplink selection settings for an MX network
 [**updateNetworkApplianceVlan**](ApplianceApi.md#updateNetworkApplianceVlan) | **PUT** /networks/{networkId}/appliance/vlans/{vlanId} | Update a VLAN
@@ -77,11 +79,12 @@ Method | HTTP request | Description
 [**updateNetworkApplianceWarmSpare**](ApplianceApi.md#updateNetworkApplianceWarmSpare) | **PUT** /networks/{networkId}/appliance/warmSpare | Update MX warm spare settings
 [**updateOrganizationApplianceSecurityIntrusion**](ApplianceApi.md#updateOrganizationApplianceSecurityIntrusion) | **PUT** /organizations/{organizationId}/appliance/security/intrusion | Sets supported intrusion settings for an organization
 [**updateOrganizationApplianceVpnThirdPartyVPNPeers**](ApplianceApi.md#updateOrganizationApplianceVpnThirdPartyVPNPeers) | **PUT** /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | Update the third party VPN peers for an organization
-[**updateOrganizationApplianceVpnVpnFirewallRules**](ApplianceApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization&#x27;s site-to-site VPN
+[**updateOrganizationApplianceVpnVpnFirewallRules**](ApplianceApi.md#updateOrganizationApplianceVpnVpnFirewallRules) | **PUT** /organizations/{organizationId}/appliance/vpn/vpnFirewallRules | Update the firewall rules of an organization's site-to-site VPN
+
 
 <a name="createNetworkApplianceStaticRoute"></a>
 # **createNetworkApplianceStaticRoute**
-> Object createNetworkApplianceStaticRoute(bodynetworkId)
+> Object createNetworkApplianceStaticRoute(networkId, createNetworkApplianceStaticRoute)
 
 Add a static route for an MX or teleworker network
 
@@ -89,34 +92,38 @@ Add a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body35(); // Body35 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.createNetworkApplianceStaticRoute(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceStaticRoute = new MerakiDashboardApi.CreateNetworkApplianceStaticRoute(); // CreateNetworkApplianceStaticRoute | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceStaticRoute(networkId, createNetworkApplianceStaticRoute, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body35**](Body35.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceStaticRoute** | [**CreateNetworkApplianceStaticRoute**](CreateNetworkApplianceStaticRoute.md)|  | 
 
 ### Return type
 
@@ -133,7 +140,7 @@ Name | Type | Description  | Notes
 
 <a name="createNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **createNetworkApplianceTrafficShapingCustomPerformanceClass**
-> Object createNetworkApplianceTrafficShapingCustomPerformanceClass(bodynetworkId)
+> Object createNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, createNetworkApplianceTrafficShapingCustomPerformanceClass)
 
 Add a custom performance class for an MX network
 
@@ -141,34 +148,38 @@ Add a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body37(); // Body37 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.createNetworkApplianceTrafficShapingCustomPerformanceClass(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceTrafficShapingCustomPerformanceClass = new MerakiDashboardApi.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(); // CreateNetworkApplianceTrafficShapingCustomPerformanceClass | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, createNetworkApplianceTrafficShapingCustomPerformanceClass, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body37**](Body37.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceTrafficShapingCustomPerformanceClass** | [**CreateNetworkApplianceTrafficShapingCustomPerformanceClass**](CreateNetworkApplianceTrafficShapingCustomPerformanceClass.md)|  | 
 
 ### Return type
 
@@ -185,7 +196,7 @@ Name | Type | Description  | Notes
 
 <a name="createNetworkApplianceVlan"></a>
 # **createNetworkApplianceVlan**
-> Object createNetworkApplianceVlan(bodynetworkId)
+> Object createNetworkApplianceVlan(networkId, createNetworkApplianceVlan)
 
 Add a VLAN
 
@@ -193,34 +204,38 @@ Add a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body42(); // Body42 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.createNetworkApplianceVlan(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var createNetworkApplianceVlan = new MerakiDashboardApi.CreateNetworkApplianceVlan(); // CreateNetworkApplianceVlan | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkApplianceVlan(networkId, createNetworkApplianceVlan, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body42**](Body42.md)|  | 
  **networkId** | **String**|  | 
+ **createNetworkApplianceVlan** | [**CreateNetworkApplianceVlan**](CreateNetworkApplianceVlan.md)|  | 
 
 ### Return type
 
@@ -245,26 +260,30 @@ Delete a static route from an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.deleteNetworkApplianceStaticRoute(networkId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceStaticRoute(networkId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -284,8 +303,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **deleteNetworkApplianceTrafficShapingCustomPerformanceClass**
@@ -297,26 +316,30 @@ Delete a custom performance class from an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.deleteNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, callback);
 ```
 
 ### Parameters
@@ -336,8 +359,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteNetworkApplianceVlan"></a>
 # **deleteNetworkApplianceVlan**
@@ -349,26 +372,30 @@ Delete a VLAN from a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.deleteNetworkApplianceVlan(networkId, vlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkApplianceVlan(networkId, vlanId, callback);
 ```
 
 ### Parameters
@@ -388,8 +415,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getDeviceApplianceDhcpSubnets"></a>
 # **getDeviceApplianceDhcpSubnets**
@@ -401,25 +428,28 @@ Return the DHCP subnet information for an appliance
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getDeviceApplianceDhcpSubnets(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceApplianceDhcpSubnets(serial, callback);
 ```
 
 ### Parameters
@@ -438,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceAppliancePerformance"></a>
@@ -451,25 +481,28 @@ Return the performance score for a single device. Only primary MX devices suppor
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getDeviceAppliancePerformance(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceAppliancePerformance(serial, callback);
 ```
 
 ### Parameters
@@ -488,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceClientSecurityEvents"></a>
@@ -501,19 +534,22 @@ List the security events for a client. Clients can be identified by a client key
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let clientId = "clientId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var clientId = "clientId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
@@ -522,13 +558,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceClientSecurityEvents(networkId, clientId, opts, callback);
 ```
 
 ### Parameters
@@ -543,7 +581,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -555,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceConnectivityMonitoringDestinations"></a>
@@ -568,25 +606,28 @@ Return the connectivity testing destinations for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceConnectivityMonitoringDestinations(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceConnectivityMonitoringDestinations(networkId, callback);
 ```
 
 ### Parameters
@@ -605,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceContentFiltering"></a>
@@ -618,25 +659,28 @@ Return the content filtering settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceContentFiltering(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceContentFiltering(networkId, callback);
 ```
 
 ### Parameters
@@ -655,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceContentFilteringCategories"></a>
@@ -668,25 +712,28 @@ List all available content filtering categories for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceContentFilteringCategories(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceContentFilteringCategories(networkId, callback);
 ```
 
 ### Parameters
@@ -705,7 +752,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallCellularFirewallRules"></a>
@@ -718,25 +765,28 @@ Return the cellular firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -755,39 +805,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallFirewalledService"></a>
 # **getNetworkApplianceFirewallFirewalledService**
 > Object getNetworkApplianceFirewallFirewalledService(networkId, service)
 
-Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 
-Return the accessibility settings of the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let service = "service_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallFirewalledService(networkId, service, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var service = "service_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallFirewalledService(networkId, service, callback);
 ```
 
 ### Parameters
@@ -807,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallFirewalledServices"></a>
@@ -820,25 +874,28 @@ List the appliance services and their accessibility rules
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallFirewalledServices(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallFirewalledServices(networkId, callback);
 ```
 
 ### Parameters
@@ -857,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallInboundFirewallRules"></a>
@@ -870,25 +927,28 @@ Return the inbound firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallInboundFirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallInboundFirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -907,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL3FirewallRules"></a>
@@ -920,25 +980,28 @@ Return the L3 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallL3FirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL3FirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -957,7 +1020,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL7FirewallRules"></a>
@@ -970,25 +1033,28 @@ List the MX L7 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallL7FirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL7FirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -1007,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallL7FirewallRulesApplicationCategories"></a>
@@ -1020,25 +1086,28 @@ Return the L7 firewall application categories and their associated applications 
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallL7FirewallRulesApplicationCategories(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallL7FirewallRulesApplicationCategories(networkId, callback);
 ```
 
 ### Parameters
@@ -1057,7 +1126,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallOneToManyNatRules"></a>
@@ -1070,25 +1139,28 @@ Return the 1:Many NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallOneToManyNatRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallOneToManyNatRules(networkId, callback);
 ```
 
 ### Parameters
@@ -1107,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallOneToOneNatRules"></a>
@@ -1120,25 +1192,28 @@ Return the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallOneToOneNatRules(networkId, callback);
 ```
 
 ### Parameters
@@ -1157,7 +1232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceFirewallPortForwardingRules"></a>
@@ -1170,25 +1245,28 @@ Return the port forwarding rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceFirewallPortForwardingRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallPortForwardingRules(networkId, callback);
 ```
 
 ### Parameters
@@ -1207,7 +1285,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkAppliancePort"></a>
@@ -1220,26 +1298,30 @@ Return per-port VLAN settings for a single MX port.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let portId = "portId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkAppliancePort(networkId, portId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkAppliancePort(networkId, portId, callback);
 ```
 
 ### Parameters
@@ -1259,7 +1341,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkAppliancePorts"></a>
@@ -1272,25 +1354,28 @@ List per-port VLAN settings for all ports of a MX.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkAppliancePorts(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkAppliancePorts(networkId, callback);
 ```
 
 ### Parameters
@@ -1309,7 +1394,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityEvents"></a>
@@ -1322,18 +1407,20 @@ List the security events for a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -1342,13 +1429,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityEvents(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -1362,7 +1451,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -1374,7 +1463,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityIntrusion"></a>
@@ -1387,25 +1476,28 @@ Returns all supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceSecurityIntrusion(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityIntrusion(networkId, callback);
 ```
 
 ### Parameters
@@ -1424,7 +1516,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSecurityMalware"></a>
@@ -1437,25 +1529,28 @@ Returns all supported malware settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceSecurityMalware(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSecurityMalware(networkId, callback);
 ```
 
 ### Parameters
@@ -1474,7 +1569,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceSingleLan"></a>
@@ -1487,25 +1582,28 @@ Return single LAN configuration
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceSingleLan(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceSingleLan(networkId, callback);
 ```
 
 ### Parameters
@@ -1524,7 +1622,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceStaticRoute"></a>
@@ -1537,26 +1635,30 @@ Return a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceStaticRoute(networkId, staticRouteId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceStaticRoute(networkId, staticRouteId, callback);
 ```
 
 ### Parameters
@@ -1576,7 +1678,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceStaticRoutes"></a>
@@ -1589,25 +1691,28 @@ List the static routes for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceStaticRoutes(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceStaticRoutes(networkId, callback);
 ```
 
 ### Parameters
@@ -1626,7 +1731,60 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getNetworkApplianceTrafficShaping"></a>
+# **getNetworkApplianceTrafficShaping**
+> Object getNetworkApplianceTrafficShaping(networkId)
+
+Display the traffic shaping settings for an MX network
+
+Display the traffic shaping settings for an MX network
+
+### Example
+```javascript
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
+
+// Configure API key authorization: meraki_api_key
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
+meraki_api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//meraki_api_key.apiKeyPrefix = 'Token';
+
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getNetworkApplianceTrafficShaping(networkId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[meraki_api_key](../README.md#meraki_api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
@@ -1639,26 +1797,30 @@ Return a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, callback);
 ```
 
 ### Parameters
@@ -1678,7 +1840,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingCustomPerformanceClasses"></a>
@@ -1691,25 +1853,28 @@ List all custom performance classes for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClasses(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingCustomPerformanceClasses(networkId, callback);
 ```
 
 ### Parameters
@@ -1728,38 +1893,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingRules"></a>
 # **getNetworkApplianceTrafficShapingRules**
 > Object getNetworkApplianceTrafficShapingRules(networkId)
 
-Display the traffic shaping settings for an MX network
+Display the traffic shaping settings rules for an MX network
 
-Display the traffic shaping settings for an MX network
+Display the traffic shaping settings rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceTrafficShapingRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingRules(networkId, callback);
 ```
 
 ### Parameters
@@ -1778,7 +1946,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingUplinkBandwidth"></a>
@@ -1791,25 +1959,28 @@ Returns the uplink bandwidth settings for your MX network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceTrafficShapingUplinkBandwidth(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingUplinkBandwidth(networkId, callback);
 ```
 
 ### Parameters
@@ -1828,7 +1999,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceTrafficShapingUplinkSelection"></a>
@@ -1841,25 +2012,28 @@ Show uplink selection settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceTrafficShapingUplinkSelection(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingUplinkSelection(networkId, callback);
 ```
 
 ### Parameters
@@ -1878,7 +2052,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlan"></a>
@@ -1891,26 +2065,30 @@ Return a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceVlan(networkId, vlanId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlan(networkId, vlanId, callback);
 ```
 
 ### Parameters
@@ -1930,7 +2108,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlans"></a>
@@ -1943,25 +2121,28 @@ List the VLANs for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceVlans(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlans(networkId, callback);
 ```
 
 ### Parameters
@@ -1980,7 +2161,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVlansSettings"></a>
@@ -1993,25 +2174,28 @@ Returns the enabled status of VLANs for the network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceVlansSettings(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVlansSettings(networkId, callback);
 ```
 
 ### Parameters
@@ -2030,7 +2214,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceVpnSiteToSiteVpn"></a>
@@ -2043,25 +2227,28 @@ Return the site-to-site VPN settings of a network. Only valid for MX networks.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceVpnSiteToSiteVpn(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceVpnSiteToSiteVpn(networkId, callback);
 ```
 
 ### Parameters
@@ -2080,7 +2267,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkApplianceWarmSpare"></a>
@@ -2093,25 +2280,28 @@ Return MX warm spare settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getNetworkApplianceWarmSpare(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceWarmSpare(networkId, callback);
 ```
 
 ### Parameters
@@ -2130,7 +2320,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityEvents"></a>
@@ -2143,18 +2333,20 @@ List the security events for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
@@ -2163,13 +2355,15 @@ let opts = {
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'sortOrder': "sortOrder_example" // String | Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
 };
-apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityEvents(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2183,7 +2377,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are &#x27;ascending&#x27; or &#x27;descending&#x27;. Default is ascending order. | [optional] 
+ **sortOrder** | **String**| Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order. | [optional] 
 
 ### Return type
 
@@ -2195,7 +2389,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceSecurityIntrusion"></a>
@@ -2208,25 +2402,28 @@ Returns all supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceSecurityIntrusion(organizationId, callback);
 ```
 
 ### Parameters
@@ -2245,7 +2442,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceUplinkStatuses"></a>
@@ -2258,29 +2455,33 @@ List the uplink status of every Meraki MX and Z series appliances in the organiz
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example" // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 };
-apiInstance.getOrganizationApplianceUplinkStatuses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceUplinkStatuses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2302,7 +2503,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnStats"></a>
@@ -2315,18 +2516,20 @@ Show VPN history stat for networks in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
@@ -2335,13 +2538,15 @@ let opts = {
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
 };
-apiInstance.getOrganizationApplianceVpnStats(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnStats(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2352,7 +2557,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 300. Default is 300. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456 | [optional] 
+ **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456 | [optional] 
  **t0** | **String**| The beginning of the timespan for the data. The maximum lookback period is 31 days from today. | [optional] 
  **t1** | **String**| The end of the timespan for the data. t1 can be a maximum of 31 days after t0. | [optional] 
  **timespan** | **Number**| The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day. | [optional] 
@@ -2367,7 +2572,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnStatuses"></a>
@@ -2380,30 +2585,34 @@ Show VPN status for networks in an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
   'perPage': 56, // Number | The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
   'startingAfter': "startingAfter_example", // String | A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'endingBefore': "endingBefore_example", // String | A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
   'networkIds': ["networkIds_example"] // [String] | A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456
 };
-apiInstance.getOrganizationApplianceVpnStatuses(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnStatuses(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -2414,7 +2623,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| The number of entries per page returned. Acceptable range is 3 - 300. Default is 300. | [optional] 
  **startingAfter** | **String**| A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
  **endingBefore** | **String**| A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it. | [optional] 
- **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456 | [optional] 
+ **networkIds** | [**[String]**](String.md)| A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456 | [optional] 
 
 ### Return type
 
@@ -2426,7 +2635,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnThirdPartyVPNPeers"></a>
@@ -2439,25 +2648,28 @@ Return the third party VPN peers for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, callback);
 ```
 
 ### Parameters
@@ -2476,38 +2688,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationApplianceVpnVpnFirewallRules"></a>
 # **getOrganizationApplianceVpnVpnFirewallRules**
 > Object getOrganizationApplianceVpnVpnFirewallRules(organizationId)
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
-Return the firewall rules for an organization&#x27;s site-to-site VPN
+Return the firewall rules for an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationApplianceVpnVpnFirewallRules(organizationId, callback);
 ```
 
 ### Parameters
@@ -2526,7 +2741,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="swapNetworkApplianceWarmSpare"></a>
@@ -2539,25 +2754,28 @@ Swap MX primary and warm spare appliances
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.swapNetworkApplianceWarmSpare(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.swapNetworkApplianceWarmSpare(networkId, callback);
 ```
 
 ### Parameters
@@ -2576,7 +2794,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceConnectivityMonitoringDestinations"></a>
@@ -2589,27 +2807,31 @@ Update the connectivity testing destinations for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body21() // Body21 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceConnectivityMonitoringDestinations': new MerakiDashboardApi.UpdateNetworkApplianceConnectivityMonitoringDestinations() // UpdateNetworkApplianceConnectivityMonitoringDestinations | 
 };
-apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2617,7 +2839,7 @@ apiInstance.updateNetworkApplianceConnectivityMonitoringDestinations(networkId, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body21**](Body21.md)|  | [optional] 
+ **updateNetworkApplianceConnectivityMonitoringDestinations** | [**UpdateNetworkApplianceConnectivityMonitoringDestinations**](UpdateNetworkApplianceConnectivityMonitoringDestinations.md)|  | [optional] 
 
 ### Return type
 
@@ -2642,27 +2864,31 @@ Update the content filtering settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body22() // Body22 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceContentFiltering': new MerakiDashboardApi.UpdateNetworkApplianceContentFiltering() // UpdateNetworkApplianceContentFiltering | 
 };
-apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2670,7 +2896,7 @@ apiInstance.updateNetworkApplianceContentFiltering(networkId, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body22**](Body22.md)|  | [optional] 
+ **updateNetworkApplianceContentFiltering** | [**UpdateNetworkApplianceContentFiltering**](UpdateNetworkApplianceContentFiltering.md)|  | [optional] 
 
 ### Return type
 
@@ -2695,27 +2921,31 @@ Update the cellular firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body23() // Body23 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallCellularFirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallCellularFirewallRules() // UpdateNetworkApplianceFirewallCellularFirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2723,7 +2953,7 @@ apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body23**](Body23.md)|  | [optional] 
+ **updateNetworkApplianceFirewallCellularFirewallRules** | [**UpdateNetworkApplianceFirewallCellularFirewallRules**](UpdateNetworkApplianceFirewallCellularFirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2740,44 +2970,49 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallFirewalledService"></a>
 # **updateNetworkApplianceFirewallFirewalledService**
-> Object updateNetworkApplianceFirewallFirewalledService(bodynetworkIdservice)
+> Object updateNetworkApplianceFirewallFirewalledService(networkId, service, updateNetworkApplianceFirewallFirewalledService)
 
-Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 
-Updates the accessibility settings for the given service (&#x27;ICMP&#x27;, &#x27;web&#x27;, or &#x27;SNMP&#x27;)
+Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body24(); // Body24 | 
-let networkId = "networkId_example"; // String | 
-let service = "service_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceFirewallFirewalledService(bodynetworkIdservice, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var service = "service_example"; // String | 
+
+var updateNetworkApplianceFirewallFirewalledService = new MerakiDashboardApi.UpdateNetworkApplianceFirewallFirewalledService(); // UpdateNetworkApplianceFirewallFirewalledService | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallFirewalledService(networkId, service, updateNetworkApplianceFirewallFirewalledService, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body24**](Body24.md)|  | 
  **networkId** | **String**|  | 
  **service** | **String**|  | 
+ **updateNetworkApplianceFirewallFirewalledService** | [**UpdateNetworkApplianceFirewallFirewalledService**](UpdateNetworkApplianceFirewallFirewalledService.md)|  | 
 
 ### Return type
 
@@ -2802,27 +3037,31 @@ Update the inbound firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body25() // Body25 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallInboundFirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallInboundFirewallRules() // UpdateNetworkApplianceFirewallInboundFirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2830,7 +3069,7 @@ apiInstance.updateNetworkApplianceFirewallInboundFirewallRules(networkId, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body25**](Body25.md)|  | [optional] 
+ **updateNetworkApplianceFirewallInboundFirewallRules** | [**UpdateNetworkApplianceFirewallInboundFirewallRules**](UpdateNetworkApplianceFirewallInboundFirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2855,27 +3094,31 @@ Update the L3 firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body26() // Body26 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallL3FirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallL3FirewallRules() // UpdateNetworkApplianceFirewallL3FirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2883,7 +3126,7 @@ apiInstance.updateNetworkApplianceFirewallL3FirewallRules(networkId, opts, (erro
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body26**](Body26.md)|  | [optional] 
+ **updateNetworkApplianceFirewallL3FirewallRules** | [**UpdateNetworkApplianceFirewallL3FirewallRules**](UpdateNetworkApplianceFirewallL3FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2908,27 +3151,31 @@ Update the MX L7 firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body27() // Body27 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallL7FirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallL7FirewallRules() // UpdateNetworkApplianceFirewallL7FirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -2936,7 +3183,7 @@ apiInstance.updateNetworkApplianceFirewallL7FirewallRules(networkId, opts, (erro
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body27**](Body27.md)|  | [optional] 
+ **updateNetworkApplianceFirewallL7FirewallRules** | [**UpdateNetworkApplianceFirewallL7FirewallRules**](UpdateNetworkApplianceFirewallL7FirewallRules.md)|  | [optional] 
 
 ### Return type
 
@@ -2953,7 +3200,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallOneToManyNatRules"></a>
 # **updateNetworkApplianceFirewallOneToManyNatRules**
-> Object updateNetworkApplianceFirewallOneToManyNatRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallOneToManyNatRules(networkId, updateNetworkApplianceFirewallOneToManyNatRules)
 
 Set the 1:Many NAT mapping rules for an MX network
 
@@ -2961,34 +3208,38 @@ Set the 1:Many NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body28(); // Body28 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceFirewallOneToManyNatRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallOneToManyNatRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallOneToManyNatRules(); // UpdateNetworkApplianceFirewallOneToManyNatRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallOneToManyNatRules(networkId, updateNetworkApplianceFirewallOneToManyNatRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body28**](Body28.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallOneToManyNatRules** | [**UpdateNetworkApplianceFirewallOneToManyNatRules**](UpdateNetworkApplianceFirewallOneToManyNatRules.md)|  | 
 
 ### Return type
 
@@ -3005,7 +3256,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallOneToOneNatRules"></a>
 # **updateNetworkApplianceFirewallOneToOneNatRules**
-> Object updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules)
 
 Set the 1:1 NAT mapping rules for an MX network
 
@@ -3013,34 +3264,38 @@ Set the 1:1 NAT mapping rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body29(); // Body29 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallOneToOneNatRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallOneToOneNatRules(); // UpdateNetworkApplianceFirewallOneToOneNatRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallOneToOneNatRules(networkId, updateNetworkApplianceFirewallOneToOneNatRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body29**](Body29.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallOneToOneNatRules** | [**UpdateNetworkApplianceFirewallOneToOneNatRules**](UpdateNetworkApplianceFirewallOneToOneNatRules.md)|  | 
 
 ### Return type
 
@@ -3057,7 +3312,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceFirewallPortForwardingRules"></a>
 # **updateNetworkApplianceFirewallPortForwardingRules**
-> Object updateNetworkApplianceFirewallPortForwardingRules(bodynetworkId)
+> Object updateNetworkApplianceFirewallPortForwardingRules(networkId, updateNetworkApplianceFirewallPortForwardingRules)
 
 Update the port forwarding rules for an MX network
 
@@ -3065,34 +3320,38 @@ Update the port forwarding rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body30(); // Body30 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceFirewallPortForwardingRules(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceFirewallPortForwardingRules = new MerakiDashboardApi.UpdateNetworkApplianceFirewallPortForwardingRules(); // UpdateNetworkApplianceFirewallPortForwardingRules | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallPortForwardingRules(networkId, updateNetworkApplianceFirewallPortForwardingRules, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body30**](Body30.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceFirewallPortForwardingRules** | [**UpdateNetworkApplianceFirewallPortForwardingRules**](UpdateNetworkApplianceFirewallPortForwardingRules.md)|  | 
 
 ### Return type
 
@@ -3109,7 +3368,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkAppliancePort"></a>
 # **updateNetworkAppliancePort**
-> Object updateNetworkAppliancePort(networkIdportId, opts)
+> Object updateNetworkAppliancePort(networkId, portId, opts)
 
 Update the per-port VLAN settings for a single MX port.
 
@@ -3117,28 +3376,33 @@ Update the per-port VLAN settings for a single MX port.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let portId = "portId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body31() // Body31 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+var opts = { 
+  'updateNetworkAppliancePort': new MerakiDashboardApi.UpdateNetworkAppliancePort() // UpdateNetworkAppliancePort | 
 };
-apiInstance.updateNetworkAppliancePort(networkIdportId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkAppliancePort(networkId, portId, opts, callback);
 ```
 
 ### Parameters
@@ -3147,7 +3411,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **portId** | **String**|  | 
- **body** | [**Body31**](Body31.md)|  | [optional] 
+ **updateNetworkAppliancePort** | [**UpdateNetworkAppliancePort**](UpdateNetworkAppliancePort.md)|  | [optional] 
 
 ### Return type
 
@@ -3172,27 +3436,31 @@ Set the supported intrusion settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body32() // Body32 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceSecurityIntrusion': new MerakiDashboardApi.UpdateNetworkApplianceSecurityIntrusion() // UpdateNetworkApplianceSecurityIntrusion | 
 };
-apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3200,7 +3468,7 @@ apiInstance.updateNetworkApplianceSecurityIntrusion(networkId, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body32**](Body32.md)|  | [optional] 
+ **updateNetworkApplianceSecurityIntrusion** | [**UpdateNetworkApplianceSecurityIntrusion**](UpdateNetworkApplianceSecurityIntrusion.md)|  | [optional] 
 
 ### Return type
 
@@ -3217,7 +3485,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceSecurityMalware"></a>
 # **updateNetworkApplianceSecurityMalware**
-> Object updateNetworkApplianceSecurityMalware(bodynetworkId)
+> Object updateNetworkApplianceSecurityMalware(networkId, updateNetworkApplianceSecurityMalware)
 
 Set the supported malware settings for an MX network
 
@@ -3225,34 +3493,38 @@ Set the supported malware settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body33(); // Body33 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceSecurityMalware(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceSecurityMalware = new MerakiDashboardApi.UpdateNetworkApplianceSecurityMalware(); // UpdateNetworkApplianceSecurityMalware | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSecurityMalware(networkId, updateNetworkApplianceSecurityMalware, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body33**](Body33.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceSecurityMalware** | [**UpdateNetworkApplianceSecurityMalware**](UpdateNetworkApplianceSecurityMalware.md)|  | 
 
 ### Return type
 
@@ -3277,27 +3549,31 @@ Update single LAN configuration
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body34() // Body34 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceSingleLan': new MerakiDashboardApi.UpdateNetworkApplianceSingleLan() // UpdateNetworkApplianceSingleLan | 
 };
-apiInstance.updateNetworkApplianceSingleLan(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceSingleLan(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3305,7 +3581,7 @@ apiInstance.updateNetworkApplianceSingleLan(networkId, opts, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body34**](Body34.md)|  | [optional] 
+ **updateNetworkApplianceSingleLan** | [**UpdateNetworkApplianceSingleLan**](UpdateNetworkApplianceSingleLan.md)|  | [optional] 
 
 ### Return type
 
@@ -3322,7 +3598,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceStaticRoute"></a>
 # **updateNetworkApplianceStaticRoute**
-> Object updateNetworkApplianceStaticRoute(networkIdstaticRouteId, opts)
+> Object updateNetworkApplianceStaticRoute(networkId, staticRouteId, opts)
 
 Update a static route for an MX or teleworker network
 
@@ -3330,28 +3606,33 @@ Update a static route for an MX or teleworker network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let staticRouteId = "staticRouteId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body36() // Body36 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var staticRouteId = "staticRouteId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceStaticRoute': new MerakiDashboardApi.UpdateNetworkApplianceStaticRoute() // UpdateNetworkApplianceStaticRoute | 
 };
-apiInstance.updateNetworkApplianceStaticRoute(networkIdstaticRouteId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceStaticRoute(networkId, staticRouteId, opts, callback);
 ```
 
 ### Parameters
@@ -3360,7 +3641,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **staticRouteId** | **String**|  | 
- **body** | [**Body36**](Body36.md)|  | [optional] 
+ **updateNetworkApplianceStaticRoute** | [**UpdateNetworkApplianceStaticRoute**](UpdateNetworkApplianceStaticRoute.md)|  | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[meraki_api_key](../README.md#meraki_api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateNetworkApplianceTrafficShaping"></a>
+# **updateNetworkApplianceTrafficShaping**
+> Object updateNetworkApplianceTrafficShaping(networkId, opts)
+
+Update the traffic shaping settings for an MX network
+
+Update the traffic shaping settings for an MX network
+
+### Example
+```javascript
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
+
+// Configure API key authorization: meraki_api_key
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
+meraki_api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//meraki_api_key.apiKeyPrefix = 'Token';
+
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShaping': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShaping() // UpdateNetworkApplianceTrafficShaping | 
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateNetworkApplianceTrafficShaping(networkId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**|  | 
+ **updateNetworkApplianceTrafficShaping** | [**UpdateNetworkApplianceTrafficShaping**](UpdateNetworkApplianceTrafficShaping.md)|  | [optional] 
 
 ### Return type
 
@@ -3377,7 +3715,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceTrafficShapingCustomPerformanceClass"></a>
 # **updateNetworkApplianceTrafficShapingCustomPerformanceClass**
-> Object updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkIdcustomPerformanceClassId, opts)
+> Object updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, opts)
 
 Update a custom performance class for an MX network
 
@@ -3385,28 +3723,33 @@ Update a custom performance class for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let customPerformanceClassId = "customPerformanceClassId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body38() // Body38 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var customPerformanceClassId = "customPerformanceClassId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingCustomPerformanceClass': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass() // UpdateNetworkApplianceTrafficShapingCustomPerformanceClass | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkIdcustomPerformanceClassId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingCustomPerformanceClass(networkId, customPerformanceClassId, opts, callback);
 ```
 
 ### Parameters
@@ -3415,7 +3758,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **customPerformanceClassId** | **String**|  | 
- **body** | [**Body38**](Body38.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingCustomPerformanceClass** | [**UpdateNetworkApplianceTrafficShapingCustomPerformanceClass**](UpdateNetworkApplianceTrafficShapingCustomPerformanceClass.md)|  | [optional] 
 
 ### Return type
 
@@ -3434,33 +3777,37 @@ Name | Type | Description  | Notes
 # **updateNetworkApplianceTrafficShapingRules**
 > Object updateNetworkApplianceTrafficShapingRules(networkId, opts)
 
-Update the traffic shaping settings for an MX network
+Update the traffic shaping settings rules for an MX network
 
-Update the traffic shaping settings for an MX network
+Update the traffic shaping settings rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body39() // Body39 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingRules': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingRules() // UpdateNetworkApplianceTrafficShapingRules | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3468,7 +3815,7 @@ apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body39**](Body39.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingRules** | [**UpdateNetworkApplianceTrafficShapingRules**](UpdateNetworkApplianceTrafficShapingRules.md)|  | [optional] 
 
 ### Return type
 
@@ -3493,27 +3840,31 @@ Updates the uplink bandwidth settings for your MX network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body40() // Body40 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingUplinkBandwidth': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingUplinkBandwidth() // UpdateNetworkApplianceTrafficShapingUplinkBandwidth | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3521,7 +3872,7 @@ apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body40**](Body40.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingUplinkBandwidth** | [**UpdateNetworkApplianceTrafficShapingUplinkBandwidth**](UpdateNetworkApplianceTrafficShapingUplinkBandwidth.md)|  | [optional] 
 
 ### Return type
 
@@ -3546,27 +3897,31 @@ Update uplink selection settings for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body41() // Body41 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingUplinkSelection': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingUplinkSelection() // UpdateNetworkApplianceTrafficShapingUplinkSelection | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingUplinkSelection(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingUplinkSelection(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3574,7 +3929,7 @@ apiInstance.updateNetworkApplianceTrafficShapingUplinkSelection(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body41**](Body41.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingUplinkSelection** | [**UpdateNetworkApplianceTrafficShapingUplinkSelection**](UpdateNetworkApplianceTrafficShapingUplinkSelection.md)|  | [optional] 
 
 ### Return type
 
@@ -3591,7 +3946,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceVlan"></a>
 # **updateNetworkApplianceVlan**
-> Object updateNetworkApplianceVlan(networkIdvlanId, opts)
+> Object updateNetworkApplianceVlan(networkId, vlanId, opts)
 
 Update a VLAN
 
@@ -3599,28 +3954,33 @@ Update a VLAN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let vlanId = "vlanId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body44() // Body44 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var vlanId = "vlanId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceVlan': new MerakiDashboardApi.UpdateNetworkApplianceVlan() // UpdateNetworkApplianceVlan | 
 };
-apiInstance.updateNetworkApplianceVlan(networkIdvlanId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVlan(networkId, vlanId, opts, callback);
 ```
 
 ### Parameters
@@ -3629,7 +3989,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **vlanId** | **String**|  | 
- **body** | [**Body44**](Body44.md)|  | [optional] 
+ **updateNetworkApplianceVlan** | [**UpdateNetworkApplianceVlan**](UpdateNetworkApplianceVlan.md)|  | [optional] 
 
 ### Return type
 
@@ -3654,27 +4014,31 @@ Enable/Disable VLANs for the given network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body43() // Body43 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceVlansSettings': new MerakiDashboardApi.UpdateNetworkApplianceVlansSettings() // UpdateNetworkApplianceVlansSettings | 
 };
-apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -3682,7 +4046,7 @@ apiInstance.updateNetworkApplianceVlansSettings(networkId, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body43**](Body43.md)|  | [optional] 
+ **updateNetworkApplianceVlansSettings** | [**UpdateNetworkApplianceVlansSettings**](UpdateNetworkApplianceVlansSettings.md)|  | [optional] 
 
 ### Return type
 
@@ -3699,7 +4063,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceVpnSiteToSiteVpn"></a>
 # **updateNetworkApplianceVpnSiteToSiteVpn**
-> Object updateNetworkApplianceVpnSiteToSiteVpn(bodynetworkId)
+> Object updateNetworkApplianceVpnSiteToSiteVpn(networkId, updateNetworkApplianceVpnSiteToSiteVpn)
 
 Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
 
@@ -3707,34 +4071,38 @@ Update the site-to-site VPN settings of a network. Only valid for MX networks in
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body45(); // Body45 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceVpnSiteToSiteVpn(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceVpnSiteToSiteVpn = new MerakiDashboardApi.UpdateNetworkApplianceVpnSiteToSiteVpn(); // UpdateNetworkApplianceVpnSiteToSiteVpn | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceVpnSiteToSiteVpn(networkId, updateNetworkApplianceVpnSiteToSiteVpn, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body45**](Body45.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceVpnSiteToSiteVpn** | [**UpdateNetworkApplianceVpnSiteToSiteVpn**](UpdateNetworkApplianceVpnSiteToSiteVpn.md)|  | 
 
 ### Return type
 
@@ -3751,7 +4119,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkApplianceWarmSpare"></a>
 # **updateNetworkApplianceWarmSpare**
-> Object updateNetworkApplianceWarmSpare(bodynetworkId)
+> Object updateNetworkApplianceWarmSpare(networkId, updateNetworkApplianceWarmSpare)
 
 Update MX warm spare settings
 
@@ -3759,34 +4127,38 @@ Update MX warm spare settings
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body46(); // Body46 | 
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateNetworkApplianceWarmSpare(bodynetworkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var updateNetworkApplianceWarmSpare = new MerakiDashboardApi.UpdateNetworkApplianceWarmSpare(); // UpdateNetworkApplianceWarmSpare | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceWarmSpare(networkId, updateNetworkApplianceWarmSpare, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body46**](Body46.md)|  | 
  **networkId** | **String**|  | 
+ **updateNetworkApplianceWarmSpare** | [**UpdateNetworkApplianceWarmSpare**](UpdateNetworkApplianceWarmSpare.md)|  | 
 
 ### Return type
 
@@ -3803,7 +4175,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationApplianceSecurityIntrusion"></a>
 # **updateOrganizationApplianceSecurityIntrusion**
-> Object updateOrganizationApplianceSecurityIntrusion(bodyorganizationId)
+> Object updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion)
 
 Sets supported intrusion settings for an organization
 
@@ -3811,34 +4183,38 @@ Sets supported intrusion settings for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body126(); // Body126 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateOrganizationApplianceSecurityIntrusion(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationApplianceSecurityIntrusion = new MerakiDashboardApi.UpdateOrganizationApplianceSecurityIntrusion(); // UpdateOrganizationApplianceSecurityIntrusion | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceSecurityIntrusion(organizationId, updateOrganizationApplianceSecurityIntrusion, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body126**](Body126.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationApplianceSecurityIntrusion** | [**UpdateOrganizationApplianceSecurityIntrusion**](UpdateOrganizationApplianceSecurityIntrusion.md)|  | 
 
 ### Return type
 
@@ -3855,7 +4231,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationApplianceVpnThirdPartyVPNPeers"></a>
 # **updateOrganizationApplianceVpnThirdPartyVPNPeers**
-> Object updateOrganizationApplianceVpnThirdPartyVPNPeers(bodyorganizationId)
+> Object updateOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, updateOrganizationApplianceVpnThirdPartyVPNPeers)
 
 Update the third party VPN peers for an organization
 
@@ -3863,34 +4239,38 @@ Update the third party VPN peers for an organization
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let body = new MerakiDashboardApi.Body127(); // Body127 | 
-let organizationId = "organizationId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
 
-apiInstance.updateOrganizationApplianceVpnThirdPartyVPNPeers(bodyorganizationId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var updateOrganizationApplianceVpnThirdPartyVPNPeers = new MerakiDashboardApi.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(); // UpdateOrganizationApplianceVpnThirdPartyVPNPeers | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceVpnThirdPartyVPNPeers(organizationId, updateOrganizationApplianceVpnThirdPartyVPNPeers, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body127**](Body127.md)|  | 
  **organizationId** | **String**|  | 
+ **updateOrganizationApplianceVpnThirdPartyVPNPeers** | [**UpdateOrganizationApplianceVpnThirdPartyVPNPeers**](UpdateOrganizationApplianceVpnThirdPartyVPNPeers.md)|  | 
 
 ### Return type
 
@@ -3909,33 +4289,37 @@ Name | Type | Description  | Notes
 # **updateOrganizationApplianceVpnVpnFirewallRules**
 > Object updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts)
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
-Update the firewall rules of an organization&#x27;s site-to-site VPN
+Update the firewall rules of an organization's site-to-site VPN
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.ApplianceApi();
-let organizationId = "organizationId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body128() // Body128 | 
+var apiInstance = new MerakiDashboardApi.ApplianceApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationApplianceVpnVpnFirewallRules': new MerakiDashboardApi.UpdateOrganizationApplianceVpnVpnFirewallRules() // UpdateOrganizationApplianceVpnVpnFirewallRules | 
 };
-apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -3943,7 +4327,7 @@ apiInstance.updateOrganizationApplianceVpnVpnFirewallRules(organizationId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**|  | 
- **body** | [**Body128**](Body128.md)|  | [optional] 
+ **updateOrganizationApplianceVpnVpnFirewallRules** | [**UpdateOrganizationApplianceVpnVpnFirewallRules**](UpdateOrganizationApplianceVpnVpnFirewallRules.md)|  | [optional] 
 
 ### Return type
 

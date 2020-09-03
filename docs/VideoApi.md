@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getDeviceCameraVideoSettings**](VideoApi.md#getDeviceCameraVideoSettings) | **GET** /devices/{serial}/camera/video/settings | Returns video settings for the given camera
 [**updateDeviceCameraVideoSettings**](VideoApi.md#updateDeviceCameraVideoSettings) | **PUT** /devices/{serial}/camera/video/settings | Update video settings for the given camera
 
+
 <a name="getDeviceCameraVideoSettings"></a>
 # **getDeviceCameraVideoSettings**
 > Object getDeviceCameraVideoSettings(serial)
@@ -17,25 +18,28 @@ Returns video settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VideoApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.VideoApi();
 
-apiInstance.getDeviceCameraVideoSettings(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceCameraVideoSettings(serial, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceCameraVideoSettings"></a>
@@ -67,27 +71,31 @@ Update video settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.VideoApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body5() // Body5 | 
+var apiInstance = new MerakiDashboardApi.VideoApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceCameraVideoSettings': new MerakiDashboardApi.UpdateDeviceCameraVideoSettings() // UpdateDeviceCameraVideoSettings | 
 };
-apiInstance.updateDeviceCameraVideoSettings(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceCameraVideoSettings(serial, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateDeviceCameraVideoSettings(serial, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body5**](Body5.md)|  | [optional] 
+ **updateDeviceCameraVideoSettings** | [**UpdateDeviceCameraVideoSettings**](UpdateDeviceCameraVideoSettings.md)|  | [optional] 
 
 ### Return type
 

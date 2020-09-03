@@ -17,9 +17,10 @@ Method | HTTP request | Description
 [**updateNetworkAppliancePort**](PortsApi.md#updateNetworkAppliancePort) | **PUT** /networks/{networkId}/appliance/ports/{portId} | Update the per-port VLAN settings for a single MX port.
 [**updateOrganizationConfigTemplateSwitchProfilePort**](PortsApi.md#updateOrganizationConfigTemplateSwitchProfilePort) | **PUT** /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | Update a switch profile port
 
+
 <a name="cycleDeviceSwitchPorts"></a>
 # **cycleDeviceSwitchPorts**
-> Object cycleDeviceSwitchPorts(bodyserial)
+> Object cycleDeviceSwitchPorts(serial, cycleDeviceSwitchPorts)
 
 Cycle a set of switch ports
 
@@ -27,34 +28,38 @@ Cycle a set of switch ports
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let body = new MerakiDashboardApi.Body9(); // Body9 | 
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.cycleDeviceSwitchPorts(bodyserial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var cycleDeviceSwitchPorts = new MerakiDashboardApi.CycleDeviceSwitchPorts(); // CycleDeviceSwitchPorts | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.cycleDeviceSwitchPorts(serial, cycleDeviceSwitchPorts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body9**](Body9.md)|  | 
  **serial** | **String**|  | 
+ **cycleDeviceSwitchPorts** | [**CycleDeviceSwitchPorts**](CycleDeviceSwitchPorts.md)|  | 
 
 ### Return type
 
@@ -79,26 +84,30 @@ Return a switch port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let serial = "serial_example"; // String | 
-let portId = "portId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getDeviceSwitchPort(serial, portId, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchPort(serial, portId, callback);
 ```
 
 ### Parameters
@@ -118,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceSwitchPorts"></a>
@@ -131,25 +140,28 @@ List the switch ports for a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getDeviceSwitchPorts(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchPorts(serial, callback);
 ```
 
 ### Parameters
@@ -168,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceSwitchPortsStatuses"></a>
@@ -181,28 +193,32 @@ Return the status for all the ports of a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.PortsApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
 };
-apiInstance.getDeviceSwitchPortsStatuses(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchPortsStatuses(serial, opts, callback);
 ```
 
 ### Parameters
@@ -223,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeviceSwitchPortsStatusesPackets"></a>
@@ -236,28 +252,32 @@ Return the packet counters for all the ports of a switch
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let serial = "serial_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.PortsApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
   'timespan': 3.4 // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
 };
-apiInstance.getDeviceSwitchPortsStatusesPackets(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceSwitchPortsStatusesPackets(serial, opts, callback);
 ```
 
 ### Parameters
@@ -278,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkAppliancePort"></a>
@@ -291,26 +311,30 @@ Return per-port VLAN settings for a single MX port.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let networkId = "networkId_example"; // String | 
-let portId = "portId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getNetworkAppliancePort(networkId, portId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkAppliancePort(networkId, portId, callback);
 ```
 
 ### Parameters
@@ -330,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkAppliancePorts"></a>
@@ -343,25 +367,28 @@ List per-port VLAN settings for all ports of a MX.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getNetworkAppliancePorts(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkAppliancePorts(networkId, callback);
 ```
 
 ### Parameters
@@ -380,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplateSwitchProfilePort"></a>
@@ -393,28 +420,34 @@ Return a switch profile port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
-let portId = "portId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, callback);
 ```
 
 ### Parameters
@@ -436,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getOrganizationConfigTemplateSwitchProfilePorts"></a>
@@ -449,27 +482,32 @@ Return all the ports of a switch profile
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
 
-apiInstance.getOrganizationConfigTemplateSwitchProfilePorts(organizationId, configTemplateId, profileId, (error, data, response) => {
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getOrganizationConfigTemplateSwitchProfilePorts(organizationId, configTemplateId, profileId, callback);
 ```
 
 ### Parameters
@@ -490,12 +528,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceSwitchPort"></a>
 # **updateDeviceSwitchPort**
-> Object updateDeviceSwitchPort(serialportId, opts)
+> Object updateDeviceSwitchPort(serial, portId, opts)
 
 Update a switch port
 
@@ -503,28 +541,33 @@ Update a switch port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let serial = "serial_example"; // String | 
-let portId = "portId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body10() // Body10 | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
+
+var serial = "serial_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+var opts = { 
+  'updateDeviceSwitchPort': new MerakiDashboardApi.UpdateDeviceSwitchPort() // UpdateDeviceSwitchPort | 
 };
-apiInstance.updateDeviceSwitchPort(serialportId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceSwitchPort(serial, portId, opts, callback);
 ```
 
 ### Parameters
@@ -533,7 +576,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
  **portId** | **String**|  | 
- **body** | [**Body10**](Body10.md)|  | [optional] 
+ **updateDeviceSwitchPort** | [**UpdateDeviceSwitchPort**](UpdateDeviceSwitchPort.md)|  | [optional] 
 
 ### Return type
 
@@ -550,7 +593,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkAppliancePort"></a>
 # **updateNetworkAppliancePort**
-> Object updateNetworkAppliancePort(networkIdportId, opts)
+> Object updateNetworkAppliancePort(networkId, portId, opts)
 
 Update the per-port VLAN settings for a single MX port.
 
@@ -558,28 +601,33 @@ Update the per-port VLAN settings for a single MX port.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let networkId = "networkId_example"; // String | 
-let portId = "portId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body31() // Body31 | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+var opts = { 
+  'updateNetworkAppliancePort': new MerakiDashboardApi.UpdateNetworkAppliancePort() // UpdateNetworkAppliancePort | 
 };
-apiInstance.updateNetworkAppliancePort(networkIdportId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkAppliancePort(networkId, portId, opts, callback);
 ```
 
 ### Parameters
@@ -588,7 +636,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **portId** | **String**|  | 
- **body** | [**Body31**](Body31.md)|  | [optional] 
+ **updateNetworkAppliancePort** | [**UpdateNetworkAppliancePort**](UpdateNetworkAppliancePort.md)|  | [optional] 
 
 ### Return type
 
@@ -605,7 +653,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationConfigTemplateSwitchProfilePort"></a>
 # **updateOrganizationConfigTemplateSwitchProfilePort**
-> Object updateOrganizationConfigTemplateSwitchProfilePort(organizationIdconfigTemplateIdprofileIdportId, opts)
+> Object updateOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, opts)
 
 Update a switch profile port
 
@@ -613,30 +661,37 @@ Update a switch profile port
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.PortsApi();
-let organizationId = "organizationId_example"; // String | 
-let configTemplateId = "configTemplateId_example"; // String | 
-let profileId = "profileId_example"; // String | 
-let portId = "portId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body136() // Body136 | 
+var apiInstance = new MerakiDashboardApi.PortsApi();
+
+var organizationId = "organizationId_example"; // String | 
+
+var configTemplateId = "configTemplateId_example"; // String | 
+
+var profileId = "profileId_example"; // String | 
+
+var portId = "portId_example"; // String | 
+
+var opts = { 
+  'updateOrganizationConfigTemplateSwitchProfilePort': new MerakiDashboardApi.UpdateOrganizationConfigTemplateSwitchProfilePort() // UpdateOrganizationConfigTemplateSwitchProfilePort | 
 };
-apiInstance.updateOrganizationConfigTemplateSwitchProfilePort(organizationIdconfigTemplateIdprofileIdportId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateOrganizationConfigTemplateSwitchProfilePort(organizationId, configTemplateId, profileId, portId, opts, callback);
 ```
 
 ### Parameters
@@ -647,7 +702,7 @@ Name | Type | Description  | Notes
  **configTemplateId** | **String**|  | 
  **profileId** | **String**|  | 
  **portId** | **String**|  | 
- **body** | [**Body136**](Body136.md)|  | [optional] 
+ **updateOrganizationConfigTemplateSwitchProfilePort** | [**UpdateOrganizationConfigTemplateSwitchProfilePort**](UpdateOrganizationConfigTemplateSwitchProfilePort.md)|  | [optional] 
 
 ### Return type
 

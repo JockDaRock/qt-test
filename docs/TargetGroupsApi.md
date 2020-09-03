@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getNetworkSmTargetGroups**](TargetGroupsApi.md#getNetworkSmTargetGroups) | **GET** /networks/{networkId}/sm/targetGroups | List the target groups in this network
 [**updateNetworkSmTargetGroup**](TargetGroupsApi.md#updateNetworkSmTargetGroup) | **PUT** /networks/{networkId}/sm/targetGroups/{targetGroupId} | Update a target group
 
+
 <a name="createNetworkSmTargetGroup"></a>
 # **createNetworkSmTargetGroup**
 > Object createNetworkSmTargetGroup(networkId, opts)
@@ -20,27 +21,31 @@ Add a target group
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.TargetGroupsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body74() // Body74 | 
+var apiInstance = new MerakiDashboardApi.TargetGroupsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'createNetworkSmTargetGroup': new MerakiDashboardApi.CreateNetworkSmTargetGroup() // CreateNetworkSmTargetGroup | 
 };
-apiInstance.createNetworkSmTargetGroup(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.createNetworkSmTargetGroup(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -48,7 +53,7 @@ apiInstance.createNetworkSmTargetGroup(networkId, opts, (error, data, response) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body74**](Body74.md)|  | [optional] 
+ **createNetworkSmTargetGroup** | [**CreateNetworkSmTargetGroup**](CreateNetworkSmTargetGroup.md)|  | [optional] 
 
 ### Return type
 
@@ -73,26 +78,30 @@ Delete a target group from a network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.TargetGroupsApi();
-let networkId = "networkId_example"; // String | 
-let targetGroupId = "targetGroupId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.TargetGroupsApi();
 
-apiInstance.deleteNetworkSmTargetGroup(networkId, targetGroupId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var targetGroupId = "targetGroupId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteNetworkSmTargetGroup(networkId, targetGroupId, callback);
 ```
 
 ### Parameters
@@ -112,8 +121,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getNetworkSmTargetGroup"></a>
 # **getNetworkSmTargetGroup**
@@ -125,28 +134,33 @@ Return a target group
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.TargetGroupsApi();
-let networkId = "networkId_example"; // String | 
-let targetGroupId = "targetGroupId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.TargetGroupsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var targetGroupId = "targetGroupId_example"; // String | 
+
+var opts = { 
   'withDetails': true // Boolean | Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
 };
-apiInstance.getNetworkSmTargetGroup(networkId, targetGroupId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmTargetGroup(networkId, targetGroupId, opts, callback);
 ```
 
 ### Parameters
@@ -167,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkSmTargetGroups"></a>
@@ -180,27 +194,31 @@ List the target groups in this network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.TargetGroupsApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.TargetGroupsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   'withDetails': true // Boolean | Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
 };
-apiInstance.getNetworkSmTargetGroups(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkSmTargetGroups(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -220,12 +238,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkSmTargetGroup"></a>
 # **updateNetworkSmTargetGroup**
-> Object updateNetworkSmTargetGroup(networkIdtargetGroupId, opts)
+> Object updateNetworkSmTargetGroup(networkId, targetGroupId, opts)
 
 Update a target group
 
@@ -233,28 +251,33 @@ Update a target group
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.TargetGroupsApi();
-let networkId = "networkId_example"; // String | 
-let targetGroupId = "targetGroupId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body75() // Body75 | 
+var apiInstance = new MerakiDashboardApi.TargetGroupsApi();
+
+var networkId = "networkId_example"; // String | 
+
+var targetGroupId = "targetGroupId_example"; // String | 
+
+var opts = { 
+  'updateNetworkSmTargetGroup': new MerakiDashboardApi.UpdateNetworkSmTargetGroup() // UpdateNetworkSmTargetGroup | 
 };
-apiInstance.updateNetworkSmTargetGroup(networkIdtargetGroupId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkSmTargetGroup(networkId, targetGroupId, opts, callback);
 ```
 
 ### Parameters
@@ -263,7 +286,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **targetGroupId** | **String**|  | 
- **body** | [**Body75**](Body75.md)|  | [optional] 
+ **updateNetworkSmTargetGroup** | [**UpdateNetworkSmTargetGroup**](UpdateNetworkSmTargetGroup.md)|  | [optional] 
 
 ### Return type
 

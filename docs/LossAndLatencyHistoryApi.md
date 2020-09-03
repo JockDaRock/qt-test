@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getDeviceLossAndLatencyHistory**](LossAndLatencyHistoryApi.md#getDeviceLossAndLatencyHistory) | **GET** /devices/{serial}/lossAndLatencyHistory | Get the uplink loss percentage and latency in milliseconds for a wired network device.
 
+
 <a name="getDeviceLossAndLatencyHistory"></a>
 # **getDeviceLossAndLatencyHistory**
 > Object getDeviceLossAndLatencyHistory(serial, ip, opts)
@@ -16,32 +17,37 @@ Get the uplink loss percentage and latency in milliseconds for a wired network d
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.LossAndLatencyHistoryApi();
-let serial = "serial_example"; // String | 
-let ip = "ip_example"; // String | The destination IP used to obtain the requested stats. This is required.
-let opts = { 
+var apiInstance = new MerakiDashboardApi.LossAndLatencyHistoryApi();
+
+var serial = "serial_example"; // String | 
+
+var ip = "ip_example"; // String | The destination IP used to obtain the requested stats. This is required.
+
+var opts = { 
   't0': "t0_example", // String | The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
   't1': "t1_example", // String | The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
   'timespan': 3.4, // Number | The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
   'resolution': 56, // Number | The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
   'uplink': "uplink_example" // String | The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, cellular. The default is wan1.
 };
-apiInstance.getDeviceLossAndLatencyHistory(serial, ip, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceLossAndLatencyHistory(serial, ip, opts, callback);
 ```
 
 ### Parameters
@@ -66,6 +72,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

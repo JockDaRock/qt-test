@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceTrafficShapingUplinkBandwidth**](UplinkBandwidthApi.md#getNetworkApplianceTrafficShapingUplinkBandwidth) | **GET** /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | Returns the uplink bandwidth settings for your MX network.
 [**updateNetworkApplianceTrafficShapingUplinkBandwidth**](UplinkBandwidthApi.md#updateNetworkApplianceTrafficShapingUplinkBandwidth) | **PUT** /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | Updates the uplink bandwidth settings for your MX network.
 
+
 <a name="getNetworkApplianceTrafficShapingUplinkBandwidth"></a>
 # **getNetworkApplianceTrafficShapingUplinkBandwidth**
 > Object getNetworkApplianceTrafficShapingUplinkBandwidth(networkId)
@@ -17,25 +18,28 @@ Returns the uplink bandwidth settings for your MX network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.UplinkBandwidthApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.UplinkBandwidthApi();
 
-apiInstance.getNetworkApplianceTrafficShapingUplinkBandwidth(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingUplinkBandwidth(networkId, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceTrafficShapingUplinkBandwidth"></a>
@@ -67,27 +71,31 @@ Updates the uplink bandwidth settings for your MX network.
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.UplinkBandwidthApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body40() // Body40 | 
+var apiInstance = new MerakiDashboardApi.UplinkBandwidthApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingUplinkBandwidth': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingUplinkBandwidth() // UpdateNetworkApplianceTrafficShapingUplinkBandwidth | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateNetworkApplianceTrafficShapingUplinkBandwidth(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body40**](Body40.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingUplinkBandwidth** | [**UpdateNetworkApplianceTrafficShapingUplinkBandwidth**](UpdateNetworkApplianceTrafficShapingUplinkBandwidth.md)|  | [optional] 
 
 ### Return type
 

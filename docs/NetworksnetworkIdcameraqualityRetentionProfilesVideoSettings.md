@@ -8,3 +8,5 @@ Name | Type | Description | Notes
 **mV32** | [**NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV32**](NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV32.md) |  | [optional] 
 **mV12WE** | [**NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV12WE**](NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV12WE.md) |  | [optional] 
 **mV22XMV72X** | [**NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV22XMV72X**](NetworksnetworkIdcameraqualityRetentionProfilesVideoSettingsMV22XMV72X.md) |  | [optional] 
+
+

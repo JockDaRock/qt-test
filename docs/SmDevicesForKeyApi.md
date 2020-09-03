@@ -6,28 +6,31 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getNetworkPiiSmDevicesForKey**](SmDevicesForKeyApi.md#getNetworkPiiSmDevicesForKey) | **GET** /networks/{networkId}/pii/smDevicesForKey | Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.
 
+
 <a name="getNetworkPiiSmDevicesForKey"></a>
 # **getNetworkPiiSmDevicesForKey**
 > Object getNetworkPiiSmDevicesForKey(networkId, opts)
 
 Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.
 
-Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.  ## ALTERNATE PATH  &#x60;&#x60;&#x60; /organizations/{organizationId}/pii/smDevicesForKey &#x60;&#x60;&#x60;
+Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.  ## ALTERNATE PATH  ``` /organizations/{organizationId}/pii/smDevicesForKey ```
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.SmDevicesForKeyApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
+var apiInstance = new MerakiDashboardApi.SmDevicesForKeyApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
   'username': "username_example", // String | The username of a Systems Manager user
   'email': "email_example", // String | The email of a network user account or a Systems Manager device
   'mac': "mac_example", // String | The MAC of a network client device or a Systems Manager device
@@ -35,13 +38,15 @@ let opts = {
   'imei': "imei_example", // String | The IMEI of a Systems Manager device
   'bluetoothMac': "bluetoothMac_example" // String | The MAC of a Bluetooth client
 };
-apiInstance.getNetworkPiiSmDevicesForKey(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkPiiSmDevicesForKey(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -66,6 +71,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

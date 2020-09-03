@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getDeviceCameraQualityAndRetention**](QualityAndRetentionApi.md#getDeviceCameraQualityAndRetention) | **GET** /devices/{serial}/camera/qualityAndRetention | Returns quality and retention settings for the given camera
 [**updateDeviceCameraQualityAndRetention**](QualityAndRetentionApi.md#updateDeviceCameraQualityAndRetention) | **PUT** /devices/{serial}/camera/qualityAndRetention | Update quality and retention settings for the given camera
 
+
 <a name="getDeviceCameraQualityAndRetention"></a>
 # **getDeviceCameraQualityAndRetention**
 > Object getDeviceCameraQualityAndRetention(serial)
@@ -17,25 +18,28 @@ Returns quality and retention settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityAndRetentionApi();
-let serial = "serial_example"; // String | 
+var apiInstance = new MerakiDashboardApi.QualityAndRetentionApi();
 
-apiInstance.getDeviceCameraQualityAndRetention(serial, (error, data, response) => {
+var serial = "serial_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getDeviceCameraQualityAndRetention(serial, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDeviceCameraQualityAndRetention"></a>
@@ -67,27 +71,31 @@ Update quality and retention settings for the given camera
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.QualityAndRetentionApi();
-let serial = "serial_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body3() // Body3 | 
+var apiInstance = new MerakiDashboardApi.QualityAndRetentionApi();
+
+var serial = "serial_example"; // String | 
+
+var opts = { 
+  'updateDeviceCameraQualityAndRetention': new MerakiDashboardApi.UpdateDeviceCameraQualityAndRetention() // UpdateDeviceCameraQualityAndRetention | 
 };
-apiInstance.updateDeviceCameraQualityAndRetention(serial, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateDeviceCameraQualityAndRetention(serial, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateDeviceCameraQualityAndRetention(serial, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serial** | **String**|  | 
- **body** | [**Body3**](Body3.md)|  | [optional] 
+ **updateDeviceCameraQualityAndRetention** | [**UpdateDeviceCameraQualityAndRetention**](UpdateDeviceCameraQualityAndRetention.md)|  | [optional] 
 
 ### Return type
 

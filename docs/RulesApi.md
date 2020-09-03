@@ -4,40 +4,44 @@ All URIs are relative to *https://api.meraki.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getNetworkApplianceTrafficShapingRules**](RulesApi.md#getNetworkApplianceTrafficShapingRules) | **GET** /networks/{networkId}/appliance/trafficShaping/rules | Display the traffic shaping settings for an MX network
+[**getNetworkApplianceTrafficShapingRules**](RulesApi.md#getNetworkApplianceTrafficShapingRules) | **GET** /networks/{networkId}/appliance/trafficShaping/rules | Display the traffic shaping settings rules for an MX network
 [**getNetworkWirelessSsidTrafficShapingRules**](RulesApi.md#getNetworkWirelessSsidTrafficShapingRules) | **GET** /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | Display the traffic shaping settings for a SSID on an MR network
-[**updateNetworkApplianceTrafficShapingRules**](RulesApi.md#updateNetworkApplianceTrafficShapingRules) | **PUT** /networks/{networkId}/appliance/trafficShaping/rules | Update the traffic shaping settings for an MX network
+[**updateNetworkApplianceTrafficShapingRules**](RulesApi.md#updateNetworkApplianceTrafficShapingRules) | **PUT** /networks/{networkId}/appliance/trafficShaping/rules | Update the traffic shaping settings rules for an MX network
 [**updateNetworkWirelessSsidTrafficShapingRules**](RulesApi.md#updateNetworkWirelessSsidTrafficShapingRules) | **PUT** /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | Update the traffic shaping settings for an SSID on an MR network
+
 
 <a name="getNetworkApplianceTrafficShapingRules"></a>
 # **getNetworkApplianceTrafficShapingRules**
 > Object getNetworkApplianceTrafficShapingRules(networkId)
 
-Display the traffic shaping settings for an MX network
+Display the traffic shaping settings rules for an MX network
 
-Display the traffic shaping settings for an MX network
+Display the traffic shaping settings rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.RulesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.RulesApi();
 
-apiInstance.getNetworkApplianceTrafficShapingRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceTrafficShapingRules(networkId, callback);
 ```
 
 ### Parameters
@@ -56,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNetworkWirelessSsidTrafficShapingRules"></a>
@@ -69,26 +73,30 @@ Display the traffic shaping settings for a SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.RulesApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
+var apiInstance = new MerakiDashboardApi.RulesApi();
 
-apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkWirelessSsidTrafficShapingRules(networkId, _number, callback);
 ```
 
 ### Parameters
@@ -108,40 +116,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceTrafficShapingRules"></a>
 # **updateNetworkApplianceTrafficShapingRules**
 > Object updateNetworkApplianceTrafficShapingRules(networkId, opts)
 
-Update the traffic shaping settings for an MX network
+Update the traffic shaping settings rules for an MX network
 
-Update the traffic shaping settings for an MX network
+Update the traffic shaping settings rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.RulesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body39() // Body39 | 
+var apiInstance = new MerakiDashboardApi.RulesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceTrafficShapingRules': new MerakiDashboardApi.UpdateNetworkApplianceTrafficShapingRules() // UpdateNetworkApplianceTrafficShapingRules | 
 };
-apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -149,7 +161,7 @@ apiInstance.updateNetworkApplianceTrafficShapingRules(networkId, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body39**](Body39.md)|  | [optional] 
+ **updateNetworkApplianceTrafficShapingRules** | [**UpdateNetworkApplianceTrafficShapingRules**](UpdateNetworkApplianceTrafficShapingRules.md)|  | [optional] 
 
 ### Return type
 
@@ -166,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNetworkWirelessSsidTrafficShapingRules"></a>
 # **updateNetworkWirelessSsidTrafficShapingRules**
-> Object updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts)
+> Object updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts)
 
 Update the traffic shaping settings for an SSID on an MR network
 
@@ -174,28 +186,33 @@ Update the traffic shaping settings for an SSID on an MR network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.RulesApi();
-let networkId = "networkId_example"; // String | 
-let _number = "_number_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body119() // Body119 | 
+var apiInstance = new MerakiDashboardApi.RulesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var _number = "_number_example"; // String | 
+
+var opts = { 
+  'updateNetworkWirelessSsidTrafficShapingRules': new MerakiDashboardApi.UpdateNetworkWirelessSsidTrafficShapingRules() // UpdateNetworkWirelessSsidTrafficShapingRules | 
 };
-apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId_number, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkWirelessSsidTrafficShapingRules(networkId, _number, opts, callback);
 ```
 
 ### Parameters
@@ -204,7 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
  **_number** | **String**|  | 
- **body** | [**Body119**](Body119.md)|  | [optional] 
+ **updateNetworkWirelessSsidTrafficShapingRules** | [**UpdateNetworkWirelessSsidTrafficShapingRules**](UpdateNetworkWirelessSsidTrafficShapingRules.md)|  | [optional] 
 
 ### Return type
 

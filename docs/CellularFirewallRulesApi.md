@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getNetworkApplianceFirewallCellularFirewallRules**](CellularFirewallRulesApi.md#getNetworkApplianceFirewallCellularFirewallRules) | **GET** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Return the cellular firewall rules for an MX network
 [**updateNetworkApplianceFirewallCellularFirewallRules**](CellularFirewallRulesApi.md#updateNetworkApplianceFirewallCellularFirewallRules) | **PUT** /networks/{networkId}/appliance/firewall/cellularFirewallRules | Update the cellular firewall rules of an MX network
 
+
 <a name="getNetworkApplianceFirewallCellularFirewallRules"></a>
 # **getNetworkApplianceFirewallCellularFirewallRules**
 > Object getNetworkApplianceFirewallCellularFirewallRules(networkId)
@@ -17,25 +18,28 @@ Return the cellular firewall rules for an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CellularFirewallRulesApi();
-let networkId = "networkId_example"; // String | 
+var apiInstance = new MerakiDashboardApi.CellularFirewallRulesApi();
 
-apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, (error, data, response) => {
+var networkId = "networkId_example"; // String | 
+
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getNetworkApplianceFirewallCellularFirewallRules(networkId, callback);
 ```
 
 ### Parameters
@@ -54,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateNetworkApplianceFirewallCellularFirewallRules"></a>
@@ -67,27 +71,31 @@ Update the cellular firewall rules of an MX network
 
 ### Example
 ```javascript
-import MerakiDashboardApi from 'meraki_dashboard_api';
-let defaultClient = MerakiDashboardApi.ApiClient.instance;
+var MerakiDashboardApi = require('meraki_dashboard_api');
+var defaultClient = MerakiDashboardApi.ApiClient.instance;
 
 // Configure API key authorization: meraki_api_key
-let meraki_api_key = defaultClient.authentications['meraki_api_key'];
+var meraki_api_key = defaultClient.authentications['meraki_api_key'];
 meraki_api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //meraki_api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new MerakiDashboardApi.CellularFirewallRulesApi();
-let networkId = "networkId_example"; // String | 
-let opts = { 
-  'body': new MerakiDashboardApi.Body23() // Body23 | 
+var apiInstance = new MerakiDashboardApi.CellularFirewallRulesApi();
+
+var networkId = "networkId_example"; // String | 
+
+var opts = { 
+  'updateNetworkApplianceFirewallCellularFirewallRules': new MerakiDashboardApi.UpdateNetworkApplianceFirewallCellularFirewallRules() // UpdateNetworkApplianceFirewallCellularFirewallRules | 
 };
-apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, (error, data, response) => {
+
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts, callback);
 ```
 
 ### Parameters
@@ -95,7 +103,7 @@ apiInstance.updateNetworkApplianceFirewallCellularFirewallRules(networkId, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**|  | 
- **body** | [**Body23**](Body23.md)|  | [optional] 
+ **updateNetworkApplianceFirewallCellularFirewallRules** | [**UpdateNetworkApplianceFirewallCellularFirewallRules**](UpdateNetworkApplianceFirewallCellularFirewallRules.md)|  | [optional] 
 
 ### Return type
 
