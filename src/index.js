@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from './ApiClient';
+import './ApiClient';
 import Body from './model/Body';
 import Body1 from './model/Body1';
 import Body10 from './model/Body10';
