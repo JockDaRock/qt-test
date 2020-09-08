@@ -108,11 +108,11 @@
       var collectionQueryParams = {
         'types': {
           value: opts['types'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
         'includedSeverities': {
           value: opts['includedSeverities'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {

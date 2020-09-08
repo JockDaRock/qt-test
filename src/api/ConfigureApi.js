@@ -12073,7 +12073,7 @@
       var collectionQueryParams = {
         'tags': {
           value: opts['tags'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {

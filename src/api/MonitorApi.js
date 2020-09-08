@@ -1473,11 +1473,11 @@
       var collectionQueryParams = {
         'includedEventTypes': {
           value: opts['includedEventTypes'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
         'excludedEventTypes': {
           value: opts['excludedEventTypes'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {
@@ -2218,11 +2218,11 @@
       var collectionQueryParams = {
         'types': {
           value: opts['types'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
         'includedSeverities': {
           value: opts['includedSeverities'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {
@@ -3541,7 +3541,7 @@
       var collectionQueryParams = {
         'networkIds': {
           value: opts['networkIds'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {
@@ -3602,7 +3602,7 @@
       var collectionQueryParams = {
         'networkIds': {
           value: opts['networkIds'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {

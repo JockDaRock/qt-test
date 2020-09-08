@@ -242,11 +242,11 @@
       var collectionQueryParams = {
         'includedEventTypes': {
           value: opts['includedEventTypes'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
         'excludedEventTypes': {
           value: opts['excludedEventTypes'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {

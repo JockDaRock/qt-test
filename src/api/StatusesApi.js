@@ -252,7 +252,7 @@
       var collectionQueryParams = {
         'networkIds': {
           value: opts['networkIds'],
-          collectionFormat: 'multi'
+          collectionFormat: 'csv'
         },
       };
       var headerParams = {

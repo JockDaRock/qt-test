@@ -50,11 +50,11 @@ command above from.
 #### git
 #
 If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/meraki_dashboard_api
+https://github.com/GIT_USER_ID/GIT_REPO_ID
 then install it via:
 
 ```shell
-    npm install YOUR_USERNAME/meraki_dashboard_api --save
+    npm install GIT_USER_ID/GIT_REPO_ID --save
 ```
 
 ### For browser

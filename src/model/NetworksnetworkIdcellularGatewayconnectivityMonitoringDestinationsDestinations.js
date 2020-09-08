@@ -75,8 +75,9 @@
   /**
    * Description of the testing destination. Optional, defaults to null
    * @member {String} description
+   * @default 'null'
    */
-  exports.prototype.description = undefined;
+  exports.prototype.description = 'null';
 
   /**
    * Boolean indicating whether this is the default testing destination (true) or not (false). Defaults to false. Only one default is allowed
